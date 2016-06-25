@@ -86,6 +86,22 @@
 }
 
 + (NSString *)translateResultToZhcnString:(NSString *)result{
+    NSArray<NSString*> *steps = [result componentsSeparatedByString:@" "];
+    NSLog(@"steps = %@",steps);
+    
+    NSDictionary<NSString*,NSString*> *directMap =
+  @{
+    @"U":@"顶层",
+    @"R":@"右侧",
+    @"F":@"前面",
+    @"D":@"底层",
+    @"L":@"左侧",
+    @"B":@"后面",
+    };
+    
+    for (NSString *step in directMap) {
+        
+    }
     
     return @"";
 }

@@ -13,6 +13,7 @@
 #import <SVProgressHUD.h>
 #import <SCLAlertView.h>
 
+
 #define MenueViewWith [ScreenSizeHelper getMenuViewWidth]
 
 @interface GuidePanelViewController ()
@@ -49,7 +50,9 @@
 - (void)setSolution:(NSString *)solution{
     _solution = solution;
     
-    _inputTextView.text = _solution;
+    NSString *trans = [RubiksConvertor translateResultToZhcnString:_solution];
+    
+    _inputTextView.text = [_solution stringByAppendingFormat:@"\n%@",trans];;
 }
 
 @end
