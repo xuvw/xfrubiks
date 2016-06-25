@@ -11,6 +11,7 @@
 #import <GLKit/GLKit.h>
 #import <QuartzCore/QuartzCore.h>
 #import <xfsolver/xfsolver.h>
+#import "ArrowsImage.h"
 
 // UUUUUUUUURRRRRRRRRFFFFFFFFFDDDDDDDDDLLLLLLLLLBBBBBBBBB
 
@@ -25,6 +26,8 @@
 @property (strong,nonatomic) UIView *containerView;
 @property (strong,nonatomic) NSArray<LayerFaceView*> *faces;
 @property (assign,nonatomic) CGFloat sideLength;
+@property (nonatomic, strong) UIImageView *arrowImgView;
+@property (nonatomic, strong) UIImageView *secondImgView;
 @end
 
 @implementation LayerDisplayView
@@ -60,9 +63,70 @@
         UIPanGestureRecognizer *gesture = [[UIPanGestureRecognizer alloc]initWithTarget:self action:@selector(_onPanGesture:)];
         [self addGestureRecognizer:gesture];
     }
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(addArrow:) name:@"input_arrow" object:nil];
+
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(removeArrow) name:@"XFSyncColor" object:nil];
+
+
     return self;
 }
 
+- (void)addArrow:(NSNotification *)notification{
+    NSString *direction = notification.object;
+    if ([direction isEqualToString:@"left"]) {
+        _arrowImgView = [ArrowsImage getLeftImage];
+        _arrowImgView.frame = CGRectMake(30, 30, 100, 100);
+        [_containerView addSubview:_arrowImgView];
+        CATransform3D transform = CATransform3DMakeTranslation(0, 0, _sideLength/2);
+        _arrowImgView.layer.transform = transform;
+    }else if([direction isEqualToString:@"right"]){
+        _arrowImgView = [ArrowsImage getRightImage];
+        _arrowImgView.frame = CGRectMake(30, 30, 100, 100);
+        [_containerView addSubview:_arrowImgView];
+        CATransform3D transform = CATransform3DMakeTranslation(_sideLength/2, 0, 0);
+        transform = CATransform3DRotate(transform, M_PI_2, 0, 1, 0);
+        _arrowImgView.layer.transform = transform;
+    }else if ([direction isEqualToString:@"upleft"]){
+        _arrowImgView = [ArrowsImage getUpImage];
+        _arrowImgView.frame = CGRectMake(30, 30, 100, 100);
+        [_containerView addSubview:_arrowImgView];
+        CATransform3D transform = CATransform3DMakeTranslation(0, _sideLength/2, 0);
+        transform = CATransform3DRotate(transform, -M_PI_2, 1, 0, 0);
+        _arrowImgView.layer.transform = transform;
+        
+        _secondImgView = [ArrowsImage getLeftImage];
+        _secondImgView.frame = CGRectMake(30, 30, 100, 100);
+        [_containerView addSubview:_secondImgView];
+        CATransform3D transform1 = CATransform3DMakeTranslation(0, 0, _sideLength/2);
+        _secondImgView.layer.transform = transform1;
+        
+    }else if ([direction isEqualToString:@"down"]){
+        _arrowImgView = [ArrowsImage getDownImage];
+        _arrowImgView.frame = CGRectMake(30, 30, 100, 100);
+        [_containerView addSubview:_arrowImgView];
+        CATransform3D transform = CATransform3DMakeTranslation(0, 0, _sideLength/2);
+        _arrowImgView.layer.transform = transform;
+    }else if ([direction isEqualToString:@"up"]){
+        _arrowImgView = [ArrowsImage getUpImage];
+        _arrowImgView.frame = CGRectMake(30, 30, 100, 100);
+        [_containerView addSubview:_arrowImgView];
+        CATransform3D transform = CATransform3DMakeTranslation(0, 0, _sideLength/2);
+        _arrowImgView.layer.transform = transform;
+    }else if ([direction isEqualToString:@"leftright"]){
+        _arrowImgView = [ArrowsImage getLeftImage];
+        _arrowImgView.frame = CGRectMake(30, 30, 100, 100);
+        [_containerView addSubview:_arrowImgView];
+        CATransform3D transform = CATransform3DMakeTranslation(-_sideLength/2, 0, 0);
+        transform = CATransform3DRotate(transform, -M_PI_2, 0, 1, 0);
+        _arrowImgView.layer.transform = transform;
+    }
+
+}
+- (void)removeArrow{
+    [_arrowImgView removeFromSuperview];
+    [_secondImgView removeFromSuperview];
+}
 - (void)_onPanGesture:(UIPanGestureRecognizer*)gesture{
     static CGPoint start;
     if(gesture.state == UIGestureRecognizerStateBegan){

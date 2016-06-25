@@ -71,7 +71,7 @@
     starBtn_audio.titleLabel.font = [UIFont systemFontOfSize: 14];
     [starBtn_audio setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     starBtn_audio.frame = CGRectMake(10, 15, witdth, 35);
-    [starBtn_audio setTitle:@"开始" forState:UIControlStateNormal];
+    [starBtn_audio setTitle:@"语音" forState:UIControlStateNormal];
     [starBtn_audio addTarget:self action:@selector(starAudioInput) forControlEvents:UIControlEventTouchUpInside];
     [audioInputView addSubview:starBtn_audio];
     
@@ -86,6 +86,7 @@
     [stopBtn_audio setTitle:@"停止" forState:UIControlStateNormal];
     [stopBtn_audio addTarget:self action:@selector(stopAudioInput) forControlEvents:UIControlEventTouchUpInside];
     [audioInputView addSubview:stopBtn_audio];
+    stopBtn_audio.hidden = YES;
     
     UIButton *reStarBtn_audio = [UIButton buttonWithType:UIButtonTypeSystem];
     reStarBtn_audio.layer.cornerRadius = 5;
@@ -286,24 +287,28 @@
         if (_inputCount == 9) {
             if (_completeCount < 1) {
                 tips = @"上面输入完成，请输入右面";
+                [[NSNotificationCenter defaultCenter]postNotificationName:@"input_arrow" object:@"left"];
                 [self showInputAlert:tips tag:0];
                 _completeCount++;
             }
         }else if (_inputCount == 18){
             if (_completeCount < 2) {
                 tips = @"右面输入完成，请输入前面";
+                [[NSNotificationCenter defaultCenter]postNotificationName:@"input_arrow" object:@"right"];
                 [self showInputAlert:tips tag:1];
                 _completeCount++;
             }
         }else if (_inputCount == 27){
             if (_completeCount < 3) {
                 tips = @"前面输入完成，请输入底面";
+                [[NSNotificationCenter defaultCenter]postNotificationName:@"input_arrow" object:@"up"];
                 [self showInputAlert:tips tag:2];
                 _completeCount++;
             }
         }else if (_inputCount == 36){
             if (_completeCount < 4) {
                 tips = @"底面输入完成，请输入左面";
+                [[NSNotificationCenter defaultCenter]postNotificationName:@"input_arrow" object:@"upleft"];
                 [self showInputAlert:tips tag:3];
                 _completeCount++;
             }
@@ -311,6 +316,8 @@
         }else if (_inputCount == 45){
             if (_completeCount < 5) {
                 tips = @"左面输入完成，请输入后面";
+                [[NSNotificationCenter defaultCenter]postNotificationName:@"input_arrow" object:@"leftright"];
+
                 [self showInputAlert:tips tag:4];
                 _completeCount++;
             }
