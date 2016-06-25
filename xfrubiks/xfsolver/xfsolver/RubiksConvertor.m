@@ -99,11 +99,30 @@
     @"B":@"后面",
     };
     
-    for (NSString *step in directMap) {
+    NSMutableString *trans = [NSMutableString new];
+    [steps enumerateObjectsUsingBlock:^(NSString * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        if(obj.length == 0)
+            return;
         
-    }
+        NSString *first = [obj substringWithRange:NSMakeRange(0, 1)];
+        NSString *direct = [directMap objectForKey:first];
+        if(obj.length == 1){
+            [trans appendFormat:@"%@ %@\n",direct, @"顺时针 旋转90度"];
+        }else if(obj.length == 2){
+            NSString *second = [obj substringWithRange:NSMakeRange(1, 1)];
+            if([second isEqualToString:@"'"]){
+                [trans appendFormat:@"%@ %@\n", direct , @"逆时针 旋转90度"];
+            }else if([second isEqualToString:@"2"]){
+                [trans appendFormat:@"%@ %@\n", direct , @"顺时针 旋转180度"];
+            }else{
+                NSLog(@"unknow second letter");
+            }
+        }else if(obj.length == 3){
+            [trans appendFormat:@"%@ %@\n", direct , @"逆时针 旋转180度"];
+        }
+    }];
     
-    return @"";
+    return trans;
 }
 
 + (NSString *)translateFaceIndexToZhcnString:(NSUInteger)index{
