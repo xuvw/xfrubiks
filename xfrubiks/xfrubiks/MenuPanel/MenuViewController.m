@@ -167,21 +167,6 @@
     
 }
 
-- (void)getAudioInputColor{
-    NSString *str1 = @"红";
-    NSString *str2 = @"蓝";
-    NSString *str3 = @"黄";
-    NSString *str4 = @"橙";
-    NSString *str5 = @"绿";
-    NSString *str6 = @"白";
-    
-    for (int i = 1; i <= 6; i++) {
-        NSRange range = [_inputStr rangeOfString:[NSString stringWithFormat:@"str%@", @(i)]];
-        int location = range.location;
-        int leight = range.length;
-    }
-}
-
 #pragma mark IFlySpeechRecognizerDelegate
 - (void) onResults:(NSArray *) results isLast:(BOOL)isLast
 {
@@ -218,7 +203,17 @@
 }
 
 - (void)_addInputText:(NSString*)text{
-    _inputTextView.text = [NSString stringWithFormat:@"%@%@ ", _inputTextView.text,text];
+    
+    NSArray *array = @[@"红", @"蓝", @"黄", @"橙", @"绿", @"白"];
+    for (NSString *str in array) {
+        if ([text rangeOfString:str].location != NSNotFound) {
+            NSLog(@"%@", str);
+            _inputTextView.text = [NSString stringWithFormat:@"%@%@ ", _inputTextView.text,str];
+            break;
+        }
+    }
+    
+//    _inputTextView.text = [NSString stringWithFormat:@"%@%@ ", _inputTextView.text,text];
 }
 
 - (void)_clearInputText{
