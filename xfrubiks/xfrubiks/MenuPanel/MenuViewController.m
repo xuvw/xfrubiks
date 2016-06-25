@@ -20,6 +20,7 @@
 @property (nonatomic, strong) ButtonMenuView *buttonsView;
 @property (nonatomic, strong) UITextView *inputTextView;
 @property (nonatomic, assign) int inputCount;
+@property (nonatomic, assign) BOOL isInputComplete;
 
 @end
 
@@ -29,6 +30,7 @@
     [super viewDidLoad];
     _inputCount = 0;
     _inputStr = @"";
+    _isInputComplete = NO;
     // Do any additional setup after loading the view.
     _inputTextView = [[UITextView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH/2, 70)];
     _inputTextView.editable = NO;
@@ -213,6 +215,7 @@
             break;
         }
     }
+    if (_isInputComplete == NO) {
         NSString *tips = @"";
         if (_inputCount == 9) {
             tips = @"上面输入完成，请输入右面";
@@ -233,7 +236,10 @@
             tips = @"魔方输入完成";
             [self showInputAlert:tips tag:5];
             [RubiksConvertor convertColorToPostion:_inputTextView.text];
+            _isInputComplete = YES;
         }
+    }
+
 
 }
 
