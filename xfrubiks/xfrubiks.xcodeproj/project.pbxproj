@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3CF105EE1D1E7D2F0027F2BD /* iflyMSC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CF105ED1D1E7D2F0027F2BD /* iflyMSC.framework */; };
+		3CF106061D1E81A00027F2BD /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CF106051D1E81A00027F2BD /* AVFoundation.framework */; };
 		D1F7E6A61D1E6663009CD28F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D1F7E6A51D1E6663009CD28F /* main.m */; };
 		D1F7E6A91D1E6663009CD28F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D1F7E6A81D1E6663009CD28F /* AppDelegate.m */; };
 		D1F7E6AC1D1E6663009CD28F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D1F7E6AB1D1E6663009CD28F /* ViewController.m */; };
@@ -23,6 +24,7 @@
 
 /* Begin PBXFileReference section */
 		3CF105ED1D1E7D2F0027F2BD /* iflyMSC.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = iflyMSC.framework; sourceTree = "<group>"; };
+		3CF106051D1E81A00027F2BD /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		944B34D8CB0E4DE7FF7EA039 /* Pods-xfrubiks.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-xfrubiks.debug.xcconfig"; path = "Pods/Target Support Files/Pods-xfrubiks/Pods-xfrubiks.debug.xcconfig"; sourceTree = "<group>"; };
 		D1F7E6A11D1E6663009CD28F /* xfrubiks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = xfrubiks.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D1F7E6A51D1E6663009CD28F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -52,6 +54,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3CF106061D1E81A00027F2BD /* AVFoundation.framework in Frameworks */,
 				3CF105EE1D1E7D2F0027F2BD /* iflyMSC.framework in Frameworks */,
 				D1F7E6F91D1E75AD009CD28F /* xfsolver.framework in Frameworks */,
 				FAE31EA632A0A6CA1A43812A /* libPods-xfrubiks.a in Frameworks */,
@@ -64,6 +67,7 @@
 		04285741233CAE749A4CFA10 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				3CF106051D1E81A00027F2BD /* AVFoundation.framework */,
 				3CF105ED1D1E7D2F0027F2BD /* iflyMSC.framework */,
 				D1F7E6F81D1E75AD009CD28F /* xfsolver.framework */,
 				D1F7E6E11D1E7451009CD28F /* liblibrubiks.a */,
