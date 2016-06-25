@@ -203,6 +203,15 @@
 - (void)buttonMenuViewColorTapped:(NSString *)tagColor{
     NSLog(@"button tap : %@", tagColor);
     
+    [self _addInputText:tagColor];
+}
+
+- (void)_addInputText:(NSString*)text{
+    _inputTextView.text = [NSString stringWithFormat:@"%@%@ ", _inputTextView.text,text];
+}
+
+- (void)_clearInputText{
+    _inputTextView.text = @"";
 }
 
 /*
