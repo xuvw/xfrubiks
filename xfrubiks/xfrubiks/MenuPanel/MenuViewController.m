@@ -18,6 +18,7 @@
 #import <SCLAlertView.h>
 
 #define MenueViewWith [ScreenSizeHelper getMenuViewWidth]
+
 @interface MenuViewController ()<IFlySpeechRecognizerDelegate, ButtonMenuViewDelegate>
 @property (nonatomic, strong) IFlySpeechRecognizer *iFlySpeechRecognizer;
 @property (nonatomic, copy) NSString *inputStr;

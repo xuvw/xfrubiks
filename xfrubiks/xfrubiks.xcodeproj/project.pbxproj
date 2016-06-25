@@ -45,6 +45,7 @@
 		D1F7E7821D1F09B7009CD28F /* LayerBoxView.m in Sources */ = {isa = PBXBuildFile; fileRef = D1F7E7811D1F09B7009CD28F /* LayerBoxView.m */; };
 		D1F7E7841D1F11F2009CD28F /* WebP.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1F7E7831D1F11F2009CD28F /* WebP.framework */; };
 		D1F7E7861D1F1377009CD28F /* wall-e@2x.webp in Resources */ = {isa = PBXBuildFile; fileRef = D1F7E7851D1F1241009CD28F /* wall-e@2x.webp */; };
+		D1F7E78E1D1F15F4009CD28F /* GuidePanelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D1F7E78D1D1F15F4009CD28F /* GuidePanelViewController.m */; };
 		FAE31EA632A0A6CA1A43812A /* libPods-xfrubiks.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DBBFAB339C1389D2FF505C48 /* libPods-xfrubiks.a */; };
 /* End PBXBuildFile section */
 
@@ -108,6 +109,8 @@
 		D1F7E7811D1F09B7009CD28F /* LayerBoxView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LayerBoxView.m; path = DisplayPanel/Layer/LayerBoxView.m; sourceTree = "<group>"; };
 		D1F7E7831D1F11F2009CD28F /* WebP.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = WebP.framework; sourceTree = "<group>"; };
 		D1F7E7851D1F1241009CD28F /* wall-e@2x.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "wall-e@2x.webp"; sourceTree = "<group>"; };
+		D1F7E78C1D1F15F4009CD28F /* GuidePanelViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GuidePanelViewController.h; path = GuidePanel/GuidePanelViewController.h; sourceTree = "<group>"; };
+		D1F7E78D1D1F15F4009CD28F /* GuidePanelViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GuidePanelViewController.m; path = GuidePanel/GuidePanelViewController.m; sourceTree = "<group>"; };
 		DBBFAB339C1389D2FF505C48 /* libPods-xfrubiks.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-xfrubiks.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F675E66FA3F595F64006F5F3 /* Pods-xfrubiks.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-xfrubiks.release.xcconfig"; path = "Pods/Target Support Files/Pods-xfrubiks/Pods-xfrubiks.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -205,6 +208,7 @@
 		D1F7E6A31D1E6663009CD28F /* xfrubiks */ = {
 			isa = PBXGroup;
 			children = (
+				D1F7E78B1D1F15DF009CD28F /* GuidePanel */,
 				D1F7E77A1D1F04E0009CD28F /* ARPanel */,
 				D1F7E6BE1D1E6A99009CD28F /* Common */,
 				D1F7E6BD1D1E6A4E009CD28F /* DisplayPanel */,
@@ -310,6 +314,15 @@
 				D1F7E77C1D1F052B009CD28F /* ARPanelViewController.m */,
 			);
 			name = ARPanel;
+			sourceTree = "<group>";
+		};
+		D1F7E78B1D1F15DF009CD28F /* GuidePanel */ = {
+			isa = PBXGroup;
+			children = (
+				D1F7E78C1D1F15F4009CD28F /* GuidePanelViewController.h */,
+				D1F7E78D1D1F15F4009CD28F /* GuidePanelViewController.m */,
+			);
+			name = GuidePanel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -448,6 +461,7 @@
 				D1F7E7791D1EFC56009CD28F /* Utility.m in Sources */,
 				D1F7E6CA1D1E6B32009CD28F /* MenuViewController.m in Sources */,
 				D1F7E6AC1D1E6663009CD28F /* ViewController.m in Sources */,
+				D1F7E78E1D1F15F4009CD28F /* GuidePanelViewController.m in Sources */,
 				D1F7E70C1D1E85B8009CD28F /* ButtonMenuView.m in Sources */,
 				D1F7E6C11D1E6AD5009CD28F /* BaseViewController.m in Sources */,
 				D1F7E76E1D1EAB2B009CD28F /* LayerDisplayView.m in Sources */,
