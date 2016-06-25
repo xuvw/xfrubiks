@@ -15,11 +15,11 @@
  蓝 F
  橙 L
  绿 B
- 白 D
+ 白、黑 D
  */
 + (NSString*)convertColorToPostion:(NSString*)colors{
     
-    NSArray *array = @[@"红", @"蓝", @"黄", @"橙", @"绿", @"白"];
+    NSArray *array = @[@"红", @"蓝", @"黄", @"橙", @"绿", @"白", @"黑"];
 
     NSMutableString *mutStr = [NSMutableString string];
     NSLog(@"%@", colors);
@@ -37,7 +37,7 @@
                     [mutStr appendString:@"L"];
                 }else if ([subStr isEqualToString:@"绿"]){
                     [mutStr appendString:@"B"];
-                }else if ([subStr isEqualToString:@"白"]){
+                }else if ([subStr isEqualToString:@"白"] || [subStr isEqualToString:@"黑"]){
                     [mutStr appendString:@"D"];
                 }
             }
@@ -51,7 +51,7 @@
 }
 
 + (NSString *)convertColorToHanZi:(NSString*)colors{
-    NSArray *array = @[@"红", @"蓝", @"黄", @"橙", @"绿", @"白"];
+    NSArray *array = @[@"红", @"蓝", @"黄", @"橙", @"绿", @"白", @"黑"];
     
     NSMutableString *mutStr = [NSMutableString string];
     NSLog(@"%@", colors);

@@ -227,9 +227,7 @@
     NSArray *array = @[@"红", @"蓝", @"黄", @"橙", @"绿", @"白", @"黑"];
     for (NSString *str in array) {
         if ([text rangeOfString:str].location != NSNotFound) {
-            if ([str isEqualToString:@"黑"]) {
-                _inputTextView.text = [NSString stringWithFormat:@"%@%@ ", _inputTextView.text,@"白"];
-            }
+
             [RubiksConvertor convertColorToHanZi:_inputTextView.text];
             _inputTextView.text = [NSString stringWithFormat:@"%@%@ ", _inputTextView.text,str];
             _inputCount++;
