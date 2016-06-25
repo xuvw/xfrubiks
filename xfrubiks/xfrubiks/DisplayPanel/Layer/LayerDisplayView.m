@@ -37,7 +37,7 @@
         
         _baseradx = -M_PI_4;
         _baserady = -M_PI_4/3*2;
-        _baseradz = -M_PI_4/3*2;
+        _baseradz = 0;
         
         _containerView = [[UIView alloc]init];
         _containerView.bounds = CGRectMake(0, 0, _sideLength, _sideLength);
