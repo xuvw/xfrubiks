@@ -26,15 +26,25 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    _inputTextView = [[UITextView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH/2, 50)];
+    _inputTextView = [[UITextView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH/2, 70)];
     _inputTextView.editable = NO;
     [self.view addSubview:_inputTextView];
     
-    _buttonsView = [[ButtonMenuView alloc]initWithFrame:CGRectMake(0,50, SCREEN_WIDTH/2, 100)];
+    {
+        UIView *sep = [[UIView alloc]initWithFrame:CGRectMake(0, 70, SCREEN_WIDTH/2, 0.5)];
+        sep.backgroundColor = [UIColor grayColor];
+        [self.view addSubview:sep];
+    }
+    
+    _buttonsView = [[ButtonMenuView alloc]initWithFrame:CGRectMake(0,71, SCREEN_WIDTH/2, 130)];
     _buttonsView.delegate = self;
     [self.view addSubview:_buttonsView];
     
-    
+    {
+        UIView *sep = [[UIView alloc]initWithFrame:CGRectMake(0, 71 + 131, SCREEN_WIDTH/2, 0.5)];
+        sep.backgroundColor = [UIColor grayColor];
+        [self.view addSubview:sep];
+    }
     
     UIView *audioInputView = [[UIView alloc]init];
     audioInputView.frame = CGRectMake(0, SCREEN_HEIGHT - 100, SCREEN_WIDTH/2, 100);

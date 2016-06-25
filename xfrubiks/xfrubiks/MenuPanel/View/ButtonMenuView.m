@@ -40,8 +40,8 @@ static char kButtonTagKey;
 
 - (UIButton*)_createButton:(UIColor*)color row:(NSUInteger)row col:(NSUInteger)col tag:(NSString*)tag{
     CGFloat width = 60;
-    CGFloat hStep = ceil(SCREEN_WIDTH/2/4);
-    CGFloat vStep = ceil(width*3/3) + 10;
+    CGFloat hStep = ceil(SCREEN_WIDTH/2/6);
+    CGFloat vStep = ceil(width*2/4)+3;
     
     UIButton *button = [UIButton new];
     button.layer.cornerRadius = 5;
@@ -50,7 +50,8 @@ static char kButtonTagKey;
     button.layer.borderWidth = 1.0;
     button.backgroundColor = color;
     button.bounds = CGRectMake(0, 0, width, width);
-    button.center = CGPointMake((col+1) * hStep, (row+1) * vStep);
+    button.center = CGPointMake(col==0?(hStep):(hStep + hStep*2*col),
+                                row==0?(vStep):(vStep + vStep*2*row));
     [button addTarget:self action:@selector(_colorTapped:) forControlEvents:UIControlEventTouchUpInside];
     [self addSubview:button];
     
