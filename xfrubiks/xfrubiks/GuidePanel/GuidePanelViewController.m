@@ -18,6 +18,7 @@
 @interface GuidePanelViewController ()
 @property (nonatomic, strong) UITextView *inputTextView;
 @property (nonatomic, strong) UIButton *closeButton;
+@property (nonatomic, strong) UIButton *nextStepButton;
 @end
 
 @implementation GuidePanelViewController
@@ -26,12 +27,30 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     _closeButton = [UIButton new];
+    [_closeButton setTitle:@"[X]" forState:UIControlStateNormal];
+    [_closeButton addTarget:self action:@selector(_closeButtonTapped:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:_closeButton];
+    [_closeButton mas_makeConstraints:^(MASConstraintMaker *make){
+        make.left.equalTo(self.view).offset(-15);
+        make.top.equalTo(self.view).offset(3);
+    }];
     
-    _inputTextView = [[UITextView alloc]initWithFrame:CGRectMake(0, 0, MenueViewWith, SCREEN_HEIGHT/2)];
+    _inputTextView = [[UITextView alloc]initWithFrame:CGRectMake(0, 0, MenueViewWith, SCREEN_HEIGHT/2 - 40)];
     _inputTextView.editable = NO;
     [self.view addSubview:_inputTextView];
     
+    _nextStepButton = [[UIButton alloc]initWithFrame:CGRectMake(0, SCREEN_HEIGHT - 40, MenueViewWith, 40)];
+    [_nextStepButton setTitle:@"下一步" forState:UIControlStateNormal];
+    _nextStepButton.layer.cornerRadius = 10;
+    _nextStepButton.layer.masksToBounds = YES;
+    [_nextStepButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    _nextStepButton.backgroundColor = [UIColor orangeColor];
+    [self.view addSubview:_nextStepButton];
+}
+
+- (void)_closeButtonTapped:(id)sender{
+    [self.view removeFromSuperview];
+    [self removeFromParentViewController];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -39,14 +58,5 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end
