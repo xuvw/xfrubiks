@@ -214,6 +214,7 @@
             if ([str isEqualToString:@"黑"]) {
                 _inputTextView.text = [NSString stringWithFormat:@"%@%@ ", _inputTextView.text,@"白"];
             }
+            [RubiksConvertor convertColorToHanZi:_inputTextView.text];
             _inputTextView.text = [NSString stringWithFormat:@"%@%@ ", _inputTextView.text,str];
             _inputCount++;
             break;

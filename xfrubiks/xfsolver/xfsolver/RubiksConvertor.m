@@ -49,4 +49,21 @@
     }
     return mutStr;
 }
+
++ (NSString *)convertColorToHanZi:(NSString*)colors{
+    NSArray *array = @[@"红", @"蓝", @"黄", @"橙", @"绿", @"白"];
+    
+    NSMutableString *mutStr = [NSMutableString string];
+    NSLog(@"%@", colors);
+    for (int i = 0; i < colors.length; i++) {
+        NSString *subStr = [colors substringWithRange:NSMakeRange(i, 1)];
+        for (NSString *str in array) {
+            if ([subStr rangeOfString:str].location != NSNotFound) {
+                [mutStr appendString:subStr];
+            }
+        }
+    }
+    NSLog(@"%@", mutStr);
+    return mutStr;
+}
 @end
