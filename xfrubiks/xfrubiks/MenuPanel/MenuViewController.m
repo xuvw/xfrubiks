@@ -59,13 +59,13 @@
     audioInputView.frame = CGRectMake(0, SCREEN_HEIGHT - 80, MenueViewWith, 80);
     [self.view addSubview:audioInputView];
     
-    float witdth = MenueViewWith/3 -40;
+    float witdth = (MenueViewWith-40)/3;
     UIButton *starBtn_audio = [UIButton buttonWithType:UIButtonTypeSystem];
     starBtn_audio.layer.cornerRadius = 5;
     starBtn_audio.layer.masksToBounds = YES;
-    starBtn_audio.titleLabel.font = [UIFont systemFontOfSize: 15];
+    starBtn_audio.titleLabel.font = [UIFont systemFontOfSize: 14];
     [starBtn_audio setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-    starBtn_audio.frame = CGRectMake(10, 0, witdth, 50);
+    starBtn_audio.frame = CGRectMake(10, 10, witdth, 50);
     [starBtn_audio setTitle:@"开始" forState:UIControlStateNormal];
     [starBtn_audio addTarget:self action:@selector(starAudioInput) forControlEvents:UIControlEventTouchUpInside];
     [audioInputView addSubview:starBtn_audio];
@@ -73,9 +73,9 @@
     UIButton *stopBtn_audio = [UIButton buttonWithType:UIButtonTypeSystem];
     stopBtn_audio.layer.cornerRadius = 5;
     stopBtn_audio.layer.masksToBounds = YES;
-    stopBtn_audio.titleLabel.font = [UIFont systemFontOfSize: 18];
+    stopBtn_audio.titleLabel.font = [UIFont systemFontOfSize: 14];
     [stopBtn_audio setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-    stopBtn_audio.frame = CGRectMake(witdth+20, 0, witdth, 50);
+    stopBtn_audio.frame = CGRectMake(witdth+20, 10, witdth, 50);
     [stopBtn_audio setTitle:@"停止" forState:UIControlStateNormal];
     [stopBtn_audio addTarget:self action:@selector(stopAudioInput) forControlEvents:UIControlEventTouchUpInside];
     [audioInputView addSubview:stopBtn_audio];
@@ -83,9 +83,9 @@
     UIButton *reStarBtn_audio = [UIButton buttonWithType:UIButtonTypeSystem];
     reStarBtn_audio.layer.cornerRadius = 5;
     reStarBtn_audio.layer.masksToBounds = YES;
-    reStarBtn_audio.titleLabel.font = [UIFont systemFontOfSize: 18];
+    reStarBtn_audio.titleLabel.font = [UIFont systemFontOfSize: 13];
     [reStarBtn_audio setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-    reStarBtn_audio.frame = CGRectMake(witdth*2+30, 0, witdth, 50);
+    reStarBtn_audio.frame = CGRectMake(witdth*2+30, 10, witdth, 50);
     [reStarBtn_audio setTitle:@"重新输入" forState:UIControlStateNormal];
     [reStarBtn_audio addTarget:self action:@selector(reStarInput) forControlEvents:UIControlEventTouchUpInside];
     [audioInputView addSubview:reStarBtn_audio];
