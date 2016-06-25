@@ -19,17 +19,17 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-//    self.view.backgroundColor = [UIColor greenColor];
+    self.view.backgroundColor = [UIColor grayColor];
     
     NSLog(@"display size = %@", [NSValue valueWithCGSize:self.view.bounds.size]);
     NSLog(@"screen size = %@", [NSValue valueWithCGSize:[UIScreen mainScreen].bounds.size]);
     
-    CGFloat width = SCREEN_WIDTH/2-10;
-    _cube = [[LayerDisplayView alloc]init];
-    _cube.bounds = CGRectMake(0, 0, width, width);
-    _cube.center = CGPointMake(SCREEN_WIDTH/2/2, SCREEN_HEIGHT/2);
+    CGFloat width = 250;
+    _cube = [[LayerDisplayView alloc]initWithFrame:CGRectMake((SCREEN_WIDTH/2-width)/2,
+                                                              (SCREEN_HEIGHT-width)/2,
+                                                              width,
+                                                              width)];
     [self.view addSubview:_cube];
-    
 }
 
 - (void)didReceiveMemoryWarning {
