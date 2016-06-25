@@ -34,6 +34,7 @@
         _waiting.bounds = CGRectMake(0, 0, self.frame.size.width*2/3, self.frame.size.height*2/3);
     }else{
         [_waiting removeFromSuperview];
+        _waiting = nil;
     }
 }
 

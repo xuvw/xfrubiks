@@ -20,6 +20,8 @@
 @property (strong,nonatomic) DisplayViewController *displayController;
 @property (strong,nonatomic) MenuViewController *menuController;
 @property (strong,nonatomic) GuidePanelViewController *guideController;
+
+@property (nonatomic, strong) UIButton *closeButton;
 @end
 
 @implementation ViewController
@@ -55,6 +57,21 @@
     [self.navigationController setNavigationBarHidden:YES];
 }
 
+- (void)showCloseGuideButton{
+    if(_closeButton)return;
+    
+    _closeButton = [UIButton new];
+    _closeButton.backgroundColor = [UIColor colorWithRed:0.702 green:0.702 blue:0.702 alpha:1.0];
+    [_closeButton setTitle:@"[X]" forState:UIControlStateNormal];
+    [_closeButton addTarget:self action:@selector(_closeGuideButtonTapped:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:_closeButton];
+    [_closeButton mas_makeConstraints:^(MASConstraintMaker *make){
+        make.right.equalTo(self.view).offset(-MenueViewWith);
+        make.top.equalTo(self.view).offset(3);
+        make.width.equalTo(@40);
+    }];
+}
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -69,6 +86,20 @@
     [_guideController didMoveToParentViewController:self];
     
     _guideController.solution = solution;
+    
+    [self showCloseGuideButton];
 }
+
+- (void)_closeGuideButtonTapped:(id)sender{
+    if(!_guideController)return;
+    
+    [_guideController.view removeFromSuperview];
+    [_guideController removeFromParentViewController];
+    _guideController = nil;
+    
+    [_closeButton removeFromSuperview];
+    _closeButton = nil;
+}
+
 
 @end

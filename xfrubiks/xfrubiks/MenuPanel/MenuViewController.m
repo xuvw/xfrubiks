@@ -42,6 +42,7 @@
     // Do any additional setup after loading the view.
     _inputTextView = [[UITextView alloc]initWithFrame:CGRectMake(0, 0, MenueViewWith, 120)];
     _inputTextView.editable = NO;
+    _inputTextView.selectable = NO;
     [self.view addSubview:_inputTextView];
     
     {
@@ -235,10 +236,10 @@
 //重新语音输入
 - (void)reStarInput{
     NSLog(@"重新输入");
-    _inputTextView.text = @"";
     [_iFlySpeechRecognizer stopListening];
 //    [self starAudioInput];
     
+    [self _clearInputText];
 }
 
 #pragma mark IFlySpeechRecognizerDelegate
@@ -361,7 +362,10 @@
 }
 - (void)_clearInputText{
     _inputTextView.text = @"";
+    
+    [[NSNotificationCenter defaultCenter]postNotificationName:@"XFSyncColor" object:@""];
 }
+
 
 /*
 #pragma mark - Navigation
