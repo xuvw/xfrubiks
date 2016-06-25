@@ -14,6 +14,8 @@
 #import <xfsolver/xfsolver.h>
 #import "ScreenSizeHelper.h"
 #import "Utility.h"
+#import <SVProgressHUD.h>
+#import <SCLAlertView.h>
 
 #define MenueViewWith [ScreenSizeHelper getMenuViewWidth]
 @interface MenuViewController ()<IFlySpeechRecognizerDelegate, ButtonMenuViewDelegate>
@@ -109,6 +111,8 @@
 - (void)_trySolve:(NSString*)input{
     NSString *filtered = [RubiksConvertor convertColorToPostion:input];
     
+    [SVProgressHUD showWithStatus:@"计算中..."];
+    
     dispatch_async(dispatch_get_global_queue(0, 0), ^{
         CFTimeInterval start = CACurrentMediaTime();
         
@@ -120,6 +124,27 @@
         
         NSLog(@"solution = %@ , %@",@(CACurrentMediaTime() - start),solution);
         NSLog(@"--------------------------------------------------");
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [SVProgressHUD dismiss];
+            
+            
+            SCLAlertView *alert = [[SCLAlertView alloc] init];
+            
+            if(solution){
+                [alert showSuccess:self
+                             title:@"找出来啦"
+                          subTitle:solution
+                  closeButtonTitle:@"那是什么意思"
+                          duration:0.0f];
+            }else{
+                [alert showError:self
+                             title:@"我的天呐"
+                          subTitle:@"一定是你的魔方坏掉了……暴力强拆吧"
+                  closeButtonTitle:@"好的，我强拆去了"
+                          duration:0.0f];
+            }
+        });
     });
 }
 
@@ -304,7 +329,7 @@
 }
 
 - (void)showInputAlert:(NSString *)tips tag:(int)tag{
-    [Utility barInfo:tips];
+//    [Utility barInfo:tips];
     
     [self starAudioInput];
     

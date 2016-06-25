@@ -180,7 +180,7 @@
     
     NSLog(@">>>>>>>>>>normal String : %@", normalString);
     
-    for(NSUInteger idx = 0; idx < normalString.length; ++idx){
+    for(NSUInteger idx = 0; idx < normalString.length && idx < 54; ++idx){
         NSString *colorItem = [normalString substringWithRange:NSMakeRange(idx, 1)];
         NSLog(@"color item = %@",colorItem);
         

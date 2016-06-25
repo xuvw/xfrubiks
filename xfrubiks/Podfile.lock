@@ -1,18 +1,21 @@
 PODS:
   - Masonry (1.0.1)
+  - SCLAlertView-Objective-C (1.0.4)
   - SVProgressHUD (2.0.3)
   - TWMessageBarManager (1.8.1)
 
 DEPENDENCIES:
   - Masonry (~> 1.0)
+  - SCLAlertView-Objective-C (~> 1.0)
   - SVProgressHUD (~> 2.0)
   - TWMessageBarManager (~> 1.8)
 
 SPEC CHECKSUMS:
   Masonry: a1a931a0d08870ed8ae415a2ea5ea68ebcac77df
+  SCLAlertView-Objective-C: dd8a12b4068b8bae1b25c1748d7413b5abcad05b
   SVProgressHUD: b0830714205bea1317ea1a2ebc71e5633af334d4
   TWMessageBarManager: fd84e7948ba7968a2b5d9454859135761214ec56
 
-PODFILE CHECKSUM: 78177e6b8f985026f846868abdeb87ea50f5a3cb
+PODFILE CHECKSUM: 784b6b280c9331e03b25b72bf3f9c6e189ea13d4
 
 COCOAPODS: 1.0.1

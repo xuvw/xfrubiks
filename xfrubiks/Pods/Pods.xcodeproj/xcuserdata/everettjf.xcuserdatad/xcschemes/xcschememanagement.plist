@@ -14,6 +14,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>SCLAlertView-Objective-C.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>SVProgressHUD.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -27,7 +32,12 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>531BF6C88DFBB3E6D79B0C7827FF5246</key>
+		<key>12B0F7280927FCC03918766017A85A40</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>2441F2667A5FB77F5DE6A008EA668909</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -37,12 +47,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>5F677E306008D25FE59DD7DB65129529</key>
+		<key>5DB9729631721EFB78AA71D14AF57032</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>E75E4AF56332F84C07009C8143275FD1</key>
+		<key>8A8E41F01D7CFBA89C8004E329A5962E</key>
 		<dict>
 			<key>primary</key>
 			<true/>
