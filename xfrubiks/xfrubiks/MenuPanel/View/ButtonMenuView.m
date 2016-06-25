@@ -42,7 +42,7 @@ static char kButtonTagKey;
 }
 
 - (UIButton*)_createButton:(UIColor*)color row:(NSUInteger)row col:(NSUInteger)col tag:(NSString*)tag{
-    CGFloat width = 60;
+    CGFloat width = 55;
     CGFloat hStep = ceil(MenueViewWith/6);
     CGFloat vStep = ceil(width*2/4)+3;
     

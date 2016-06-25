@@ -95,8 +95,17 @@
     [reStarBtn_audio setTitle:@"重新输入" forState:UIControlStateNormal];
     [reStarBtn_audio addTarget:self action:@selector(reStarInput) forControlEvents:UIControlEventTouchUpInside];
     [audioInputView addSubview:reStarBtn_audio];
+    
+    UIButton *testBtn = [UIButton buttonWithType:UIButtonTypeSystem];
+    testBtn.frame = CGRectMake(0, 0, 20, 20);
+    testBtn.backgroundColor = [UIColor redColor];
+    [audioInputView addSubview:testBtn];
+    [testBtn addTarget:self action:@selector(test) forControlEvents:UIControlEventTouchUpInside];
 }
-
+- (void)test{
+    NSString *testStr = @"绿蓝白红蓝蓝白橙红蓝红蓝蓝橙绿红橙黄红蓝黄橙黄白白白蓝绿绿白白绿绿蓝红绿红绿绿橙红白黄红橙橙黄黄黄白黄橙黄橙";
+    [self _addInputText:testStr];
+}
 - (void)initRecognizer
 {
     if (_iFlySpeechRecognizer == nil) {
