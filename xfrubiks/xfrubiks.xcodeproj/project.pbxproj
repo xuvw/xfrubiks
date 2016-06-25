@@ -19,6 +19,8 @@
 		3CF106161D1E82650027F2BD /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CF106151D1E82650027F2BD /* AddressBook.framework */; };
 		3CF106181D1E82710027F2BD /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CF106171D1E82710027F2BD /* QuartzCore.framework */; };
 		3CF1061A1D1E827B0027F2BD /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CF106191D1E827B0027F2BD /* CoreGraphics.framework */; };
+		3CF106201D1E83390027F2BD /* IATConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CF1061D1D1E83390027F2BD /* IATConfig.m */; };
+		3CF106211D1E83390027F2BD /* ISRDataHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CF1061F1D1E83390027F2BD /* ISRDataHelper.m */; };
 		D1F7E6A61D1E6663009CD28F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D1F7E6A51D1E6663009CD28F /* main.m */; };
 		D1F7E6A91D1E6663009CD28F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D1F7E6A81D1E6663009CD28F /* AppDelegate.m */; };
 		D1F7E6AC1D1E6663009CD28F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D1F7E6AB1D1E6663009CD28F /* ViewController.m */; };
@@ -45,6 +47,10 @@
 		3CF106151D1E82650027F2BD /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
 		3CF106171D1E82710027F2BD /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		3CF106191D1E827B0027F2BD /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		3CF1061C1D1E83390027F2BD /* IATConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IATConfig.h; sourceTree = "<group>"; };
+		3CF1061D1D1E83390027F2BD /* IATConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IATConfig.m; sourceTree = "<group>"; };
+		3CF1061E1D1E83390027F2BD /* ISRDataHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISRDataHelper.h; sourceTree = "<group>"; };
+		3CF1061F1D1E83390027F2BD /* ISRDataHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ISRDataHelper.m; sourceTree = "<group>"; };
 		944B34D8CB0E4DE7FF7EA039 /* Pods-xfrubiks.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-xfrubiks.debug.xcconfig"; path = "Pods/Target Support Files/Pods-xfrubiks/Pods-xfrubiks.debug.xcconfig"; sourceTree = "<group>"; };
 		D1F7E6A11D1E6663009CD28F /* xfrubiks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = xfrubiks.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D1F7E6A51D1E6663009CD28F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -125,6 +131,18 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		3CF1061B1D1E83070027F2BD /* audioInput */ = {
+			isa = PBXGroup;
+			children = (
+				3CF1061C1D1E83390027F2BD /* IATConfig.h */,
+				3CF1061D1D1E83390027F2BD /* IATConfig.m */,
+				3CF1061E1D1E83390027F2BD /* ISRDataHelper.h */,
+				3CF1061F1D1E83390027F2BD /* ISRDataHelper.m */,
+			);
+			name = audioInput;
+			path = MenuPanel/audioInput;
+			sourceTree = "<group>";
+		};
 		D1F7E6981D1E6663009CD28F = {
 			isa = PBXGroup;
 			children = (
@@ -182,6 +200,7 @@
 		D1F7E6BC1D1E6A38009CD28F /* MenuPanel */ = {
 			isa = PBXGroup;
 			children = (
+				3CF1061B1D1E83070027F2BD /* audioInput */,
 				D1F7E6C81D1E6B32009CD28F /* MenuViewController.h */,
 				D1F7E6C91D1E6B32009CD28F /* MenuViewController.m */,
 			);
@@ -327,7 +346,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3CF106201D1E83390027F2BD /* IATConfig.m in Sources */,
 				D1F7E6C71D1E6B28009CD28F /* DisplayViewController.m in Sources */,
+				3CF106211D1E83390027F2BD /* ISRDataHelper.m in Sources */,
 				D1F7E6CA1D1E6B32009CD28F /* MenuViewController.m in Sources */,
 				D1F7E6AC1D1E6663009CD28F /* ViewController.m in Sources */,
 				D1F7E6C11D1E6AD5009CD28F /* BaseViewController.m in Sources */,
