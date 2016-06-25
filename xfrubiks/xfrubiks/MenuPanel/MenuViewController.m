@@ -230,10 +230,15 @@
 
             [RubiksConvertor convertColorToHanZi:_inputTextView.text];
             _inputTextView.text = [NSString stringWithFormat:@"%@%@ ", _inputTextView.text,str];
+            
+            //Sync fill color
+            [[NSNotificationCenter defaultCenter]postNotificationName:@"XFSyncColor" object:_inputTextView.text];
+            
             _inputCount++;
             break;
         }
     }
+    
     if (_isInputComplete == NO) {
         NSString *tips = @"";
         if (_inputCount == 9) {

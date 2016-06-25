@@ -10,5 +10,8 @@
 
 @interface LayerFaceView : UIView
 
-@property (strong,nonatomic) NSString *tagText;
+- (void)setColor:(UIColor*)color index:(NSUInteger)index;
+
+@property (strong,nonatomic) NSString *text;
+
 @end

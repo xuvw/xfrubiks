@@ -31,11 +31,23 @@
                                                               width,
                                                               width)];
     [self.view addSubview:_cube];
+    
+    
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(onSyncColor:) name:@"XFSyncColor" object:nil];
+}
+
+- (void)dealloc{
+    [[NSNotificationCenter defaultCenter]removeObserver:self];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)onSyncColor:(NSNotification *)notification{
+    NSString *colorString = notification.object;
+    [_cube setColorByString:colorString];
 }
 
 /*

@@ -10,4 +10,6 @@
 
 @interface LayerDisplayView : UIView
 
+- (void)setColorByString:(NSString*)zhcnString;
+
 @end

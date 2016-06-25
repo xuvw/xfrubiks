@@ -66,4 +66,23 @@
     NSLog(@"%@", mutStr);
     return mutStr;
 }
+
+
+
++ (UIColor *)colorFromZhcnString:(NSString *)zhcnString{
+    if(zhcnString.length == 0)return [UIColor grayColor];
+    NSDictionary<NSString*,UIColor*> *dict =
+  @{
+    @"红":[UIColor redColor],
+    @"橙":[UIColor orangeColor],
+    @"蓝":[UIColor blueColor],
+    @"绿":[UIColor greenColor],
+    @"黄":[UIColor yellowColor],
+    @"白":[UIColor whiteColor],
+    };
+    UIColor *ret = [dict objectForKey:[zhcnString substringWithRange:NSMakeRange(0, 1)]];
+    if(!ret)return [UIColor grayColor];
+    return ret;
+}
+
 @end

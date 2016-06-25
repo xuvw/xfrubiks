@@ -10,6 +10,9 @@
 #import "LayerFaceView.h"
 #import <GLKit/GLKit.h>
 #import <QuartzCore/QuartzCore.h>
+#import <xfsolver/xfsolver.h>
+
+// UUUUUUUUURRRRRRRRRFFFFFFFFFDDDDDDDDDLLLLLLLLLBBBBBBBBB
 
 //#define LIGHT_DIRECTION 0, 1, -0.5 
 //#define AMBIENT_LIGHT 0.5
@@ -111,7 +114,7 @@
 
 - (void)addFace:(NSInteger)index withTransform:(CATransform3D)transform {
     UIView *face = _faces[index];
-    face.backgroundColor = [UIColor whiteColor];
+    face.backgroundColor = [UIColor colorWithRed:0.902 green:0.902 blue:0.902 alpha:1.0];
     [_containerView addSubview:face];
     face.layer.transform = transform;
     
@@ -126,10 +129,23 @@
 
 - (void)_configFace:(LayerFaceView*)face idx:(NSUInteger)idx{
     
-//    face.backgroundColor = [UIColor colorWithRed:arc4random()%255/255.0 green:arc4random()%255/255.0 blue:arc4random()%255/255.0 alpha:1.0f];
-    face.tagText = [NSString stringWithFormat:@"%@",@(idx)];
+    [face setText:[NSString stringWithFormat:@"%@",@(idx)]];
 }
 
+- (void)setColorByString:(NSString *)zhcnString{
+    NSString *normalString = [RubiksConvertor convertColorToHanZi:zhcnString];
+    
+    for(NSUInteger idx = 0; idx < normalString.length; ++idx){
+        NSString *colorItem = [normalString substringWithRange:NSMakeRange(idx, 1)];
+        NSLog(@"color item = %@",colorItem);
+        
+        NSUInteger faceIndex = idx/9;
+        NSUInteger boxIndex = idx%9;
+        
+        UIColor *color = [RubiksConvertor colorFromZhcnString:colorItem];
+        [_faces[faceIndex] setColor:color index:boxIndex];
+    }
+}
 
 
 @end

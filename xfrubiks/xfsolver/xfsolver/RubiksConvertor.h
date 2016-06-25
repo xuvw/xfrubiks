@@ -7,10 +7,13 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIkit.h>
 
 @interface RubiksConvertor : NSObject
 
 + (NSString *)convertColorToPostion:(NSString*)colors;
 + (NSString *)convertColorToHanZi:(NSString*)colors;
+
++ (UIColor*)colorFromZhcnString:(NSString*)zhcnString;
 
 @end
