@@ -12,7 +12,7 @@
 #import "ISRDataHelper.h"
 #import "ButtonMenuView.h"
 
-@interface MenuViewController ()<IFlySpeechRecognizerDelegate>
+@interface MenuViewController ()<IFlySpeechRecognizerDelegate, ButtonMenuViewDelegate>
 @property (nonatomic, strong) IFlySpeechRecognizer *iFlySpeechRecognizer;
 @property (nonatomic, copy) NSString *inputStr;
 
@@ -31,6 +31,7 @@
     [self.view addSubview:_inputTextView];
     
     _buttonsView = [[ButtonMenuView alloc]initWithFrame:CGRectMake(0,50, SCREEN_WIDTH/2, 100)];
+    _buttonsView.delegate = self;
     [self.view addSubview:_buttonsView];
     
     
@@ -142,6 +143,11 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)buttonMenuViewColorTapped:(NSString *)tagColor{
+    NSLog(@"button tap : %@", tagColor);
+    
 }
 
 /*

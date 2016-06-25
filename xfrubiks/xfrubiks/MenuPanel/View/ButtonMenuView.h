@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
+@class ButtonMenuView;
+@protocol ButtonMenuViewDelegate <NSObject>
+- (void)buttonMenuViewColorTapped:(NSString*)tagColor;
+@end
 @interface ButtonMenuView : UIView
-
+@property (weak,nonatomic) id<ButtonMenuViewDelegate> delegate;
 @end

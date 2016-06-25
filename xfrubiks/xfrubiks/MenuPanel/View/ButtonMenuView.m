@@ -7,6 +7,9 @@
 //
 
 #import "ButtonMenuView.h"
+#import <objc/runtime.h>
+
+static char kButtonTagKey;
 
 @implementation ButtonMenuView{
     UIButton *_red;
@@ -23,14 +26,14 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
-        _red = [self _createButton:[UIColor redColor] row:0 col:0 tag:@"red"];
-        _orange = [self _createButton:[UIColor orangeColor] row:1 col:0 tag:@"orange"];
+        _red = [self _createButton:[UIColor redColor] row:0 col:0 tag:@"红"];
+        _orange = [self _createButton:[UIColor orangeColor] row:1 col:0 tag:@"橙"];
         
-        _blue = [self _createButton:[UIColor blueColor] row:0 col:1 tag:@"blue"];
-        _green = [self _createButton:[UIColor greenColor] row:1 col:1 tag:@"green"];
+        _blue = [self _createButton:[UIColor blueColor] row:0 col:1 tag:@"蓝"];
+        _green = [self _createButton:[UIColor greenColor] row:1 col:1 tag:@"绿"];
         
-        _yellow = [self _createButton:[UIColor yellowColor] row:0 col:2 tag:@"yellow"];
-        _white = [self _createButton:[UIColor whiteColor] row:1 col:2 tag:@"white"];
+        _yellow = [self _createButton:[UIColor yellowColor] row:0 col:2 tag:@"黄"];
+        _white = [self _createButton:[UIColor whiteColor] row:1 col:2 tag:@"白"];
     }
     return self;
 }
@@ -50,11 +53,20 @@
     button.center = CGPointMake((col+1) * hStep, (row+1) * vStep);
     [button addTarget:self action:@selector(_colorTapped:) forControlEvents:UIControlEventTouchUpInside];
     [self addSubview:button];
+    
+    objc_setAssociatedObject(button, &kButtonTagKey, tag,OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    
     return button;
 }
 
 - (void)_colorTapped:(id)sender{
+    UIButton *button = sender;
     
+    NSString *tag = objc_getAssociatedObject(button, &kButtonTagKey);
+    
+    if(_delegate){
+        [_delegate buttonMenuViewColorTapped:tag];
+    }
 }
 
 /*
