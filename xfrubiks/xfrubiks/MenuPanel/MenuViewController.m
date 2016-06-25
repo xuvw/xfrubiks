@@ -204,16 +204,27 @@
 
 - (void)_addInputText:(NSString*)text{
     
+    BOOL isright = NO;
     NSArray *array = @[@"红", @"蓝", @"黄", @"橙", @"绿", @"白"];
     for (NSString *str in array) {
         if ([text rangeOfString:str].location != NSNotFound) {
             NSLog(@"%@", str);
             _inputTextView.text = [NSString stringWithFormat:@"%@%@ ", _inputTextView.text,str];
+            isright = YES;
             break;
         }
     }
     
-//    _inputTextView.text = [NSString stringWithFormat:@"%@%@ ", _inputTextView.text,text];
+    if (isright == NO) {
+        NSString *tips = @"语音输入错误，请重新输入";
+        UIAlertController *alertController = [UIAlertController alertControllerWithTitle:nil message:tips preferredStyle:UIAlertControllerStyleAlert];
+
+        UIAlertAction *otherAction = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+            [self starAudioInput];
+        }];
+        [alertController addAction:otherAction];
+        [self presentViewController:alertController animated:YES completion:nil];
+    }
 }
 
 - (void)_clearInputText{
