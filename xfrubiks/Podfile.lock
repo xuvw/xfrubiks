@@ -3,19 +3,30 @@ PODS:
   - SCLAlertView-Objective-C (1.0.4)
   - SVProgressHUD (2.0.3)
   - TWMessageBarManager (1.8.1)
+  - YYCache (1.0.3)
+  - YYImage (1.0.2):
+    - YYImage/Core (= 1.0.2)
+  - YYImage/Core (1.0.2)
+  - YYWebImage (1.0.4):
+    - YYCache
+    - YYImage
 
 DEPENDENCIES:
   - Masonry (~> 1.0)
   - SCLAlertView-Objective-C (~> 1.0)
   - SVProgressHUD (~> 2.0)
   - TWMessageBarManager (~> 1.8)
+  - YYWebImage (~> 1.0)
 
 SPEC CHECKSUMS:
   Masonry: a1a931a0d08870ed8ae415a2ea5ea68ebcac77df
   SCLAlertView-Objective-C: dd8a12b4068b8bae1b25c1748d7413b5abcad05b
   SVProgressHUD: b0830714205bea1317ea1a2ebc71e5633af334d4
   TWMessageBarManager: fd84e7948ba7968a2b5d9454859135761214ec56
+  YYCache: 282f35b5b0990833d0b7a06d864a87141a021da2
+  YYImage: 2cc79ed49b9549b71c6715cefe7b0f5ab3d33abf
+  YYWebImage: 0431ed108e104527669b86f75efd58958425cca2
 
-PODFILE CHECKSUM: 784b6b280c9331e03b25b72bf3f9c6e189ea13d4
+PODFILE CHECKSUM: 92749ce750c3c129a465c58b691bb5e926769b58
 
 COCOAPODS: 1.0.1
