@@ -9,6 +9,16 @@
 /* Begin PBXBuildFile section */
 		3CF105EE1D1E7D2F0027F2BD /* iflyMSC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CF105ED1D1E7D2F0027F2BD /* iflyMSC.framework */; };
 		3CF106061D1E81A00027F2BD /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CF106051D1E81A00027F2BD /* AVFoundation.framework */; };
+		3CF106081D1E82190027F2BD /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CF106071D1E82190027F2BD /* libz.tbd */; };
+		3CF1060A1D1E82240027F2BD /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CF106091D1E82240027F2BD /* SystemConfiguration.framework */; };
+		3CF1060C1D1E822D0027F2BD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CF1060B1D1E822D0027F2BD /* Foundation.framework */; };
+		3CF1060E1D1E823C0027F2BD /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CF1060D1D1E823C0027F2BD /* CoreTelephony.framework */; };
+		3CF106101D1E82470027F2BD /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CF1060F1D1E82470027F2BD /* AudioToolbox.framework */; };
+		3CF106121D1E82510027F2BD /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CF106111D1E82510027F2BD /* UIKit.framework */; };
+		3CF106141D1E825B0027F2BD /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CF106131D1E825B0027F2BD /* CoreLocation.framework */; };
+		3CF106161D1E82650027F2BD /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CF106151D1E82650027F2BD /* AddressBook.framework */; };
+		3CF106181D1E82710027F2BD /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CF106171D1E82710027F2BD /* QuartzCore.framework */; };
+		3CF1061A1D1E827B0027F2BD /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CF106191D1E827B0027F2BD /* CoreGraphics.framework */; };
 		D1F7E6A61D1E6663009CD28F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D1F7E6A51D1E6663009CD28F /* main.m */; };
 		D1F7E6A91D1E6663009CD28F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D1F7E6A81D1E6663009CD28F /* AppDelegate.m */; };
 		D1F7E6AC1D1E6663009CD28F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D1F7E6AB1D1E6663009CD28F /* ViewController.m */; };
@@ -25,6 +35,16 @@
 /* Begin PBXFileReference section */
 		3CF105ED1D1E7D2F0027F2BD /* iflyMSC.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = iflyMSC.framework; sourceTree = "<group>"; };
 		3CF106051D1E81A00027F2BD /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		3CF106071D1E82190027F2BD /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		3CF106091D1E82240027F2BD /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		3CF1060B1D1E822D0027F2BD /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		3CF1060D1D1E823C0027F2BD /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
+		3CF1060F1D1E82470027F2BD /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		3CF106111D1E82510027F2BD /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		3CF106131D1E825B0027F2BD /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		3CF106151D1E82650027F2BD /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
+		3CF106171D1E82710027F2BD /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		3CF106191D1E827B0027F2BD /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		944B34D8CB0E4DE7FF7EA039 /* Pods-xfrubiks.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-xfrubiks.debug.xcconfig"; path = "Pods/Target Support Files/Pods-xfrubiks/Pods-xfrubiks.debug.xcconfig"; sourceTree = "<group>"; };
 		D1F7E6A11D1E6663009CD28F /* xfrubiks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = xfrubiks.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D1F7E6A51D1E6663009CD28F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -54,6 +74,16 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3CF1061A1D1E827B0027F2BD /* CoreGraphics.framework in Frameworks */,
+				3CF106181D1E82710027F2BD /* QuartzCore.framework in Frameworks */,
+				3CF106161D1E82650027F2BD /* AddressBook.framework in Frameworks */,
+				3CF106141D1E825B0027F2BD /* CoreLocation.framework in Frameworks */,
+				3CF106121D1E82510027F2BD /* UIKit.framework in Frameworks */,
+				3CF106101D1E82470027F2BD /* AudioToolbox.framework in Frameworks */,
+				3CF1060E1D1E823C0027F2BD /* CoreTelephony.framework in Frameworks */,
+				3CF1060C1D1E822D0027F2BD /* Foundation.framework in Frameworks */,
+				3CF1060A1D1E82240027F2BD /* SystemConfiguration.framework in Frameworks */,
+				3CF106081D1E82190027F2BD /* libz.tbd in Frameworks */,
 				3CF106061D1E81A00027F2BD /* AVFoundation.framework in Frameworks */,
 				3CF105EE1D1E7D2F0027F2BD /* iflyMSC.framework in Frameworks */,
 				D1F7E6F91D1E75AD009CD28F /* xfsolver.framework in Frameworks */,
@@ -67,6 +97,16 @@
 		04285741233CAE749A4CFA10 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				3CF106191D1E827B0027F2BD /* CoreGraphics.framework */,
+				3CF106171D1E82710027F2BD /* QuartzCore.framework */,
+				3CF106151D1E82650027F2BD /* AddressBook.framework */,
+				3CF106131D1E825B0027F2BD /* CoreLocation.framework */,
+				3CF106111D1E82510027F2BD /* UIKit.framework */,
+				3CF1060F1D1E82470027F2BD /* AudioToolbox.framework */,
+				3CF1060D1D1E823C0027F2BD /* CoreTelephony.framework */,
+				3CF1060B1D1E822D0027F2BD /* Foundation.framework */,
+				3CF106091D1E82240027F2BD /* SystemConfiguration.framework */,
+				3CF106071D1E82190027F2BD /* libz.tbd */,
 				3CF106051D1E81A00027F2BD /* AVFoundation.framework */,
 				3CF105ED1D1E7D2F0027F2BD /* iflyMSC.framework */,
 				D1F7E6F81D1E75AD009CD28F /* xfsolver.framework */,
