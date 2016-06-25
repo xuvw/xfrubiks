@@ -174,7 +174,11 @@
 }
 
 - (void)setColorByString:(NSString *)zhcnString{
+    NSLog(@"zhcn String : %@", zhcnString);
+    
     NSString *normalString = [RubiksConvertor convertColorToHanZi:zhcnString];
+    
+    NSLog(@">>>>>>>>>>normal String : %@", normalString);
     
     for(NSUInteger idx = 0; idx < normalString.length; ++idx){
         NSString *colorItem = [normalString substringWithRange:NSMakeRange(idx, 1)];
