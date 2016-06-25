@@ -30,7 +30,6 @@
 
 - (void)initRecognizer
 {
-    //单例模式，无UI的实例
     if (_iFlySpeechRecognizer == nil) {
         _iFlySpeechRecognizer = [IFlySpeechRecognizer sharedInstance];
         
@@ -69,6 +68,42 @@
         
     }
     
+}
+
+//开始语音输入
+- (void)starAudioInput{
+    
+    NSLog(@"开始输入");
+
+    if(_iFlySpeechRecognizer == nil)
+    {
+        [self initRecognizer];
+    }
+    
+    [_iFlySpeechRecognizer cancel];
+    
+    //设置音频来源为麦克风
+    [_iFlySpeechRecognizer setParameter:IFLY_AUDIO_SOURCE_MIC forKey:@"audio_source"];
+    
+    //设置听写结果格式为json
+    [_iFlySpeechRecognizer setParameter:@"json" forKey:[IFlySpeechConstant RESULT_TYPE]];
+    
+    //保存录音文件，保存在sdk工作路径中，如未设置工作路径，则默认保存在library/cache下
+    [_iFlySpeechRecognizer setParameter:@"asr.pcm" forKey:[IFlySpeechConstant ASR_AUDIO_PATH]];
+    
+    [_iFlySpeechRecognizer setDelegate:self];
+    
+    BOOL ret = [_iFlySpeechRecognizer startListening];
+    
+    if (!ret) {
+        NSLog(@"error");
+    }
+
+}
+
+- (void)stopAudioInput{
+    NSLog(@"停止输入");
+    [_iFlySpeechRecognizer stopListening];
 }
 
 #pragma mark IFlySpeechRecognizerDelegate
