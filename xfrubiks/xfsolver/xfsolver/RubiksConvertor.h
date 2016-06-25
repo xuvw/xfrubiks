@@ -11,7 +11,6 @@
 @interface RubiksConvertor : NSObject
 
 + (NSString *)convertColorToPostion:(NSString*)colors;
-
 + (NSString *)convertColorToHanZi:(NSString*)colors;
 
 @end
