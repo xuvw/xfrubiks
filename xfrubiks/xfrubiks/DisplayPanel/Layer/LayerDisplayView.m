@@ -99,27 +99,27 @@
 }
 
 - (void)_setupFaces{
-    //add cube face 1
-    CATransform3D transform = CATransform3DMakeTranslation(0, 0, _sideLength/2);
+    CATransform3D transform;
+    //add cube face 0 - U - Upper
+    transform = CATransform3DMakeTranslation(0, -_sideLength/2, 0);
+    transform = CATransform3DRotate(transform, M_PI_2, 1, 0, 0);
     [self addFace:0 withTransform:transform];
-    //add cube face 2
+    //add cube face 1 - R - Right
     transform = CATransform3DMakeTranslation(_sideLength/2, 0, 0);
     transform = CATransform3DRotate(transform, M_PI_2, 0, 1, 0);
     [self addFace:1 withTransform:transform];
-    //add cube face 3
-    transform = CATransform3DMakeTranslation(0, -_sideLength/2, 0);
-    transform = CATransform3DRotate(transform, M_PI_2, 1, 0, 0);
+    //add cube face 2 - F - Front
+    transform = CATransform3DMakeTranslation(0, 0, _sideLength/2);
     [self addFace:2 withTransform:transform];
-    //add cube face 4
+    //add cube face 3
     transform = CATransform3DMakeTranslation(0, _sideLength/2, 0);
     transform = CATransform3DRotate(transform, -M_PI_2, 1, 0, 0);
     [self addFace:3 withTransform:transform];
-    
-    //add cube face 5
+    //add cube face 4
     transform = CATransform3DMakeTranslation(-_sideLength/2, 0, 0);
     transform = CATransform3DRotate(transform, -M_PI_2, 0, 1, 0);
     [self addFace:4 withTransform:transform];
-    //add cube face 6
+    //add cube face 5
     transform = CATransform3DMakeTranslation(0, 0, -_sideLength/2);
     transform = CATransform3DRotate(transform, M_PI, 0, 1, 0);
     [self addFace:5 withTransform:transform];
