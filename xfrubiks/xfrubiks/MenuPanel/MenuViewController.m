@@ -101,7 +101,7 @@
     
 }
 - (void)fillTestData{
-    NSString *testStr = @"绿蓝白红蓝蓝白橙红蓝红蓝蓝橙绿红橙黄红蓝黄橙黄白白白蓝绿绿白白绿绿蓝红绿红绿绿橙红白黄红橙橙黄黄黄白黄橙黄橙";
+    NSString *testStr = @"白红蓝蓝白绿红白绿黄黄红红红红橙蓝蓝绿红橙橙绿绿蓝黄蓝白蓝黄橙黄白绿橙白绿橙白绿橙绿黄白橙黄黄橙蓝蓝白红黄红";
     _inputTextView.text = testStr;
     
     
