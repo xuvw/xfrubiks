@@ -14,6 +14,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>SVProgressHUD.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>TWMessageBarManager.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -22,7 +27,7 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>15089CF7ED930EFA5A5FF5EA3132E3DE</key>
+		<key>531BF6C88DFBB3E6D79B0C7827FF5246</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -32,7 +37,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>E1DE162CE78ED6C92487B1435DD80849</key>
+		<key>5F677E306008D25FE59DD7DB65129529</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>E75E4AF56332F84C07009C8143275FD1</key>
 		<dict>
 			<key>primary</key>
 			<true/>

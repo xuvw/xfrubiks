@@ -1,15 +1,18 @@
 PODS:
   - Masonry (1.0.1)
+  - SVProgressHUD (2.0.3)
   - TWMessageBarManager (1.8.1)
 
 DEPENDENCIES:
   - Masonry (~> 1.0)
+  - SVProgressHUD (~> 2.0)
   - TWMessageBarManager (~> 1.8)
 
 SPEC CHECKSUMS:
   Masonry: a1a931a0d08870ed8ae415a2ea5ea68ebcac77df
+  SVProgressHUD: b0830714205bea1317ea1a2ebc71e5633af334d4
   TWMessageBarManager: fd84e7948ba7968a2b5d9454859135761214ec56
 
-PODFILE CHECKSUM: 328b78f263c0de7a2ef6fb985ed64c385bfa94e4
+PODFILE CHECKSUM: 78177e6b8f985026f846868abdeb87ea50f5a3cb
 
 COCOAPODS: 1.0.1
