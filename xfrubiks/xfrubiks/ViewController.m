@@ -10,6 +10,7 @@
 #import "DisplayViewController.h"
 #import "MenuViewController.h"
 #import "ScreenSizeHelper.h"
+#import "XFContext.h"
 
 #define MenueViewWith [ScreenSizeHelper getMenuViewWidth]
 #define DisViewWith [ScreenSizeHelper getDisplayViewWidth]
@@ -26,6 +27,8 @@
     // Do any additional setup after loading the view, typically from a nib.
     
     _displayController = [[DisplayViewController alloc]init];
+    [XFContext context].display = _displayController;
+    
     _displayController.view.frame = CGRectMake(0, 0, DisViewWith, SCREEN_HEIGHT);
     [self addChildViewController:_displayController];
     [self.view addSubview:_displayController.view];
@@ -33,6 +36,8 @@
     
     
     _menuController = [[MenuViewController alloc]init];
+    [XFContext context].menu = _menuController;
+    
     _menuController.view.frame = CGRectMake(DisViewWith, 0, MenueViewWith, SCREEN_HEIGHT);
     [self addChildViewController:_menuController];
     [self.view addSubview:_menuController.view];

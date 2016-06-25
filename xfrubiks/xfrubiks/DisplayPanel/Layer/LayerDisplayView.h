@@ -11,5 +11,6 @@
 @interface LayerDisplayView : UIView
 
 - (void)setColorByString:(NSString*)zhcnString;
+- (void)restorePosition;
 
 @end

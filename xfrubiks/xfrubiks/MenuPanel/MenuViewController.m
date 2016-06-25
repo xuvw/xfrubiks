@@ -96,20 +96,33 @@
     [reStarBtn_audio addTarget:self action:@selector(reStarInput) forControlEvents:UIControlEventTouchUpInside];
     [audioInputView addSubview:reStarBtn_audio];
     
-    UIButton *testBtn = [UIButton buttonWithType:UIButtonTypeSystem];
-    testBtn.frame = CGRectMake(0, 0, 20, 20);
-    testBtn.backgroundColor = [UIColor redColor];
-    [audioInputView addSubview:testBtn];
-    [testBtn addTarget:self action:@selector(test) forControlEvents:UIControlEventTouchUpInside];
-    
 }
-- (void)test{
+- (void)fillTestData{
     NSString *testStr = @"绿蓝白红蓝蓝白橙红蓝红蓝蓝橙绿红橙黄红蓝黄橙黄白白白蓝绿绿白白绿绿蓝红绿红绿绿橙红白黄红橙橙黄黄黄白黄橙黄橙";
     _inputTextView.text = testStr;
-    [RubiksConvertor convertColorToPostion:_inputTextView.text];
-
-    //TODO :假数据
+    
+    
+    [self _trySolve:_inputTextView.text];
 }
+
+- (void)_trySolve:(NSString*)input{
+    NSString *filtered = [RubiksConvertor convertColorToPostion:input];
+    
+    dispatch_async(dispatch_get_global_queue(0, 0), ^{
+        CFTimeInterval start = CACurrentMediaTime();
+        
+//        NSString *solution = [RubiksSolver solve:@"DRLUUBFBRBLURRLRUBLRDDFDLFUFUFFDBRDUBRUFLLFDDBFLUBLRBD"];
+        NSLog(@"--------------------------------------------------");
+        NSLog(@"begin to solve : %@",filtered);
+        
+        NSString *solution = [RubiksSolver solve:filtered];
+        
+        NSLog(@"solution = %@ , %@",@(CACurrentMediaTime() - start),solution);
+        NSLog(@"--------------------------------------------------");
+    });
+}
+
+
 - (void)initRecognizer
 {
     if (_iFlySpeechRecognizer == nil) {
@@ -279,7 +292,9 @@
             if (_completeCount < 6) {
                 tips = @"魔方输入完成";
                 [self showInputAlert:tips tag:5];
-                [RubiksConvertor convertColorToPostion:_inputTextView.text];
+                
+                [self _trySolve:_inputTextView.text];
+                
                 _isInputComplete = YES;
                 _completeCount++;
             }

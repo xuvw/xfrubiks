@@ -188,4 +188,12 @@
     }
 }
 
+- (void)restorePosition{
+    _baseradx = -M_PI_4;
+    _baserady = -M_PI_4/3*2;
+    _baseradz = 0;
+    
+    [self _rotateCube:0 rady:0 radz:0];
+}
+
 @end

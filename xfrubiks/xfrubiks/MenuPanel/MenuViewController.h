@@ -10,4 +10,6 @@
 
 @interface MenuViewController : BaseViewController
 
+- (void)fillTestData;
+
 @end

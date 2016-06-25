@@ -39,6 +39,7 @@
 		D1F7E76E1D1EAB2B009CD28F /* LayerDisplayView.m in Sources */ = {isa = PBXBuildFile; fileRef = D1F7E76D1D1EAB2B009CD28F /* LayerDisplayView.m */; };
 		D1F7E7711D1EB187009CD28F /* LayerFaceView.m in Sources */ = {isa = PBXBuildFile; fileRef = D1F7E7701D1EB187009CD28F /* LayerFaceView.m */; };
 		D1F7E7731D1EC0C2009CD28F /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1F7E7721D1EC0C2009CD28F /* GLKit.framework */; };
+		D1F7E7761D1EF61F009CD28F /* XFContext.m in Sources */ = {isa = PBXBuildFile; fileRef = D1F7E7751D1EF61F009CD28F /* XFContext.m */; };
 		FAE31EA632A0A6CA1A43812A /* libPods-xfrubiks.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DBBFAB339C1389D2FF505C48 /* libPods-xfrubiks.a */; };
 /* End PBXBuildFile section */
 
@@ -92,6 +93,8 @@
 		D1F7E76F1D1EB187009CD28F /* LayerFaceView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LayerFaceView.h; path = DisplayPanel/Layer/LayerFaceView.h; sourceTree = "<group>"; };
 		D1F7E7701D1EB187009CD28F /* LayerFaceView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LayerFaceView.m; path = DisplayPanel/Layer/LayerFaceView.m; sourceTree = "<group>"; };
 		D1F7E7721D1EC0C2009CD28F /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = System/Library/Frameworks/GLKit.framework; sourceTree = SDKROOT; };
+		D1F7E7741D1EF61F009CD28F /* XFContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = XFContext.h; path = Common/XFContext.h; sourceTree = "<group>"; };
+		D1F7E7751D1EF61F009CD28F /* XFContext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = XFContext.m; path = Common/XFContext.m; sourceTree = "<group>"; };
 		DBBFAB339C1389D2FF505C48 /* libPods-xfrubiks.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-xfrubiks.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F675E66FA3F595F64006F5F3 /* Pods-xfrubiks.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-xfrubiks.release.xcconfig"; path = "Pods/Target Support Files/Pods-xfrubiks/Pods-xfrubiks.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -252,6 +255,8 @@
 				3CF106341D1EF0040027F2BD /* arrowsImage.m */,
 				3CF106361D1EF0310027F2BD /* right.png */,
 				3CF106381D1EF0980027F2BD /* left.png */,
+				D1F7E7741D1EF61F009CD28F /* XFContext.h */,
+				D1F7E7751D1EF61F009CD28F /* XFContext.m */,
 			);
 			name = Common;
 			sourceTree = "<group>";
@@ -403,6 +408,7 @@
 				D1F7E7711D1EB187009CD28F /* LayerFaceView.m in Sources */,
 				3CF106201D1E83390027F2BD /* IATConfig.m in Sources */,
 				3CF106351D1EF0040027F2BD /* arrowsImage.m in Sources */,
+				D1F7E7761D1EF61F009CD28F /* XFContext.m in Sources */,
 				D1F7E6C71D1E6B28009CD28F /* DisplayViewController.m in Sources */,
 				3CF106211D1E83390027F2BD /* ISRDataHelper.m in Sources */,
 				3CF106321D1EC4BB0027F2BD /* ScreenSizeHelper.m in Sources */,

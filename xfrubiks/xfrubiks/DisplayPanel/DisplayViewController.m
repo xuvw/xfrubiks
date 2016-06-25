@@ -9,10 +9,14 @@
 #import "DisplayViewController.h"
 #import "LayerDisplayView.h"
 #import "ScreenSizeHelper.h"
+#import "XFContext.h"
+
 
 @interface DisplayViewController ()
 @property (strong, nonatomic) LayerDisplayView *cube;
 
+@property (strong, nonatomic) UIButton *revertPosition;
+@property (strong, nonatomic) UIButton *fillTestData;
 @end
 
 @implementation DisplayViewController
@@ -34,6 +38,22 @@
     
     
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(onSyncColor:) name:@"XFSyncColor" object:nil];
+    
+    _revertPosition = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, 50, 30)];
+    _revertPosition.backgroundColor = [UIColor yellowColor];
+    [_revertPosition setTitle:@"恢复位置" forState:UIControlStateNormal];
+    _revertPosition.titleLabel.font = [UIFont systemFontOfSize:10];
+    [_revertPosition setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    [_revertPosition addTarget:self action:@selector(_revertPosition:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:_revertPosition];
+    
+    _fillTestData = [[UIButton alloc]initWithFrame:CGRectMake(0, 33, 50, 30)];
+    _fillTestData.backgroundColor = [UIColor orangeColor];
+    _fillTestData.titleLabel.font = [UIFont systemFontOfSize:10];
+    [_fillTestData setTitle:@"测试数据" forState:UIControlStateNormal];
+    [_fillTestData setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    [_fillTestData addTarget:self action:@selector(_fillTestData:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:_fillTestData];
 }
 
 - (void)dealloc{
@@ -50,14 +70,13 @@
     [_cube setColorByString:colorString];
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (void)_fillTestData:(id)sender{
+    [[XFContext context].menu fillTestData];
 }
-*/
+
+- (void)_revertPosition:(id)sender{
+    [_cube restorePosition];
+}
+
 
 @end
