@@ -11,6 +11,8 @@
 #import "IATConfig.h"
 #import "ISRDataHelper.h"
 #import "ButtonMenuView.h"
+#import <xfsolver/xfsolver.h>
+
 
 @interface MenuViewController ()<IFlySpeechRecognizerDelegate, ButtonMenuViewDelegate>
 @property (nonatomic, strong) IFlySpeechRecognizer *iFlySpeechRecognizer;
@@ -18,6 +20,7 @@
 
 @property (nonatomic, strong) ButtonMenuView *buttonsView;
 @property (nonatomic, strong) UITextView *inputTextView;
+@property (nonatomic, assign) int inputCount;
 
 @end
 
@@ -204,29 +207,50 @@
 
 - (void)_addInputText:(NSString*)text{
     
-    BOOL isright = NO;
-    NSArray *array = @[@"红", @"蓝", @"黄", @"橙", @"绿", @"白"];
+    NSArray *array = @[@"红", @"蓝", @"黄", @"橙", @"绿", @"白", @"黑"];
     for (NSString *str in array) {
         if ([text rangeOfString:str].location != NSNotFound) {
-            NSLog(@"%@", str);
+            if ([str isEqualToString:@"黑"]) {
+                _inputTextView.text = [NSString stringWithFormat:@"%@%@ ", _inputTextView.text,@"白"];
+            }
             _inputTextView.text = [NSString stringWithFormat:@"%@%@ ", _inputTextView.text,str];
-            isright = YES;
+            _inputCount++;
             break;
         }
     }
-    
-    if (isright == NO) {
-        NSString *tips = @"语音输入错误，请重新输入";
-        UIAlertController *alertController = [UIAlertController alertControllerWithTitle:nil message:tips preferredStyle:UIAlertControllerStyleAlert];
+        NSString *tips = @"";
+        if (_inputCount == 9) {
+            tips = @"上面输入完成，请输入右面";
+            [self showInputAlert:tips];
+        }else if (_inputCount == 18){
+            tips = @"右面输入完成，请输入前面";
+            [self showInputAlert:tips];
+        }else if (_inputCount == 27){
+            tips = @"前面输入完成，请输入底面";
+            [self showInputAlert:tips];
+        }else if (_inputCount == 36){
+            tips = @"底面输入完成，请输入左面";
+            [self showInputAlert:tips];
+        }else if (_inputCount == 45){
+            tips = @"左面输入完成，请输入后面";
+            [self showInputAlert:tips];
+        }else if (_inputCount == 54){
+            tips = @"魔方输入完成";
+            [self showInputAlert:tips];
+        }
 
-        UIAlertAction *otherAction = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
-            [self starAudioInput];
-        }];
-        [alertController addAction:otherAction];
-        [self presentViewController:alertController animated:YES completion:nil];
-    }
 }
 
+- (void)showInputAlert:(NSString *)tips{
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:nil message:tips preferredStyle:UIAlertControllerStyleAlert];
+    
+    UIAlertAction *otherAction = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+        [self starAudioInput];
+        _inputTextView.text = @"";
+    }];
+    [alertController addAction:otherAction];
+    [self presentViewController:alertController animated:YES completion:nil];
+}
 - (void)_clearInputText{
     _inputTextView.text = @"";
 }
