@@ -9,6 +9,6 @@ target 'xfrubiks' do
   #pod 'ReactiveCocoa', '~> 4.1'
   #pod 'PromiseKit', '~> 3.2'
   pod 'Masonry', '~> 1.0'
-  #pod 'TWMessageBarManager', '~> 1.8'
+  pod 'TWMessageBarManager', '~> 1.8'
 
 end

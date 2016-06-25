@@ -1,12 +1,15 @@
 PODS:
   - Masonry (1.0.1)
+  - TWMessageBarManager (1.8.1)
 
 DEPENDENCIES:
   - Masonry (~> 1.0)
+  - TWMessageBarManager (~> 1.8)
 
 SPEC CHECKSUMS:
   Masonry: a1a931a0d08870ed8ae415a2ea5ea68ebcac77df
+  TWMessageBarManager: fd84e7948ba7968a2b5d9454859135761214ec56
 
-PODFILE CHECKSUM: 64dd64150428f907fcbb691c9fcd3088b32a5795
+PODFILE CHECKSUM: 328b78f263c0de7a2ef6fb985ed64c385bfa94e4
 
 COCOAPODS: 1.0.1

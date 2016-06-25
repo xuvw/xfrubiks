@@ -13,6 +13,7 @@
 #import "ButtonMenuView.h"
 #import <xfsolver/xfsolver.h>
 #import "ScreenSizeHelper.h"
+#import "Utility.h"
 
 #define MenueViewWith [ScreenSizeHelper getMenuViewWidth]
 @interface MenuViewController ()<IFlySpeechRecognizerDelegate, ButtonMenuViewDelegate>
@@ -298,34 +299,28 @@
                 _isInputComplete = YES;
                 _completeCount++;
             }
-
         }
     }
-
-
 }
 
 - (void)showInputAlert:(NSString *)tips tag:(int)tag{
-    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:nil message:tips preferredStyle:UIAlertControllerStyleAlert];
+    [Utility barInfo:tips];
     
-    UIAlertAction *otherAction = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
-        [self starAudioInput];
-        if (tag == 0) {
-            _inputTextView.text = [NSString stringWithFormat:@"%@(%@)\n", _inputTextView.text, @"上面"];
-        }else if (tag == 1){
-            _inputTextView.text = [NSString stringWithFormat:@"%@(%@)\n", _inputTextView.text, @"右面"];
-        }else if (tag == 2){
-            _inputTextView.text = [NSString stringWithFormat:@"%@(%@)\n", _inputTextView.text, @"前面"];
-        }else if (tag == 3){
-            _inputTextView.text = [NSString stringWithFormat:@"%@(%@)\n", _inputTextView.text, @"底面"];
-        }else if (tag == 4){
-            _inputTextView.text = [NSString stringWithFormat:@"%@(%@)\n", _inputTextView.text, @"左面"];
-        }else if (tag == 5){
-            _inputTextView.text = [NSString stringWithFormat:@"%@(%@)\n", _inputTextView.text, @"后面"];
-        }
-    }];
-    [alertController addAction:otherAction];
-    [self presentViewController:alertController animated:YES completion:nil];
+    [self starAudioInput];
+    
+    if (tag == 0) {
+        _inputTextView.text = [NSString stringWithFormat:@"%@(%@)\n", _inputTextView.text, @"上面"];
+    }else if (tag == 1){
+        _inputTextView.text = [NSString stringWithFormat:@"%@(%@)\n", _inputTextView.text, @"右面"];
+    }else if (tag == 2){
+        _inputTextView.text = [NSString stringWithFormat:@"%@(%@)\n", _inputTextView.text, @"前面"];
+    }else if (tag == 3){
+        _inputTextView.text = [NSString stringWithFormat:@"%@(%@)\n", _inputTextView.text, @"底面"];
+    }else if (tag == 4){
+        _inputTextView.text = [NSString stringWithFormat:@"%@(%@)\n", _inputTextView.text, @"左面"];
+    }else if (tag == 5){
+        _inputTextView.text = [NSString stringWithFormat:@"%@(%@)\n", _inputTextView.text, @"后面"];
+    }
 }
 - (void)_clearInputText{
     _inputTextView.text = @"";

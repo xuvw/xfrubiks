@@ -12,5 +12,6 @@
 
 + (void)barInfo:(NSString*)str;
 + (void)barError:(NSString*)str;
++ (void)barSuccess:(NSString *)str;
 
 @end
