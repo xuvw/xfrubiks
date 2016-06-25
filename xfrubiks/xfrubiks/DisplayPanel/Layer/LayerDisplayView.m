@@ -90,14 +90,14 @@
         transform = CATransform3DRotate(transform, M_PI_2, 0, 1, 0);
         _arrowImgView.layer.transform = transform;
     }else if ([direction isEqualToString:@"upleft"]){
-        _arrowImgView = [ArrowsImage getUpImage];
+        _arrowImgView = [ArrowsImage getDownImage];
         _arrowImgView.frame = CGRectMake(30, 30, 100, 100);
         [_containerView addSubview:_arrowImgView];
         CATransform3D transform = CATransform3DMakeTranslation(0, _sideLength/2, 0);
         transform = CATransform3DRotate(transform, -M_PI_2, 1, 0, 0);
         _arrowImgView.layer.transform = transform;
         
-        _secondImgView = [ArrowsImage getLeftImage];
+        _secondImgView = [ArrowsImage getRightImage];
         _secondImgView.frame = CGRectMake(30, 30, 100, 100);
         [_containerView addSubview:_secondImgView];
         CATransform3D transform1 = CATransform3DMakeTranslation(0, 0, _sideLength/2);
@@ -116,7 +116,7 @@
         CATransform3D transform = CATransform3DMakeTranslation(0, 0, _sideLength/2);
         _arrowImgView.layer.transform = transform;
     }else if ([direction isEqualToString:@"leftright"]){
-        _arrowImgView = [ArrowsImage getLeftImage];
+        _arrowImgView = [ArrowsImage getRightImage];
         _arrowImgView.frame = CGRectMake(30, 30, 100, 100);
         [_containerView addSubview:_arrowImgView];
         CATransform3D transform = CATransform3DMakeTranslation(-_sideLength/2, 0, 0);
