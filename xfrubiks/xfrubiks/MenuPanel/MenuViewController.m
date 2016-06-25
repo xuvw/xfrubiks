@@ -13,7 +13,6 @@
 #import "ButtonMenuView.h"
 #import <xfsolver/xfsolver.h>
 
-
 @interface MenuViewController ()<IFlySpeechRecognizerDelegate, ButtonMenuViewDelegate>
 @property (nonatomic, strong) IFlySpeechRecognizer *iFlySpeechRecognizer;
 @property (nonatomic, copy) NSString *inputStr;
@@ -28,6 +27,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    _inputCount = 0;
+    _inputStr = @"";
     // Do any additional setup after loading the view.
     _inputTextView = [[UITextView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH/2, 70)];
     _inputTextView.editable = NO;
@@ -179,16 +180,10 @@
     for (NSString *key in dic) {
         [resultString appendFormat:@"%@",key];
     }
-    _inputStr =[NSString stringWithFormat:@"%@%@", _inputTextView.text,resultString];
     NSString * resultFromJson =  [ISRDataHelper stringFromJson:resultString];
-    
+
     [self _addInputText:resultFromJson];
     
-    if (isLast){
-        NSLog(@"听写结果(json)：%@测试",  self.inputStr);
-    }
-    NSLog(@"_result=%@",_inputStr);
-    NSLog(@"resultFromJson=%@",resultFromJson);
 }
 - (void) onError:(IFlySpeechError *) errorCode{
     NSLog(@"%@", errorCode);
@@ -221,32 +216,45 @@
         NSString *tips = @"";
         if (_inputCount == 9) {
             tips = @"上面输入完成，请输入右面";
-            [self showInputAlert:tips];
+            [self showInputAlert:tips tag:0];
         }else if (_inputCount == 18){
             tips = @"右面输入完成，请输入前面";
-            [self showInputAlert:tips];
+            [self showInputAlert:tips tag:1];
         }else if (_inputCount == 27){
             tips = @"前面输入完成，请输入底面";
-            [self showInputAlert:tips];
+            [self showInputAlert:tips tag:2];
         }else if (_inputCount == 36){
             tips = @"底面输入完成，请输入左面";
-            [self showInputAlert:tips];
+            [self showInputAlert:tips tag:3];
         }else if (_inputCount == 45){
             tips = @"左面输入完成，请输入后面";
-            [self showInputAlert:tips];
+            [self showInputAlert:tips tag:4];
         }else if (_inputCount == 54){
             tips = @"魔方输入完成";
-            [self showInputAlert:tips];
+            [self showInputAlert:tips tag:5];
+            [RubiksConvertor convertColorToPostion:_inputTextView.text];
         }
 
 }
 
-- (void)showInputAlert:(NSString *)tips{
+- (void)showInputAlert:(NSString *)tips tag:(int)tag{
     UIAlertController *alertController = [UIAlertController alertControllerWithTitle:nil message:tips preferredStyle:UIAlertControllerStyleAlert];
     
     UIAlertAction *otherAction = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
         [self starAudioInput];
-        _inputTextView.text = @"";
+        if (tag == 0) {
+            _inputTextView.text = [NSString stringWithFormat:@"%@(%@)\n", _inputTextView.text, @"上面"];
+        }else if (tag == 1){
+            _inputTextView.text = [NSString stringWithFormat:@"%@(%@)\n", _inputTextView.text, @"右面"];
+        }else if (tag == 2){
+            _inputTextView.text = [NSString stringWithFormat:@"%@(%@)\n", _inputTextView.text, @"前面"];
+        }else if (tag == 3){
+            _inputTextView.text = [NSString stringWithFormat:@"%@(%@)\n", _inputTextView.text, @"底面"];
+        }else if (tag == 4){
+            _inputTextView.text = [NSString stringWithFormat:@"%@(%@)\n", _inputTextView.text, @"左面"];
+        }else if (tag == 5){
+            _inputTextView.text = [NSString stringWithFormat:@"%@(%@)\n", _inputTextView.text, @"后面"];
+        }
     }];
     [alertController addAction:otherAction];
     [self presentViewController:alertController animated:YES completion:nil];

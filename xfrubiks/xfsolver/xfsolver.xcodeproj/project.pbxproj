@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3CF1062A1D1EA7670027F2BD /* RubiksConvertor.h in Headers */ = {isa = PBXBuildFile; fileRef = 3CF106281D1EA7670027F2BD /* RubiksConvertor.h */; };
+		3CF1062A1D1EA7670027F2BD /* RubiksConvertor.h in Headers */ = {isa = PBXBuildFile; fileRef = 3CF106281D1EA7670027F2BD /* RubiksConvertor.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3CF1062B1D1EA7670027F2BD /* RubiksConvertor.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CF106291D1EA7670027F2BD /* RubiksConvertor.m */; };
 		D1F7E6F11D1E7547009CD28F /* xfsolver.h in Headers */ = {isa = PBXBuildFile; fileRef = D1F7E6F01D1E7547009CD28F /* xfsolver.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D1F7E6FC1D1E75DB009CD28F /* RubiksSolver.h in Headers */ = {isa = PBXBuildFile; fileRef = D1F7E6FA1D1E75DB009CD28F /* RubiksSolver.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -128,10 +128,10 @@
 			files = (
 				D1F7E7601D1E9FE6009CD28F /* color.h in Headers */,
 				D1F7E6F11D1E7547009CD28F /* xfsolver.h in Headers */,
+				3CF1062A1D1EA7670027F2BD /* RubiksConvertor.h in Headers */,
 				D1F7E7631D1E9FE6009CD28F /* cubiecube.h in Headers */,
 				D1F7E7661D1E9FE6009CD28F /* facelet.h in Headers */,
 				D1F7E7641D1E9FE6009CD28F /* edge.h in Headers */,
-				3CF1062A1D1EA7670027F2BD /* RubiksConvertor.h in Headers */,
 				D1F7E6FC1D1E75DB009CD28F /* RubiksSolver.h in Headers */,
 				D1F7E7671D1E9FE6009CD28F /* search.h in Headers */,
 				D1F7E7621D1E9FE6009CD28F /* corner.h in Headers */,
