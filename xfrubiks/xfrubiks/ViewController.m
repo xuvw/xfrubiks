@@ -25,11 +25,14 @@
     _displayController.view.frame = CGRectMake(0, 0, SCREEN_WIDTH/2, SCREEN_HEIGHT);
     [self addChildViewController:_displayController];
     [self.view addSubview:_displayController.view];
+    [_displayController didMoveToParentViewController:self];
+    
     
     _menuController = [[MenuViewController alloc]init];
     _menuController.view.frame = CGRectMake(SCREEN_WIDTH/2, 0, SCREEN_WIDTH/2, SCREEN_HEIGHT);
     [self addChildViewController:_menuController];
     [self.view addSubview:_menuController.view];
+    [_menuController didMoveToParentViewController:self];
     
     
 }
