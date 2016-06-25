@@ -183,7 +183,8 @@
     }
     _inputStr =[NSString stringWithFormat:@"%@%@", _inputTextView.text,resultString];
     NSString * resultFromJson =  [ISRDataHelper stringFromJson:resultString];
-    _inputTextView.text = [NSString stringWithFormat:@"%@%@", _inputTextView.text,resultFromJson];
+    
+    [self _addInputText:resultFromJson];
     
     if (isLast){
         NSLog(@"听写结果(json)：%@测试",  self.inputStr);
