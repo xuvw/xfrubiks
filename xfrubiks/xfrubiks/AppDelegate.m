@@ -21,8 +21,14 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     
-    NSString *solution = [RubiksSolver solve:@"RRRR"];
-    NSLog(@"solution = %@",solution);
+    dispatch_async(dispatch_get_global_queue(0, 0), ^{
+        CFTimeInterval start = CACurrentMediaTime();
+        
+        NSString *solution = [RubiksSolver solve:@"DRLUUBFBRBLURRLRUBLRDDFDLFUFUFFDBRDUBRUFLLFDDBFLUBLRBD"];
+        NSLog(@"--------------------------------------------------");
+        NSLog(@"solution = %@ , %@",@(CACurrentMediaTime() - start),solution);
+        NSLog(@"--------------------------------------------------");
+    });
     
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES);
     NSString *cachePath = [paths objectAtIndex:0];

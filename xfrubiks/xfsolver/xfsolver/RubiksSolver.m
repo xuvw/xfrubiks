@@ -7,11 +7,29 @@
 //
 
 #import "RubiksSolver.h"
+#include "search.h"
 
 @implementation RubiksSolver
 
+
 +(NSString *)solve:(NSString *)input{
-    return @"UUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU";
+    const char *facelets = input.UTF8String;
+    if(!facelets) return nil;
+    
+    char *sol = solution(
+        facelets,
+        24,
+        1000,
+        0,
+        "cache"
+    );
+    if (sol == NULL) {
+        NSLog(@"Unsolvable cube!");
+        return nil;
+    }
+    free(sol);
+    
+    return [NSString stringWithUTF8String:sol];
 }
 
 @end

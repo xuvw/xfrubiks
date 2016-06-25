@@ -10,6 +10,19 @@
 		D1F7E6F11D1E7547009CD28F /* xfsolver.h in Headers */ = {isa = PBXBuildFile; fileRef = D1F7E6F01D1E7547009CD28F /* xfsolver.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D1F7E6FC1D1E75DB009CD28F /* RubiksSolver.h in Headers */ = {isa = PBXBuildFile; fileRef = D1F7E6FA1D1E75DB009CD28F /* RubiksSolver.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D1F7E6FD1D1E75DB009CD28F /* RubiksSolver.m in Sources */ = {isa = PBXBuildFile; fileRef = D1F7E6FB1D1E75DB009CD28F /* RubiksSolver.m */; };
+		D1F7E75D1D1E9FE6009CD28F /* coordcube.c in Sources */ = {isa = PBXBuildFile; fileRef = D1F7E74E1D1E9FE6009CD28F /* coordcube.c */; };
+		D1F7E75E1D1E9FE6009CD28F /* cubiecube.c in Sources */ = {isa = PBXBuildFile; fileRef = D1F7E74F1D1E9FE6009CD28F /* cubiecube.c */; };
+		D1F7E75F1D1E9FE6009CD28F /* facecube.c in Sources */ = {isa = PBXBuildFile; fileRef = D1F7E7501D1E9FE6009CD28F /* facecube.c */; };
+		D1F7E7601D1E9FE6009CD28F /* color.h in Headers */ = {isa = PBXBuildFile; fileRef = D1F7E7521D1E9FE6009CD28F /* color.h */; };
+		D1F7E7611D1E9FE6009CD28F /* coordcube.h in Headers */ = {isa = PBXBuildFile; fileRef = D1F7E7531D1E9FE6009CD28F /* coordcube.h */; };
+		D1F7E7621D1E9FE6009CD28F /* corner.h in Headers */ = {isa = PBXBuildFile; fileRef = D1F7E7541D1E9FE6009CD28F /* corner.h */; };
+		D1F7E7631D1E9FE6009CD28F /* cubiecube.h in Headers */ = {isa = PBXBuildFile; fileRef = D1F7E7551D1E9FE6009CD28F /* cubiecube.h */; };
+		D1F7E7641D1E9FE6009CD28F /* edge.h in Headers */ = {isa = PBXBuildFile; fileRef = D1F7E7561D1E9FE6009CD28F /* edge.h */; };
+		D1F7E7651D1E9FE6009CD28F /* facecube.h in Headers */ = {isa = PBXBuildFile; fileRef = D1F7E7571D1E9FE6009CD28F /* facecube.h */; };
+		D1F7E7661D1E9FE6009CD28F /* facelet.h in Headers */ = {isa = PBXBuildFile; fileRef = D1F7E7581D1E9FE6009CD28F /* facelet.h */; };
+		D1F7E7671D1E9FE6009CD28F /* search.h in Headers */ = {isa = PBXBuildFile; fileRef = D1F7E7591D1E9FE6009CD28F /* search.h */; };
+		D1F7E7691D1E9FE6009CD28F /* search.c in Sources */ = {isa = PBXBuildFile; fileRef = D1F7E75B1D1E9FE6009CD28F /* search.c */; };
+		D1F7E76A1D1E9FE6009CD28F /* solve.c in Sources */ = {isa = PBXBuildFile; fileRef = D1F7E75C1D1E9FE6009CD28F /* solve.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -18,6 +31,19 @@
 		D1F7E6F21D1E7547009CD28F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D1F7E6FA1D1E75DB009CD28F /* RubiksSolver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RubiksSolver.h; sourceTree = "<group>"; };
 		D1F7E6FB1D1E75DB009CD28F /* RubiksSolver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RubiksSolver.m; sourceTree = "<group>"; };
+		D1F7E74E1D1E9FE6009CD28F /* coordcube.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = coordcube.c; sourceTree = "<group>"; };
+		D1F7E74F1D1E9FE6009CD28F /* cubiecube.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = cubiecube.c; sourceTree = "<group>"; };
+		D1F7E7501D1E9FE6009CD28F /* facecube.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = facecube.c; sourceTree = "<group>"; };
+		D1F7E7521D1E9FE6009CD28F /* color.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = color.h; sourceTree = "<group>"; };
+		D1F7E7531D1E9FE6009CD28F /* coordcube.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = coordcube.h; sourceTree = "<group>"; };
+		D1F7E7541D1E9FE6009CD28F /* corner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = corner.h; sourceTree = "<group>"; };
+		D1F7E7551D1E9FE6009CD28F /* cubiecube.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cubiecube.h; sourceTree = "<group>"; };
+		D1F7E7561D1E9FE6009CD28F /* edge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = edge.h; sourceTree = "<group>"; };
+		D1F7E7571D1E9FE6009CD28F /* facecube.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = facecube.h; sourceTree = "<group>"; };
+		D1F7E7581D1E9FE6009CD28F /* facelet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = facelet.h; sourceTree = "<group>"; };
+		D1F7E7591D1E9FE6009CD28F /* search.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = search.h; sourceTree = "<group>"; };
+		D1F7E75B1D1E9FE6009CD28F /* search.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = search.c; sourceTree = "<group>"; };
+		D1F7E75C1D1E9FE6009CD28F /* solve.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = solve.c; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,12 +76,41 @@
 		D1F7E6EF1D1E7547009CD28F /* xfsolver */ = {
 			isa = PBXGroup;
 			children = (
+				D1F7E74D1D1E9FE6009CD28F /* ckociemba */,
 				D1F7E6F01D1E7547009CD28F /* xfsolver.h */,
 				D1F7E6F21D1E7547009CD28F /* Info.plist */,
 				D1F7E6FA1D1E75DB009CD28F /* RubiksSolver.h */,
 				D1F7E6FB1D1E75DB009CD28F /* RubiksSolver.m */,
 			);
 			path = xfsolver;
+			sourceTree = "<group>";
+		};
+		D1F7E74D1D1E9FE6009CD28F /* ckociemba */ = {
+			isa = PBXGroup;
+			children = (
+				D1F7E74E1D1E9FE6009CD28F /* coordcube.c */,
+				D1F7E74F1D1E9FE6009CD28F /* cubiecube.c */,
+				D1F7E7501D1E9FE6009CD28F /* facecube.c */,
+				D1F7E7511D1E9FE6009CD28F /* include */,
+				D1F7E75B1D1E9FE6009CD28F /* search.c */,
+				D1F7E75C1D1E9FE6009CD28F /* solve.c */,
+			);
+			path = ckociemba;
+			sourceTree = "<group>";
+		};
+		D1F7E7511D1E9FE6009CD28F /* include */ = {
+			isa = PBXGroup;
+			children = (
+				D1F7E7521D1E9FE6009CD28F /* color.h */,
+				D1F7E7531D1E9FE6009CD28F /* coordcube.h */,
+				D1F7E7541D1E9FE6009CD28F /* corner.h */,
+				D1F7E7551D1E9FE6009CD28F /* cubiecube.h */,
+				D1F7E7561D1E9FE6009CD28F /* edge.h */,
+				D1F7E7571D1E9FE6009CD28F /* facecube.h */,
+				D1F7E7581D1E9FE6009CD28F /* facelet.h */,
+				D1F7E7591D1E9FE6009CD28F /* search.h */,
+			);
+			path = include;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -65,8 +120,16 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D1F7E7601D1E9FE6009CD28F /* color.h in Headers */,
 				D1F7E6F11D1E7547009CD28F /* xfsolver.h in Headers */,
+				D1F7E7631D1E9FE6009CD28F /* cubiecube.h in Headers */,
+				D1F7E7661D1E9FE6009CD28F /* facelet.h in Headers */,
+				D1F7E7641D1E9FE6009CD28F /* edge.h in Headers */,
 				D1F7E6FC1D1E75DB009CD28F /* RubiksSolver.h in Headers */,
+				D1F7E7671D1E9FE6009CD28F /* search.h in Headers */,
+				D1F7E7621D1E9FE6009CD28F /* corner.h in Headers */,
+				D1F7E7651D1E9FE6009CD28F /* facecube.h in Headers */,
+				D1F7E7611D1E9FE6009CD28F /* coordcube.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -137,7 +200,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D1F7E76A1D1E9FE6009CD28F /* solve.c in Sources */,
+				D1F7E75D1D1E9FE6009CD28F /* coordcube.c in Sources */,
+				D1F7E75F1D1E9FE6009CD28F /* facecube.c in Sources */,
+				D1F7E7691D1E9FE6009CD28F /* search.c in Sources */,
 				D1F7E6FD1D1E75DB009CD28F /* RubiksSolver.m in Sources */,
+				D1F7E75E1D1E9FE6009CD28F /* cubiecube.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -287,6 +355,7 @@
 				D1F7E6F71D1E7547009CD28F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
