@@ -29,6 +29,8 @@
 @property (nonatomic, assign) int inputCount;
 @property (nonatomic, assign) BOOL isInputComplete;
 @property (nonatomic, assign) int completeCount;
+
+@property (nonatomic, strong) NSMutableArray<NSString *> *colors;
 @end
 
 @implementation MenuViewController
@@ -44,6 +46,8 @@
     _inputTextView.editable = NO;
     _inputTextView.selectable = NO;
     [self.view addSubview:_inputTextView];
+    
+    _colors = [NSMutableArray new];
     
     {
         UIView *sep = [[UIView alloc]initWithFrame:CGRectMake(0, 120, MenueViewWith, 0.5)];
@@ -86,10 +90,9 @@
     stopBtn_audio.titleLabel.font = [UIFont systemFontOfSize: 14];
     [stopBtn_audio setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     stopBtn_audio.frame = CGRectMake(witdth+20, 15, witdth, 35);
-    [stopBtn_audio setTitle:@"停止" forState:UIControlStateNormal];
-    [stopBtn_audio addTarget:self action:@selector(stopAudioInput) forControlEvents:UIControlEventTouchUpInside];
+    [stopBtn_audio setTitle:@"退格" forState:UIControlStateNormal];
+    [stopBtn_audio addTarget:self action:@selector(backInputTapped:) forControlEvents:UIControlEventTouchUpInside];
     [audioInputView addSubview:stopBtn_audio];
-    stopBtn_audio.hidden = YES;
     
     UIButton *reStarBtn_audio = [UIButton buttonWithType:UIButtonTypeSystem];
     reStarBtn_audio.layer.cornerRadius = 5;
@@ -102,6 +105,8 @@
     [reStarBtn_audio setTitle:@"重新输入" forState:UIControlStateNormal];
     [reStarBtn_audio addTarget:self action:@selector(reStarInput) forControlEvents:UIControlEventTouchUpInside];
     [audioInputView addSubview:reStarBtn_audio];
+    
+    
     
 }
 - (void)fillTestData{
@@ -277,11 +282,8 @@
     for (NSString *str in array) {
         if ([text rangeOfString:str].location != NSNotFound) {
 
-            [RubiksConvertor convertColorToHanZi:_inputTextView.text];
-            _inputTextView.text = [NSString stringWithFormat:@"%@%@ ", _inputTextView.text,str];
+            [self _pushColor:str];
             
-            //Sync fill color
-            [[NSNotificationCenter defaultCenter]postNotificationName:@"XFSyncColor" object:_inputTextView.text];
             
             _inputCount++;
             break;
@@ -342,23 +344,7 @@
 }
 
 - (void)showInputAlert:(NSString *)tips tag:(int)tag{
-//    [Utility barInfo:tips];
-    
     [self starAudioInput];
-    
-    if (tag == 0) {
-        _inputTextView.text = [NSString stringWithFormat:@"%@(%@)\n", _inputTextView.text, @"上面"];
-    }else if (tag == 1){
-        _inputTextView.text = [NSString stringWithFormat:@"%@(%@)\n", _inputTextView.text, @"右面"];
-    }else if (tag == 2){
-        _inputTextView.text = [NSString stringWithFormat:@"%@(%@)\n", _inputTextView.text, @"前面"];
-    }else if (tag == 3){
-        _inputTextView.text = [NSString stringWithFormat:@"%@(%@)\n", _inputTextView.text, @"底面"];
-    }else if (tag == 4){
-        _inputTextView.text = [NSString stringWithFormat:@"%@(%@)\n", _inputTextView.text, @"左面"];
-    }else if (tag == 5){
-        _inputTextView.text = [NSString stringWithFormat:@"%@(%@)\n", _inputTextView.text, @"后面"];
-    }
 }
 - (void)_clearInputText{
     _inputTextView.text = @"";
@@ -366,15 +352,53 @@
     [[NSNotificationCenter defaultCenter]postNotificationName:@"XFSyncColor" object:@""];
 }
 
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (void)_pushColor:(NSString*)text{
+    [_colors addObject:text];
+    
+    [self _refreshInputTextView];
 }
-*/
+
+- (void)_popColor{
+    if(_colors.count > 0)
+        [_colors removeLastObject];
+    
+    [self _refreshInputTextView];
+}
+
+- (void)_clearColor{
+    [_colors removeAllObjects];
+    
+    [self _refreshInputTextView];
+}
+
+- (void)_refreshInputTextView{
+    NSArray<NSString*> *faceNames = @[
+                                      @"上面",
+                                      @"右面",
+                                      @"前面",
+                                      @"底面",
+                                      @"左面",
+                                      @"后面",
+                                      ];
+    
+    NSMutableString *str = [NSMutableString new];
+    [_colors enumerateObjectsUsingBlock:^(NSString * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        [str appendString:obj];
+        [str appendString:@" "];
+        
+        if((idx+1)%9==0){
+            [str appendFormat:@" [%@]\n", faceNames[idx/9]];
+        }
+    }];
+    
+    _inputTextView.text = [str copy];
+    
+    //Sync fill color
+    [[NSNotificationCenter defaultCenter]postNotificationName:@"XFSyncColor" object:_inputTextView.text];
+}
+
+- (void)backInputTapped:(id)sender{
+    [self _popColor];
+}
 
 @end
