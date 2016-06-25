@@ -129,7 +129,7 @@
             [SVProgressHUD dismiss];
             
             
-            SCLAlertView *alert = [[SCLAlertView alloc] init];
+            SCLAlertView *alert = [[SCLAlertView alloc] initWithNewWindow];
             
             if(solution){
                 [alert showSuccess:self
