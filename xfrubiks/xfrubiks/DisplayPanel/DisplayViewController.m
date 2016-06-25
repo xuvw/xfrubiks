@@ -10,6 +10,7 @@
 #import "LayerDisplayView.h"
 #import "ScreenSizeHelper.h"
 #import "XFContext.h"
+#import "ARPanelViewController.h"
 
 
 @interface DisplayViewController ()
@@ -17,6 +18,7 @@
 
 @property (strong, nonatomic) UIButton *revertPosition;
 @property (strong, nonatomic) UIButton *fillTestData;
+@property (strong, nonatomic) UIButton *opencvLab;
 @end
 
 @implementation DisplayViewController
@@ -54,6 +56,14 @@
     [_fillTestData setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     [_fillTestData addTarget:self action:@selector(_fillTestData:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:_fillTestData];
+    
+    _opencvLab = [[UIButton alloc]initWithFrame:CGRectMake(0, 33+30+3, 50, 30)];
+    _opencvLab.backgroundColor = [UIColor purpleColor];
+    _opencvLab.titleLabel.font = [UIFont systemFontOfSize:10];
+    [_opencvLab setTitle:@"42" forState:UIControlStateNormal];
+    [_opencvLab setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    [_opencvLab addTarget:self action:@selector(_opencvLab:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:_opencvLab];
 }
 
 - (void)dealloc{
@@ -76,6 +86,11 @@
 
 - (void)_revertPosition:(id)sender{
     [_cube restorePosition];
+}
+
+- (void)_opencvLab:(id)sender{
+    ARPanelViewController *vc = [[ARPanelViewController alloc]init];
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 

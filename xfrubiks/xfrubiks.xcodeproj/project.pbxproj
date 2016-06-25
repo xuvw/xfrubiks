@@ -41,6 +41,7 @@
 		D1F7E7731D1EC0C2009CD28F /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1F7E7721D1EC0C2009CD28F /* GLKit.framework */; };
 		D1F7E7761D1EF61F009CD28F /* XFContext.m in Sources */ = {isa = PBXBuildFile; fileRef = D1F7E7751D1EF61F009CD28F /* XFContext.m */; };
 		D1F7E7791D1EFC56009CD28F /* Utility.m in Sources */ = {isa = PBXBuildFile; fileRef = D1F7E7781D1EFC56009CD28F /* Utility.m */; };
+		D1F7E77D1D1F052B009CD28F /* ARPanelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D1F7E77C1D1F052B009CD28F /* ARPanelViewController.m */; };
 		FAE31EA632A0A6CA1A43812A /* libPods-xfrubiks.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DBBFAB339C1389D2FF505C48 /* libPods-xfrubiks.a */; };
 /* End PBXBuildFile section */
 
@@ -98,6 +99,8 @@
 		D1F7E7751D1EF61F009CD28F /* XFContext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = XFContext.m; path = Common/XFContext.m; sourceTree = "<group>"; };
 		D1F7E7771D1EFC56009CD28F /* Utility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Utility.h; path = Common/Utility.h; sourceTree = "<group>"; };
 		D1F7E7781D1EFC56009CD28F /* Utility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Utility.m; path = Common/Utility.m; sourceTree = "<group>"; };
+		D1F7E77B1D1F052B009CD28F /* ARPanelViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ARPanelViewController.h; path = ARPanel/ARPanelViewController.h; sourceTree = "<group>"; };
+		D1F7E77C1D1F052B009CD28F /* ARPanelViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ARPanelViewController.m; path = ARPanel/ARPanelViewController.m; sourceTree = "<group>"; };
 		DBBFAB339C1389D2FF505C48 /* libPods-xfrubiks.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-xfrubiks.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F675E66FA3F595F64006F5F3 /* Pods-xfrubiks.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-xfrubiks.release.xcconfig"; path = "Pods/Target Support Files/Pods-xfrubiks/Pods-xfrubiks.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -193,6 +196,7 @@
 		D1F7E6A31D1E6663009CD28F /* xfrubiks */ = {
 			isa = PBXGroup;
 			children = (
+				D1F7E77A1D1F04E0009CD28F /* ARPanel */,
 				D1F7E6BE1D1E6A99009CD28F /* Common */,
 				D1F7E6BD1D1E6A4E009CD28F /* DisplayPanel */,
 				D1F7E6BC1D1E6A38009CD28F /* MenuPanel */,
@@ -285,6 +289,15 @@
 				D1F7E7701D1EB187009CD28F /* LayerFaceView.m */,
 			);
 			name = Layer;
+			sourceTree = "<group>";
+		};
+		D1F7E77A1D1F04E0009CD28F /* ARPanel */ = {
+			isa = PBXGroup;
+			children = (
+				D1F7E77B1D1F052B009CD28F /* ARPanelViewController.h */,
+				D1F7E77C1D1F052B009CD28F /* ARPanelViewController.m */,
+			);
+			name = ARPanel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -414,6 +427,7 @@
 				3CF106201D1E83390027F2BD /* IATConfig.m in Sources */,
 				3CF106351D1EF0040027F2BD /* arrowsImage.m in Sources */,
 				D1F7E7761D1EF61F009CD28F /* XFContext.m in Sources */,
+				D1F7E77D1D1F052B009CD28F /* ARPanelViewController.m in Sources */,
 				D1F7E6C71D1E6B28009CD28F /* DisplayViewController.m in Sources */,
 				3CF106211D1E83390027F2BD /* ISRDataHelper.m in Sources */,
 				3CF106321D1EC4BB0027F2BD /* ScreenSizeHelper.m in Sources */,

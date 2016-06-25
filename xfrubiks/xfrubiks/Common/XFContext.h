@@ -14,6 +14,7 @@
 
 + (XFContext*)context;
 
+@property (weak,nonatomic) UIViewController *main;
 @property (weak,nonatomic) MenuViewController *menu;
 @property (weak,nonatomic) DisplayViewController *display;
 
