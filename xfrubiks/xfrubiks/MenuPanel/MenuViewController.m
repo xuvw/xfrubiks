@@ -21,7 +21,7 @@
 @property (nonatomic, strong) UITextView *inputTextView;
 @property (nonatomic, assign) int inputCount;
 @property (nonatomic, assign) BOOL isInputComplete;
-
+@property (nonatomic, assign) int completeCount;
 @end
 
 @implementation MenuViewController
@@ -29,31 +29,32 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     _inputCount = 0;
+    _completeCount = 0;
     _inputStr = @"";
     _isInputComplete = NO;
     // Do any additional setup after loading the view.
-    _inputTextView = [[UITextView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH/2, 70)];
+    _inputTextView = [[UITextView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH/2, 120)];
     _inputTextView.editable = NO;
     [self.view addSubview:_inputTextView];
     
     {
-        UIView *sep = [[UIView alloc]initWithFrame:CGRectMake(0, 70, SCREEN_WIDTH/2, 0.5)];
+        UIView *sep = [[UIView alloc]initWithFrame:CGRectMake(0, 120, SCREEN_WIDTH/2, 0.5)];
         sep.backgroundColor = [UIColor grayColor];
         [self.view addSubview:sep];
     }
     
-    _buttonsView = [[ButtonMenuView alloc]initWithFrame:CGRectMake(0,71, SCREEN_WIDTH/2, 130)];
+    _buttonsView = [[ButtonMenuView alloc]initWithFrame:CGRectMake(0,121, SCREEN_WIDTH/2, 130)];
     _buttonsView.delegate = self;
     [self.view addSubview:_buttonsView];
     
     {
-        UIView *sep = [[UIView alloc]initWithFrame:CGRectMake(0, 71 + 131, SCREEN_WIDTH/2, 0.5)];
+        UIView *sep = [[UIView alloc]initWithFrame:CGRectMake(0, 121 + 131, SCREEN_WIDTH/2, 0.5)];
         sep.backgroundColor = [UIColor grayColor];
         [self.view addSubview:sep];
     }
     
     UIView *audioInputView = [[UIView alloc]init];
-    audioInputView.frame = CGRectMake(0, SCREEN_HEIGHT - 100, SCREEN_WIDTH/2, 100);
+    audioInputView.frame = CGRectMake(0, SCREEN_HEIGHT - 80, SCREEN_WIDTH/2, 80);
     [self.view addSubview:audioInputView];
     
     UIButton *starBtn_audio = [UIButton buttonWithType:UIButtonTypeSystem];
@@ -61,7 +62,7 @@
     starBtn_audio.layer.masksToBounds = YES;
     starBtn_audio.titleLabel.font = [UIFont systemFontOfSize: 18];
     [starBtn_audio setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-    starBtn_audio.frame = CGRectMake(20, 20, 80, 50);
+    starBtn_audio.frame = CGRectMake(20, 0, 80, 50);
     [starBtn_audio setTitle:@"开始" forState:UIControlStateNormal];
     [starBtn_audio addTarget:self action:@selector(starAudioInput) forControlEvents:UIControlEventTouchUpInside];
     [audioInputView addSubview:starBtn_audio];
@@ -71,7 +72,7 @@
     stopBtn_audio.layer.masksToBounds = YES;
     stopBtn_audio.titleLabel.font = [UIFont systemFontOfSize: 18];
     [stopBtn_audio setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-    stopBtn_audio.frame = CGRectMake(120, 20, 80, 50);
+    stopBtn_audio.frame = CGRectMake(120, 0, 80, 50);
     [stopBtn_audio setTitle:@"停止" forState:UIControlStateNormal];
     [stopBtn_audio addTarget:self action:@selector(stopAudioInput) forControlEvents:UIControlEventTouchUpInside];
     [audioInputView addSubview:stopBtn_audio];
@@ -81,7 +82,7 @@
     reStarBtn_audio.layer.masksToBounds = YES;
     reStarBtn_audio.titleLabel.font = [UIFont systemFontOfSize: 18];
     [reStarBtn_audio setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-    reStarBtn_audio.frame = CGRectMake(220, 20, 80, 50);
+    reStarBtn_audio.frame = CGRectMake(220, 0, 80, 50);
     [reStarBtn_audio setTitle:@"重新输入" forState:UIControlStateNormal];
     [reStarBtn_audio addTarget:self action:@selector(reStarInput) forControlEvents:UIControlEventTouchUpInside];
     [audioInputView addSubview:reStarBtn_audio];
@@ -215,20 +216,33 @@
             break;
         }
     }
-    if (_isInputComplete == NO) {
+    if (_completeCount < NO) {
         NSString *tips = @"";
         if (_inputCount == 9) {
-            tips = @"上面输入完成，请输入右面";
-            [self showInputAlert:tips tag:0];
+            if (_completeCount < 1) {
+                tips = @"上面输入完成，请输入右面";
+                [self showInputAlert:tips tag:0];
+                _completeCount++;
+            }
         }else if (_inputCount == 18){
-            tips = @"右面输入完成，请输入前面";
-            [self showInputAlert:tips tag:1];
+            if (_completeCount < 2) {
+                tips = @"右面输入完成，请输入前面";
+                [self showInputAlert:tips tag:1];
+                _completeCount++;
+            }
         }else if (_inputCount == 27){
-            tips = @"前面输入完成，请输入底面";
-            [self showInputAlert:tips tag:2];
+            if (_completeCount < 3) {
+                tips = @"前面输入完成，请输入底面";
+                [self showInputAlert:tips tag:2];
+                _completeCount++;
+            }
         }else if (_inputCount == 36){
-            tips = @"底面输入完成，请输入左面";
-            [self showInputAlert:tips tag:3];
+            if (_completeCount < 4) {
+                tips = @"底面输入完成，请输入左面";
+                [self showInputAlert:tips tag:3];
+                _completeCount++;
+            }
+
         }else if (_inputCount == 45){
             tips = @"左面输入完成，请输入后面";
             [self showInputAlert:tips tag:4];

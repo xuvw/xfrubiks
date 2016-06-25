@@ -45,7 +45,9 @@
         
     }
     NSLog(@"%@", mutStr);
-    
+    if (mutStr.length != 54) {
+        NSLog(@"error");
+    }
     return mutStr;
 }
 @end
