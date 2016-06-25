@@ -40,7 +40,10 @@
     CGFloat height = 45;
     
     UIButton *button = [[UIButton alloc]initWithFrame:CGRectMake(col * width, height * row, width, height)];
+    button.layer.cornerRadius = 5;
+    button.layer.masksToBounds = YES;
     button.backgroundColor = color;
+    [button addTarget:self action:@selector(_colorTapped:) forControlEvents:UIControlEventTouchUpInside];
     [self addSubview:button];
     return button;
 }

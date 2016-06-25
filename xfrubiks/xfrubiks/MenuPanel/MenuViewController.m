@@ -10,10 +10,14 @@
 #import "iflyMSC/IFlyMSC.h"
 #import "IATConfig.h"
 #import "ISRDataHelper.h"
+#import "ButtonMenuView.h"
 
 @interface MenuViewController ()<IFlySpeechRecognizerDelegate>
 @property (nonatomic, strong) IFlySpeechRecognizer *iFlySpeechRecognizer;
 @property (nonatomic, copy) NSString *inputStr;
+
+@property (nonatomic, strong) ButtonMenuView *buttonsView;
+@property (nonatomic, strong) UITextView *inputTextView;
 @end
 
 @implementation MenuViewController
@@ -21,10 +25,13 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.view.backgroundColor = [UIColor yellowColor];
     
+    _buttonsView = [[ButtonMenuView alloc]initWithFrame:CGRectMake(0,100, SCREEN_WIDTH/2, 100)];
+    [self.view addSubview:_buttonsView];
     
-    
+    _inputTextView = [[UITextView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH/2, 100)];
+    _inputTextView.editable = NO;
+    [self.view addSubview:_inputTextView];
     
 }
 

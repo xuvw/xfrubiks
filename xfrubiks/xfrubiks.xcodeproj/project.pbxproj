@@ -31,6 +31,7 @@
 		D1F7E6C71D1E6B28009CD28F /* DisplayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D1F7E6C61D1E6B28009CD28F /* DisplayViewController.m */; };
 		D1F7E6CA1D1E6B32009CD28F /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D1F7E6C91D1E6B32009CD28F /* MenuViewController.m */; };
 		D1F7E6F91D1E75AD009CD28F /* xfsolver.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1F7E6F81D1E75AD009CD28F /* xfsolver.framework */; };
+		D1F7E70C1D1E85B8009CD28F /* ButtonMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = D1F7E70B1D1E85B8009CD28F /* ButtonMenuView.m */; };
 		FAE31EA632A0A6CA1A43812A /* libPods-xfrubiks.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DBBFAB339C1389D2FF505C48 /* libPods-xfrubiks.a */; };
 /* End PBXBuildFile section */
 
@@ -71,6 +72,8 @@
 		D1F7E6CB1D1E6B43009CD28F /* Precompiled.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Precompiled.h; sourceTree = "<group>"; };
 		D1F7E6E11D1E7451009CD28F /* liblibrubiks.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = liblibrubiks.a; path = "librubiks/build/Debug-iphoneos/liblibrubiks.a"; sourceTree = "<group>"; };
 		D1F7E6F81D1E75AD009CD28F /* xfsolver.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = xfsolver.framework; path = "xfsolver/build/Debug-iphoneos/xfsolver.framework"; sourceTree = "<group>"; };
+		D1F7E70A1D1E85B8009CD28F /* ButtonMenuView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ButtonMenuView.h; sourceTree = "<group>"; };
+		D1F7E70B1D1E85B8009CD28F /* ButtonMenuView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ButtonMenuView.m; sourceTree = "<group>"; };
 		DBBFAB339C1389D2FF505C48 /* libPods-xfrubiks.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-xfrubiks.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F675E66FA3F595F64006F5F3 /* Pods-xfrubiks.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-xfrubiks.release.xcconfig"; path = "Pods/Target Support Files/Pods-xfrubiks/Pods-xfrubiks.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -200,6 +203,7 @@
 		D1F7E6BC1D1E6A38009CD28F /* MenuPanel */ = {
 			isa = PBXGroup;
 			children = (
+				D1F7E7091D1E85B8009CD28F /* View */,
 				3CF1061B1D1E83070027F2BD /* audioInput */,
 				D1F7E6C81D1E6B32009CD28F /* MenuViewController.h */,
 				D1F7E6C91D1E6B32009CD28F /* MenuViewController.m */,
@@ -223,6 +227,16 @@
 				D1F7E6C01D1E6AD5009CD28F /* BaseViewController.m */,
 			);
 			name = Common;
+			sourceTree = "<group>";
+		};
+		D1F7E7091D1E85B8009CD28F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D1F7E70A1D1E85B8009CD28F /* ButtonMenuView.h */,
+				D1F7E70B1D1E85B8009CD28F /* ButtonMenuView.m */,
+			);
+			name = View;
+			path = MenuPanel/View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -351,6 +365,7 @@
 				3CF106211D1E83390027F2BD /* ISRDataHelper.m in Sources */,
 				D1F7E6CA1D1E6B32009CD28F /* MenuViewController.m in Sources */,
 				D1F7E6AC1D1E6663009CD28F /* ViewController.m in Sources */,
+				D1F7E70C1D1E85B8009CD28F /* ButtonMenuView.m in Sources */,
 				D1F7E6C11D1E6AD5009CD28F /* BaseViewController.m in Sources */,
 				D1F7E6A91D1E6663009CD28F /* AppDelegate.m in Sources */,
 				D1F7E6A61D1E6663009CD28F /* main.m in Sources */,
