@@ -27,9 +27,10 @@
         NSLog(@"Unsolvable cube!");
         return nil;
     }
-    free(sol);
     
-    return [NSString stringWithUTF8String:sol];
+    NSString *result = [NSString stringWithUTF8String:sol];
+    free(sol);
+    return result;
 }
 
 @end
