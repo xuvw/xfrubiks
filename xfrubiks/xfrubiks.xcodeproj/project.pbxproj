@@ -396,11 +396,8 @@
 				D1F7E6B41D1E6663009CD28F /* LaunchScreen.storyboard in Resources */,
 				3CF106501D1F12970027F2BD /* left.png in Resources */,
 				D1F7E6B11D1E6663009CD28F /* Assets.xcassets in Resources */,
-<<<<<<< HEAD
-=======
 				D1F7E7861D1F1377009CD28F /* wall-e@2x.webp in Resources */,
 				3CF106371D1EF0310027F2BD /* right.png in Resources */,
->>>>>>> origin/master
 				D1F7E6AF1D1E6663009CD28F /* Main.storyboard in Resources */,
 				3CF1064F1D1F12970027F2BD /* down.png in Resources */,
 			);
