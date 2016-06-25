@@ -59,6 +59,8 @@
         
         UIPanGestureRecognizer *gesture = [[UIPanGestureRecognizer alloc]initWithTarget:self action:@selector(_onPanGesture:)];
         [self addGestureRecognizer:gesture];
+        
+        [_faces[0] setWaitingIndex:0];
     }
     return self;
 }
@@ -180,7 +182,8 @@
     
     NSLog(@">>>>>>>>>>normal String : %@", normalString);
     
-    for(NSUInteger idx = 0; idx < normalString.length && idx < 54; ++idx){
+    NSUInteger idx;
+    for(idx = 0; idx < normalString.length && idx < 54; ++idx){
         NSString *colorItem = [normalString substringWithRange:NSMakeRange(idx, 1)];
         NSLog(@"color item = %@",colorItem);
         
@@ -189,6 +192,14 @@
         
         UIColor *color = [RubiksConvertor colorFromZhcnString:colorItem];
         [_faces[faceIndex] setColor:color index:boxIndex];
+        [_faces[faceIndex] removeWaiting];
+    }
+    
+    // next
+    NSUInteger faceIndex = idx/9;
+    NSUInteger boxIndex = idx%9;
+    if(faceIndex<=5 && boxIndex<=8){
+        [_faces[faceIndex] setWaitingIndex:boxIndex];
     }
 }
 

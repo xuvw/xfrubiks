@@ -11,6 +11,8 @@
 @interface LayerFaceView : UIView
 
 - (void)setColor:(UIColor*)color index:(NSUInteger)index;
+- (void)setWaitingIndex:(NSUInteger)index;
+- (void)removeWaiting;
 
 @property (strong,nonatomic) NSString *text;
 
