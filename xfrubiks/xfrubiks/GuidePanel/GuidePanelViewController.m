@@ -17,6 +17,7 @@
 
 @interface GuidePanelViewController ()
 @property (nonatomic, strong) UITextView *inputTextView;
+@property (nonatomic, strong) UIButton *closeButton;
 @end
 
 @implementation GuidePanelViewController
@@ -24,6 +25,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    _closeButton = [UIButton new];
+    [self.view addSubview:_closeButton];
     
     _inputTextView = [[UITextView alloc]initWithFrame:CGRectMake(0, 0, MenueViewWith, SCREEN_HEIGHT/2)];
     _inputTextView.editable = NO;

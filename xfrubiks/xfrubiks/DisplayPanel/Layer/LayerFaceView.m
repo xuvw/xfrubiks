@@ -51,7 +51,7 @@
         [self addSubview:_label];
         _label.font = [UIFont systemFontOfSize:20];
         _label.textColor = [UIColor blackColor];
-        _label.center = CGPointMake(frame.size.width/2, frame.size.height/2);
+        _label.center = CGPointMake(frame.size.width/2 - 10, frame.size.height/2 - 10);
         
     }
     return self;

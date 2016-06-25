@@ -113,15 +113,15 @@
     //add cube face 2 - F - Front
     transform = CATransform3DMakeTranslation(0, 0, _sideLength/2);
     [self addFace:2 withTransform:transform];
-    //add cube face 3
+    //add cube face 3 - D - Down
     transform = CATransform3DMakeTranslation(0, _sideLength/2, 0);
     transform = CATransform3DRotate(transform, -M_PI_2, 1, 0, 0);
     [self addFace:3 withTransform:transform];
-    //add cube face 4
+    //add cube face 4 - L - Left
     transform = CATransform3DMakeTranslation(-_sideLength/2, 0, 0);
     transform = CATransform3DRotate(transform, -M_PI_2, 0, 1, 0);
     [self addFace:4 withTransform:transform];
-    //add cube face 5
+    //add cube face 5 - B - Back
     transform = CATransform3DMakeTranslation(0, 0, -_sideLength/2);
     transform = CATransform3DRotate(transform, M_PI, 0, 1, 0);
     [self addFace:5 withTransform:transform];
@@ -172,7 +172,7 @@
 
 - (void)_configFace:(LayerFaceView*)face idx:(NSUInteger)idx{
     
-    [face setText:[NSString stringWithFormat:@"%@",@(idx)]];
+    [face setText:[RubiksConvertor translateFaceIndexToZhcnString:idx]];
 }
 
 - (void)setColorByString:(NSString *)zhcnString{
