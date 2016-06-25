@@ -170,7 +170,7 @@
     NSLog(@"重新输入");
     _inputTextView.text = @"";
     [_iFlySpeechRecognizer stopListening];
-    [self starAudioInput];
+//    [self starAudioInput];
     
 }
 
@@ -216,7 +216,7 @@
             break;
         }
     }
-    if (_completeCount < NO) {
+    if (_isInputComplete == NO) {
         NSString *tips = @"";
         if (_inputCount == 9) {
             if (_completeCount < 1) {
@@ -244,13 +244,20 @@
             }
 
         }else if (_inputCount == 45){
-            tips = @"左面输入完成，请输入后面";
-            [self showInputAlert:tips tag:4];
+            if (_completeCount < 5) {
+                tips = @"左面输入完成，请输入后面";
+                [self showInputAlert:tips tag:4];
+                _completeCount++;
+            }
         }else if (_inputCount == 54){
-            tips = @"魔方输入完成";
-            [self showInputAlert:tips tag:5];
-            [RubiksConvertor convertColorToPostion:_inputTextView.text];
-            _isInputComplete = YES;
+            if (_completeCount < 6) {
+                tips = @"魔方输入完成";
+                [self showInputAlert:tips tag:5];
+                [RubiksConvertor convertColorToPostion:_inputTextView.text];
+                _isInputComplete = YES;
+                _completeCount++;
+            }
+
         }
     }
 
