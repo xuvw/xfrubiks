@@ -36,13 +36,18 @@
 }
 
 - (UIButton*)_createButton:(UIColor*)color row:(NSUInteger)row col:(NSUInteger)col tag:(NSString*)tag{
-    CGFloat width = self.bounds.size.width/3;
-    CGFloat height = 45;
+    CGFloat width = 60;
+    CGFloat hStep = ceil(SCREEN_WIDTH/2/4);
+    CGFloat vStep = ceil(width*3/3) + 10;
     
-    UIButton *button = [[UIButton alloc]initWithFrame:CGRectMake(col * width, height * row, width, height)];
+    UIButton *button = [UIButton new];
     button.layer.cornerRadius = 5;
     button.layer.masksToBounds = YES;
+    button.layer.borderColor = [UIColor grayColor].CGColor;
+    button.layer.borderWidth = 1.0;
     button.backgroundColor = color;
+    button.bounds = CGRectMake(0, 0, width, width);
+    button.center = CGPointMake((col+1) * hStep, (row+1) * vStep);
     [button addTarget:self action:@selector(_colorTapped:) forControlEvents:UIControlEventTouchUpInside];
     [self addSubview:button];
     return button;

@@ -18,6 +18,7 @@
 
 @property (nonatomic, strong) ButtonMenuView *buttonsView;
 @property (nonatomic, strong) UITextView *inputTextView;
+
 @end
 
 @implementation MenuViewController
@@ -25,13 +26,14 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    
-    _buttonsView = [[ButtonMenuView alloc]initWithFrame:CGRectMake(0,100, SCREEN_WIDTH/2, 100)];
-    [self.view addSubview:_buttonsView];
-    
-    _inputTextView = [[UITextView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH/2, 100)];
+    _inputTextView = [[UITextView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH/2, 50)];
     _inputTextView.editable = NO;
     [self.view addSubview:_inputTextView];
+    
+    _buttonsView = [[ButtonMenuView alloc]initWithFrame:CGRectMake(0,50, SCREEN_WIDTH/2, 100)];
+    [self.view addSubview:_buttonsView];
+    
+    
     
 }
 
