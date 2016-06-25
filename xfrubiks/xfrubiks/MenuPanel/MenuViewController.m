@@ -36,6 +36,39 @@
     
     
     
+    UIView *audioInputView = [[UIView alloc]init];
+    audioInputView.frame = CGRectMake(0, SCREEN_HEIGHT - 100, SCREEN_WIDTH/2, 100);
+    [self.view addSubview:audioInputView];
+    
+    UIButton *starBtn_audio = [UIButton buttonWithType:UIButtonTypeSystem];
+    starBtn_audio.layer.cornerRadius = 5;
+    starBtn_audio.layer.masksToBounds = YES;
+    starBtn_audio.titleLabel.font = [UIFont systemFontOfSize: 18];
+    [starBtn_audio setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    starBtn_audio.frame = CGRectMake(20, 20, 80, 50);
+    [starBtn_audio setTitle:@"开始" forState:UIControlStateNormal];
+    [starBtn_audio addTarget:self action:@selector(starAudioInput) forControlEvents:UIControlEventTouchUpInside];
+    [audioInputView addSubview:starBtn_audio];
+    
+    UIButton *stopBtn_audio = [UIButton buttonWithType:UIButtonTypeSystem];
+    stopBtn_audio.layer.cornerRadius = 5;
+    stopBtn_audio.layer.masksToBounds = YES;
+    stopBtn_audio.titleLabel.font = [UIFont systemFontOfSize: 18];
+    [stopBtn_audio setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    stopBtn_audio.frame = CGRectMake(120, 20, 80, 50);
+    [stopBtn_audio setTitle:@"停止" forState:UIControlStateNormal];
+    [stopBtn_audio addTarget:self action:@selector(stopAudioInput) forControlEvents:UIControlEventTouchUpInside];
+    [audioInputView addSubview:stopBtn_audio];
+    
+    UIButton *reStarBtn_audio = [UIButton buttonWithType:UIButtonTypeSystem];
+    reStarBtn_audio.layer.cornerRadius = 5;
+    reStarBtn_audio.layer.masksToBounds = YES;
+    reStarBtn_audio.titleLabel.font = [UIFont systemFontOfSize: 18];
+    [reStarBtn_audio setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    reStarBtn_audio.frame = CGRectMake(220, 20, 80, 50);
+    [reStarBtn_audio setTitle:@"重新输入" forState:UIControlStateNormal];
+    [reStarBtn_audio addTarget:self action:@selector(reStarInput) forControlEvents:UIControlEventTouchUpInside];
+    [audioInputView addSubview:reStarBtn_audio];
 }
 
 - (void)initRecognizer
@@ -110,10 +143,33 @@
     }
 
 }
-
+//停止语音输入
 - (void)stopAudioInput{
     NSLog(@"停止输入");
     [_iFlySpeechRecognizer stopListening];
+}
+//重新语音输入
+- (void)reStarInput{
+    NSLog(@"重新输入");
+    _inputTextView.text = @"";
+    [_iFlySpeechRecognizer stopListening];
+    [self starAudioInput];
+    
+}
+
+- (void)getAudioInputColor{
+    NSString *str1 = @"红";
+    NSString *str2 = @"蓝";
+    NSString *str3 = @"黄";
+    NSString *str4 = @"橙";
+    NSString *str5 = @"绿";
+    NSString *str6 = @"白";
+    
+    for (int i = 1; i <= 6; i++) {
+        NSRange range = [_inputStr rangeOfString:[NSString stringWithFormat:@"str%@", @(i)]];
+        int location = range.location;
+        int leight = range.length;
+    }
 }
 
 #pragma mark IFlySpeechRecognizerDelegate
@@ -125,16 +181,15 @@
     for (NSString *key in dic) {
         [resultString appendFormat:@"%@",key];
     }
-//    _inputStr =[NSString stringWithFormat:@"%@%@", _label.text,resultString];
+    _inputStr =[NSString stringWithFormat:@"%@%@", _inputTextView.text,resultString];
     NSString * resultFromJson =  [ISRDataHelper stringFromJson:resultString];
-//    _label.text = [NSString stringWithFormat:@"%@%@", _label.text,resultFromJson];
+    _inputTextView.text = [NSString stringWithFormat:@"%@%@", _inputTextView.text,resultFromJson];
     
     if (isLast){
         NSLog(@"听写结果(json)：%@测试",  self.inputStr);
     }
     NSLog(@"_result=%@",_inputStr);
     NSLog(@"resultFromJson=%@",resultFromJson);
-//    NSLog(@"isLast=%d,_textView.text=%@",isLast,_label.text);
 }
 - (void) onError:(IFlySpeechError *) errorCode{
     NSLog(@"%@", errorCode);
