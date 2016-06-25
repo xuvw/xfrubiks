@@ -22,6 +22,9 @@
 		3CF106201D1E83390027F2BD /* IATConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CF1061D1D1E83390027F2BD /* IATConfig.m */; };
 		3CF106211D1E83390027F2BD /* ISRDataHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CF1061F1D1E83390027F2BD /* ISRDataHelper.m */; };
 		3CF106321D1EC4BB0027F2BD /* ScreenSizeHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CF106311D1EC4BB0027F2BD /* ScreenSizeHelper.m */; };
+		3CF106351D1EF0040027F2BD /* arrowsImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CF106341D1EF0040027F2BD /* arrowsImage.m */; };
+		3CF106371D1EF0310027F2BD /* right.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CF106361D1EF0310027F2BD /* right.png */; };
+		3CF106391D1EF0980027F2BD /* left.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CF106381D1EF0980027F2BD /* left.png */; };
 		D1F7E6A61D1E6663009CD28F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D1F7E6A51D1E6663009CD28F /* main.m */; };
 		D1F7E6A91D1E6663009CD28F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D1F7E6A81D1E6663009CD28F /* AppDelegate.m */; };
 		D1F7E6AC1D1E6663009CD28F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D1F7E6AB1D1E6663009CD28F /* ViewController.m */; };
@@ -58,6 +61,10 @@
 		3CF1061F1D1E83390027F2BD /* ISRDataHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ISRDataHelper.m; sourceTree = "<group>"; };
 		3CF106301D1EC4BB0027F2BD /* ScreenSizeHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScreenSizeHelper.h; sourceTree = "<group>"; };
 		3CF106311D1EC4BB0027F2BD /* ScreenSizeHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScreenSizeHelper.m; sourceTree = "<group>"; };
+		3CF106331D1EF0040027F2BD /* arrowsImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = arrowsImage.h; sourceTree = "<group>"; };
+		3CF106341D1EF0040027F2BD /* arrowsImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = arrowsImage.m; sourceTree = "<group>"; };
+		3CF106361D1EF0310027F2BD /* right.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = right.png; sourceTree = "<group>"; };
+		3CF106381D1EF0980027F2BD /* left.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = left.png; sourceTree = "<group>"; };
 		944B34D8CB0E4DE7FF7EA039 /* Pods-xfrubiks.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-xfrubiks.debug.xcconfig"; path = "Pods/Target Support Files/Pods-xfrubiks/Pods-xfrubiks.debug.xcconfig"; sourceTree = "<group>"; };
 		D1F7E6A11D1E6663009CD28F /* xfrubiks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = xfrubiks.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D1F7E6A51D1E6663009CD28F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -241,6 +248,10 @@
 				D1F7E6C01D1E6AD5009CD28F /* BaseViewController.m */,
 				3CF106301D1EC4BB0027F2BD /* ScreenSizeHelper.h */,
 				3CF106311D1EC4BB0027F2BD /* ScreenSizeHelper.m */,
+				3CF106331D1EF0040027F2BD /* arrowsImage.h */,
+				3CF106341D1EF0040027F2BD /* arrowsImage.m */,
+				3CF106361D1EF0310027F2BD /* right.png */,
+				3CF106381D1EF0980027F2BD /* left.png */,
 			);
 			name = Common;
 			sourceTree = "<group>";
@@ -327,7 +338,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				D1F7E6B41D1E6663009CD28F /* LaunchScreen.storyboard in Resources */,
+				3CF106391D1EF0980027F2BD /* left.png in Resources */,
 				D1F7E6B11D1E6663009CD28F /* Assets.xcassets in Resources */,
+				3CF106371D1EF0310027F2BD /* right.png in Resources */,
 				D1F7E6AF1D1E6663009CD28F /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -389,6 +402,7 @@
 			files = (
 				D1F7E7711D1EB187009CD28F /* LayerFaceView.m in Sources */,
 				3CF106201D1E83390027F2BD /* IATConfig.m in Sources */,
+				3CF106351D1EF0040027F2BD /* arrowsImage.m in Sources */,
 				D1F7E6C71D1E6B28009CD28F /* DisplayViewController.m in Sources */,
 				3CF106211D1E83390027F2BD /* ISRDataHelper.m in Sources */,
 				3CF106321D1EC4BB0027F2BD /* ScreenSizeHelper.m in Sources */,
