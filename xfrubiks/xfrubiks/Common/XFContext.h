@@ -9,12 +9,13 @@
 #import <Foundation/Foundation.h>
 #import "MenuViewController.h"
 #import "DisplayViewController.h"
+#import "ViewController.h"
 
 @interface XFContext : NSObject
 
 + (XFContext*)context;
 
-@property (weak,nonatomic) UIViewController *main;
+@property (weak,nonatomic) ViewController *main;
 @property (weak,nonatomic) MenuViewController *menu;
 @property (weak,nonatomic) DisplayViewController *display;
 

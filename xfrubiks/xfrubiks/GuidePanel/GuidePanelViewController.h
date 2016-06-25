@@ -10,4 +10,6 @@
 
 @interface GuidePanelViewController : BaseViewController
 
+@property (strong,nonatomic) NSString *solution;
+
 @end

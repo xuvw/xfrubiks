@@ -11,6 +11,7 @@
 #import "MenuViewController.h"
 #import "ScreenSizeHelper.h"
 #import "XFContext.h"
+#import "GuidePanelViewController.h"
 
 #define MenueViewWith [ScreenSizeHelper getMenuViewWidth]
 #define DisViewWith [ScreenSizeHelper getDisplayViewWidth]
@@ -18,6 +19,7 @@
 @interface ViewController ()
 @property (strong,nonatomic) DisplayViewController *displayController;
 @property (strong,nonatomic) MenuViewController *menuController;
+@property (strong,nonatomic) GuidePanelViewController *guideController;
 @end
 
 @implementation ViewController
@@ -51,13 +53,22 @@
     [XFContext context].main = self;
     
     [self.navigationController setNavigationBarHidden:YES];
-    
 }
 
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)showGuide:(NSString*)solution{
+    _guideController = [[GuidePanelViewController alloc]init];
+    _guideController.view.frame = CGRectMake(DisViewWith, 0, MenueViewWith, SCREEN_HEIGHT);
+    [self addChildViewController:_guideController];
+    [self.view addSubview:_guideController.view];
+    [_guideController didMoveToParentViewController:self];
+    
+    _guideController.solution = solution;
 }
 
 @end

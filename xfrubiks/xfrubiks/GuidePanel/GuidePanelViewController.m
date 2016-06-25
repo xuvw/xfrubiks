@@ -58,5 +58,10 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void)setSolution:(NSString *)solution{
+    _solution = solution;
+    
+    _inputTextView.text = _solution;
+}
 
 @end

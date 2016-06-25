@@ -16,6 +16,7 @@
 #import "Utility.h"
 #import <SVProgressHUD.h>
 #import <SCLAlertView.h>
+#import "XFContext.h"
 
 #define MenueViewWith [ScreenSizeHelper getMenuViewWidth]
 
@@ -139,6 +140,9 @@
                           subTitle:solution
                   closeButtonTitle:@"那是什么意思"
                           duration:0.0f];
+                
+                [[XFContext context].main showGuide:solution];
+                
             }else{
                 [alert showError:self
                              title:@"我的天呐"
