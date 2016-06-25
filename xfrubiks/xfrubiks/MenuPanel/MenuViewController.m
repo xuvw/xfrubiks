@@ -104,8 +104,8 @@
     
 }
 - (void)fillTestData{
-    NSString *testStr = @"白红蓝蓝白绿红白绿黄黄红红红红橙蓝蓝绿红橙橙绿绿蓝黄蓝白蓝黄橙黄白绿橙白绿橙白绿橙绿黄白橙黄黄橙蓝蓝白红黄红";
-//    NSString *testStr = @"白绿红蓝黄绿红绿蓝橙红黄橙绿黄橙白红白黄黄绿红白白橙黄绿黄绿蓝白红红蓝绿橙白蓝红蓝白白橙橙蓝橙蓝红橙蓝黄黄绿";
+//    NSString *testStr = @"白红蓝蓝白绿红白绿黄黄红红红红橙蓝蓝绿红橙橙绿绿蓝黄蓝白蓝黄橙黄白绿橙白绿橙白绿橙绿黄白橙黄黄橙蓝蓝白红黄红";
+    NSString *testStr = @"白绿红蓝黄绿红绿蓝橙红黄橙绿黄橙白红白黄黄绿红白白橙黄绿黄绿蓝白红红蓝绿橙白蓝红蓝白白橙橙蓝橙蓝红橙蓝黄黄绿";
     _inputTextView.text = testStr;
     
     
@@ -307,7 +307,7 @@
 
 
 - (void)_clearInputText{
-    _inputTextView.text = @"";
+    [self _clearColor];
     
     [[NSNotificationCenter defaultCenter]postNotificationName:@"XFSyncColor" object:@""];
 }

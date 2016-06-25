@@ -16,13 +16,8 @@
     const char *facelets = input.UTF8String;
     if(!facelets) return nil;
     
-    char *sol = solution(
-        facelets,
-        24,
-        1000,
-        0,
-        "cache"
-    );
+//    char *sol = solution(facelets,24,1000,0,"cache");
+    char *sol = solution(facelets,30,1000,0,"cache");
     if (sol == NULL) {
         NSLog(@"Unsolvable cube!");
         return nil;
