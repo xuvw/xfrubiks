@@ -85,4 +85,23 @@
     return ret;
 }
 
++ (NSString *)translateResultToZhcnString:(NSString *)result{
+    
+    return @"";
+}
+
++ (NSString *)translateFaceIndexToZhcnString:(NSUInteger)index{
+    // UUUUUUUUURRRRRRRRRFFFFFFFFFDDDDDDDDDLLLLLLLLLBBBBBBBBB
+    switch (index) {
+        case 0: return @"顶";
+        case 1: return @"右";
+        case 2: return @"前";
+        case 3: return @"底";
+        case 4: return @"左";
+        case 5: return @"后";
+        default:break;
+    }
+    return @"";
+}
+
 @end

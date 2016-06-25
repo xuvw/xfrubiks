@@ -43,6 +43,11 @@
 		D1F7E7731D1EC0C2009CD28F /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1F7E7721D1EC0C2009CD28F /* GLKit.framework */; };
 		D1F7E7761D1EF61F009CD28F /* XFContext.m in Sources */ = {isa = PBXBuildFile; fileRef = D1F7E7751D1EF61F009CD28F /* XFContext.m */; };
 		D1F7E7791D1EFC56009CD28F /* Utility.m in Sources */ = {isa = PBXBuildFile; fileRef = D1F7E7781D1EFC56009CD28F /* Utility.m */; };
+		D1F7E77D1D1F052B009CD28F /* ARPanelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D1F7E77C1D1F052B009CD28F /* ARPanelViewController.m */; };
+		D1F7E7821D1F09B7009CD28F /* LayerBoxView.m in Sources */ = {isa = PBXBuildFile; fileRef = D1F7E7811D1F09B7009CD28F /* LayerBoxView.m */; };
+		D1F7E7841D1F11F2009CD28F /* WebP.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1F7E7831D1F11F2009CD28F /* WebP.framework */; };
+		D1F7E7861D1F1377009CD28F /* wall-e@2x.webp in Resources */ = {isa = PBXBuildFile; fileRef = D1F7E7851D1F1241009CD28F /* wall-e@2x.webp */; };
+		D1F7E78E1D1F15F4009CD28F /* GuidePanelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D1F7E78D1D1F15F4009CD28F /* GuidePanelViewController.m */; };
 		FAE31EA632A0A6CA1A43812A /* libPods-xfrubiks.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DBBFAB339C1389D2FF505C48 /* libPods-xfrubiks.a */; };
 /* End PBXBuildFile section */
 
@@ -102,6 +107,14 @@
 		D1F7E7751D1EF61F009CD28F /* XFContext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = XFContext.m; path = Common/XFContext.m; sourceTree = "<group>"; };
 		D1F7E7771D1EFC56009CD28F /* Utility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Utility.h; path = Common/Utility.h; sourceTree = "<group>"; };
 		D1F7E7781D1EFC56009CD28F /* Utility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Utility.m; path = Common/Utility.m; sourceTree = "<group>"; };
+		D1F7E77B1D1F052B009CD28F /* ARPanelViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ARPanelViewController.h; path = ARPanel/ARPanelViewController.h; sourceTree = "<group>"; };
+		D1F7E77C1D1F052B009CD28F /* ARPanelViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ARPanelViewController.m; path = ARPanel/ARPanelViewController.m; sourceTree = "<group>"; };
+		D1F7E7801D1F09B7009CD28F /* LayerBoxView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LayerBoxView.h; path = DisplayPanel/Layer/LayerBoxView.h; sourceTree = "<group>"; };
+		D1F7E7811D1F09B7009CD28F /* LayerBoxView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LayerBoxView.m; path = DisplayPanel/Layer/LayerBoxView.m; sourceTree = "<group>"; };
+		D1F7E7831D1F11F2009CD28F /* WebP.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = WebP.framework; sourceTree = "<group>"; };
+		D1F7E7851D1F1241009CD28F /* wall-e@2x.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "wall-e@2x.webp"; sourceTree = "<group>"; };
+		D1F7E78C1D1F15F4009CD28F /* GuidePanelViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GuidePanelViewController.h; path = GuidePanel/GuidePanelViewController.h; sourceTree = "<group>"; };
+		D1F7E78D1D1F15F4009CD28F /* GuidePanelViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GuidePanelViewController.m; path = GuidePanel/GuidePanelViewController.m; sourceTree = "<group>"; };
 		DBBFAB339C1389D2FF505C48 /* libPods-xfrubiks.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-xfrubiks.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F675E66FA3F595F64006F5F3 /* Pods-xfrubiks.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-xfrubiks.release.xcconfig"; path = "Pods/Target Support Files/Pods-xfrubiks/Pods-xfrubiks.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -119,6 +132,7 @@
 				3CF106121D1E82510027F2BD /* UIKit.framework in Frameworks */,
 				3CF106101D1E82470027F2BD /* AudioToolbox.framework in Frameworks */,
 				3CF1060E1D1E823C0027F2BD /* CoreTelephony.framework in Frameworks */,
+				D1F7E7841D1F11F2009CD28F /* WebP.framework in Frameworks */,
 				3CF1060C1D1E822D0027F2BD /* Foundation.framework in Frameworks */,
 				3CF1060A1D1E82240027F2BD /* SystemConfiguration.framework in Frameworks */,
 				3CF106081D1E82190027F2BD /* libz.tbd in Frameworks */,
@@ -135,6 +149,7 @@
 		04285741233CAE749A4CFA10 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D1F7E7831D1F11F2009CD28F /* WebP.framework */,
 				D1F7E7721D1EC0C2009CD28F /* GLKit.framework */,
 				3CF106191D1E827B0027F2BD /* CoreGraphics.framework */,
 				3CF106171D1E82710027F2BD /* QuartzCore.framework */,
@@ -197,6 +212,8 @@
 		D1F7E6A31D1E6663009CD28F /* xfrubiks */ = {
 			isa = PBXGroup;
 			children = (
+				D1F7E78B1D1F15DF009CD28F /* GuidePanel */,
+				D1F7E77A1D1F04E0009CD28F /* ARPanel */,
 				D1F7E6BE1D1E6A99009CD28F /* Common */,
 				D1F7E6BD1D1E6A4E009CD28F /* DisplayPanel */,
 				D1F7E6BC1D1E6A38009CD28F /* MenuPanel */,
@@ -217,6 +234,7 @@
 		D1F7E6BB1D1E6A30009CD28F /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				D1F7E7851D1F1241009CD28F /* wall-e@2x.webp */,
 				D1F7E6A71D1E6663009CD28F /* AppDelegate.h */,
 				D1F7E6A81D1E6663009CD28F /* AppDelegate.m */,
 				D1F7E6AA1D1E6663009CD28F /* ViewController.h */,
@@ -289,8 +307,28 @@
 				D1F7E76D1D1EAB2B009CD28F /* LayerDisplayView.m */,
 				D1F7E76F1D1EB187009CD28F /* LayerFaceView.h */,
 				D1F7E7701D1EB187009CD28F /* LayerFaceView.m */,
+				D1F7E7801D1F09B7009CD28F /* LayerBoxView.h */,
+				D1F7E7811D1F09B7009CD28F /* LayerBoxView.m */,
 			);
 			name = Layer;
+			sourceTree = "<group>";
+		};
+		D1F7E77A1D1F04E0009CD28F /* ARPanel */ = {
+			isa = PBXGroup;
+			children = (
+				D1F7E77B1D1F052B009CD28F /* ARPanelViewController.h */,
+				D1F7E77C1D1F052B009CD28F /* ARPanelViewController.m */,
+			);
+			name = ARPanel;
+			sourceTree = "<group>";
+		};
+		D1F7E78B1D1F15DF009CD28F /* GuidePanel */ = {
+			isa = PBXGroup;
+			children = (
+				D1F7E78C1D1F15F4009CD28F /* GuidePanelViewController.h */,
+				D1F7E78D1D1F15F4009CD28F /* GuidePanelViewController.m */,
+			);
+			name = GuidePanel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -358,6 +396,11 @@
 				D1F7E6B41D1E6663009CD28F /* LaunchScreen.storyboard in Resources */,
 				3CF106501D1F12970027F2BD /* left.png in Resources */,
 				D1F7E6B11D1E6663009CD28F /* Assets.xcassets in Resources */,
+<<<<<<< HEAD
+=======
+				D1F7E7861D1F1377009CD28F /* wall-e@2x.webp in Resources */,
+				3CF106371D1EF0310027F2BD /* right.png in Resources */,
+>>>>>>> origin/master
 				D1F7E6AF1D1E6663009CD28F /* Main.storyboard in Resources */,
 				3CF1064F1D1F12970027F2BD /* down.png in Resources */,
 			);
@@ -422,12 +465,15 @@
 				3CF106201D1E83390027F2BD /* IATConfig.m in Sources */,
 				3CF106351D1EF0040027F2BD /* ArrowsImage.m in Sources */,
 				D1F7E7761D1EF61F009CD28F /* XFContext.m in Sources */,
+				D1F7E7821D1F09B7009CD28F /* LayerBoxView.m in Sources */,
+				D1F7E77D1D1F052B009CD28F /* ARPanelViewController.m in Sources */,
 				D1F7E6C71D1E6B28009CD28F /* DisplayViewController.m in Sources */,
 				3CF106211D1E83390027F2BD /* ISRDataHelper.m in Sources */,
 				3CF106321D1EC4BB0027F2BD /* ScreenSizeHelper.m in Sources */,
 				D1F7E7791D1EFC56009CD28F /* Utility.m in Sources */,
 				D1F7E6CA1D1E6B32009CD28F /* MenuViewController.m in Sources */,
 				D1F7E6AC1D1E6663009CD28F /* ViewController.m in Sources */,
+				D1F7E78E1D1F15F4009CD28F /* GuidePanelViewController.m in Sources */,
 				D1F7E70C1D1E85B8009CD28F /* ButtonMenuView.m in Sources */,
 				D1F7E6C11D1E6AD5009CD28F /* BaseViewController.m in Sources */,
 				D1F7E76E1D1EAB2B009CD28F /* LayerDisplayView.m in Sources */,

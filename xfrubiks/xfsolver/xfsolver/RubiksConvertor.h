@@ -16,4 +16,8 @@
 
 + (UIColor*)colorFromZhcnString:(NSString*)zhcnString;
 
++ (NSString *)translateResultToZhcnString:(NSString*)result;
+
++ (NSString *)translateFaceIndexToZhcnString:(NSUInteger)index;
+
 @end

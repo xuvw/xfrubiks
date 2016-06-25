@@ -62,6 +62,8 @@
         
         UIPanGestureRecognizer *gesture = [[UIPanGestureRecognizer alloc]initWithTarget:self action:@selector(_onPanGesture:)];
         [self addGestureRecognizer:gesture];
+        
+        [_faces[0] setWaitingIndex:0];
     }
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(addArrow:) name:@"input_arrow" object:nil];
@@ -175,15 +177,15 @@
     //add cube face 2 - F - Front
     transform = CATransform3DMakeTranslation(0, 0, _sideLength/2);
     [self addFace:2 withTransform:transform];
-    //add cube face 3
+    //add cube face 3 - D - Down
     transform = CATransform3DMakeTranslation(0, _sideLength/2, 0);
     transform = CATransform3DRotate(transform, -M_PI_2, 1, 0, 0);
     [self addFace:3 withTransform:transform];
-    //add cube face 4
+    //add cube face 4 - L - Left
     transform = CATransform3DMakeTranslation(-_sideLength/2, 0, 0);
     transform = CATransform3DRotate(transform, -M_PI_2, 0, 1, 0);
     [self addFace:4 withTransform:transform];
-    //add cube face 5
+    //add cube face 5 - B - Back
     transform = CATransform3DMakeTranslation(0, 0, -_sideLength/2);
     transform = CATransform3DRotate(transform, M_PI, 0, 1, 0);
     [self addFace:5 withTransform:transform];
@@ -234,7 +236,7 @@
 
 - (void)_configFace:(LayerFaceView*)face idx:(NSUInteger)idx{
     
-    [face setText:[NSString stringWithFormat:@"%@",@(idx)]];
+    [face setText:[RubiksConvertor translateFaceIndexToZhcnString:idx]];
 }
 
 - (void)setColorByString:(NSString *)zhcnString{
@@ -244,7 +246,8 @@
     
     NSLog(@">>>>>>>>>>normal String : %@", normalString);
     
-    for(NSUInteger idx = 0; idx < normalString.length && idx < 54; ++idx){
+    NSUInteger idx;
+    for(idx = 0; idx < normalString.length && idx < 54; ++idx){
         NSString *colorItem = [normalString substringWithRange:NSMakeRange(idx, 1)];
         NSLog(@"color item = %@",colorItem);
         
@@ -253,6 +256,14 @@
         
         UIColor *color = [RubiksConvertor colorFromZhcnString:colorItem];
         [_faces[faceIndex] setColor:color index:boxIndex];
+        [_faces[faceIndex] removeWaiting];
+    }
+    
+    // next
+    NSUInteger faceIndex = idx/9;
+    NSUInteger boxIndex = idx%9;
+    if(faceIndex<=5 && boxIndex<=8){
+        [_faces[faceIndex] setWaitingIndex:boxIndex];
     }
 }
 

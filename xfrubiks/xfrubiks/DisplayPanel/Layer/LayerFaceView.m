@@ -7,10 +7,11 @@
 //
 
 #import "LayerFaceView.h"
+#import "LayerBoxView.h"
 
 @interface LayerFaceView ()
 
-@property (strong,nonatomic) NSArray<UIView*> *views;
+@property (strong,nonatomic) NSArray<LayerBoxView*> *views;
 @property (strong,nonatomic) UILabel *label;
 
 @end
@@ -22,19 +23,19 @@
     self = [super initWithFrame:frame];
     if (self) {
         _views = @[
-                   [UIView new],
-                   [UIView new],
-                   [UIView new],
-                   [UIView new],
-                   [UIView new],
-                   [UIView new],
-                   [UIView new],
-                   [UIView new],
-                   [UIView new],
+                   [LayerBoxView new],
+                   [LayerBoxView new],
+                   [LayerBoxView new],
+                   [LayerBoxView new],
+                   [LayerBoxView new],
+                   [LayerBoxView new],
+                   [LayerBoxView new],
+                   [LayerBoxView new],
+                   [LayerBoxView new],
                    ];
         
 //        CGFloat width = 
-        [_views enumerateObjectsUsingBlock:^(UIView * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        [_views enumerateObjectsUsingBlock:^(LayerBoxView * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
             NSUInteger row = idx/3;
             NSUInteger col = idx%3;
             
@@ -50,7 +51,7 @@
         [self addSubview:_label];
         _label.font = [UIFont systemFontOfSize:20];
         _label.textColor = [UIColor blackColor];
-        _label.center = CGPointMake(frame.size.width/2, frame.size.height/2);
+        _label.center = CGPointMake(frame.size.width/2 - 10, frame.size.height/2 - 10);
         
     }
     return self;
@@ -68,6 +69,17 @@
     [_label sizeToFit];
 }
 
+- (void)setWaitingIndex:(NSUInteger)index{
+    if(index > _views.count - 1)return;
+    
+    _views[index].waitingInput = YES;
+}
+
+- (void)removeWaiting{
+    [_views enumerateObjectsUsingBlock:^(LayerBoxView * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        obj.waitingInput = NO;
+    }];
+}
 
 /*
 // Only override drawRect: if you perform custom drawing.
