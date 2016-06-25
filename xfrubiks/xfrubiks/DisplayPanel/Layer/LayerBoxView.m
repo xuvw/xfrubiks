@@ -7,7 +7,7 @@
 //
 
 #import "LayerBoxView.h"
-#import <YYWebImage.h>
+#import <YYImage.h>
 
 @implementation LayerBoxView{
     UIImageView *_waiting;
@@ -27,7 +27,7 @@
     if(_waitingInput){
         if(_waiting)return;
         
-        UIImage *image = [UIImage imageNamed:@"apng"];
+        YYImage *image = [YYImage imageNamed:@"wall-e"];
         _waiting = [[YYAnimatedImageView alloc] initWithImage:image];
         [self addSubview:_waiting];
         _waiting.center = CGPointMake(self.frame.size.width/2, self.frame.size.height/2);
