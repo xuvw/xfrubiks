@@ -11,6 +11,6 @@
 #import "MenuViewController.h"
 
 @interface ScreenSizeHelper : NSObject
-+ (float)getDisplayViewWidth;
-+ (float)getMenuViewWidth;
++ (CGFloat)getDisplayViewWidth;
++ (CGFloat)getMenuViewWidth;
 @end

@@ -8,6 +8,7 @@
 
 #import "DisplayViewController.h"
 #import "LayerDisplayView.h"
+#import "ScreenSizeHelper.h"
 
 @interface DisplayViewController ()
 @property (strong, nonatomic) LayerDisplayView *cube;
@@ -25,7 +26,7 @@
     NSLog(@"screen size = %@", [NSValue valueWithCGSize:[UIScreen mainScreen].bounds.size]);
     
     CGFloat width = 250;
-    _cube = [[LayerDisplayView alloc]initWithFrame:CGRectMake((SCREEN_WIDTH/2-width)/2,
+    _cube = [[LayerDisplayView alloc]initWithFrame:CGRectMake(([ScreenSizeHelper getDisplayViewWidth]-width)/2,
                                                               (SCREEN_HEIGHT-width)/2,
                                                               width,
                                                               width)];

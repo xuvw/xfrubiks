@@ -9,10 +9,10 @@
 #import "ScreenSizeHelper.h"
 
 @implementation ScreenSizeHelper
-+ (float)getDisplayViewWidth{
++ (CGFloat)getDisplayViewWidth{
     return SCREEN_WIDTH/2 + 80;
 }
-+ (float)getMenuViewWidth{
++ (CGFloat)getMenuViewWidth{
     return SCREEN_WIDTH/2 - 80;
 }
 @end
