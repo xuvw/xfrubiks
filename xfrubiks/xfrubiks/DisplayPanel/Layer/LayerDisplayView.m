@@ -17,7 +17,11 @@
 //#define LIGHT_DIRECTION 0, 1, -0.5 
 //#define AMBIENT_LIGHT 0.5
 
-@interface LayerDisplayView()
+@interface LayerDisplayView(){
+    CGFloat _baseradx;
+    CGFloat _baserady;
+    CGFloat _baseradz;
+}
 @property (strong,nonatomic) UIView *containerView;
 @property (strong,nonatomic) NSArray<LayerFaceView*> *faces;
 @property (assign,nonatomic) CGFloat sideLength;
@@ -30,6 +34,10 @@
     self = [super initWithFrame:frame];
     if (self) {
         _sideLength = 160;
+        
+        _baseradx = -M_PI_4;
+        _baserady = -M_PI_4/3*2;
+        _baseradz = -M_PI_4/3*2;
         
         _containerView = [[UIView alloc]init];
         _containerView.bounds = CGRectMake(0, 0, _sideLength, _sideLength);
@@ -47,14 +55,47 @@
         
         [self _setupFaces];
         
-        //set up the container sublayer transform
-        CATransform3D perspective = CATransform3DIdentity;
-        perspective.m34 = -1.0 / 500.0;
-        perspective = CATransform3DRotate(perspective, -M_PI_4, 1, 0, 0);
-        perspective = CATransform3DRotate(perspective, -M_PI_4/3*2, 0, 1, 0);
-        self.containerView.layer.sublayerTransform = perspective;
+        [self _rotateCube:0 rady:0 radz:0];
+        
+        UIPanGestureRecognizer *gesture = [[UIPanGestureRecognizer alloc]initWithTarget:self action:@selector(_onPanGesture:)];
+        [self addGestureRecognizer:gesture];
     }
     return self;
+}
+
+- (void)_onPanGesture:(UIPanGestureRecognizer*)gesture{
+    static CGPoint start;
+    if(gesture.state == UIGestureRecognizerStateBegan){
+        start = [gesture locationInView:self];
+    }else{
+        CGPoint loc = [gesture locationInView:self];
+        CGPoint diff = CGPointMake(start.x-loc.x, start.y-loc.y);
+        
+        CGFloat diffx = diff.x;
+        CGFloat diffy = diff.y;
+        CGFloat diffz = sqrt(diff.x*diff.x + diff.y*diff.y) * diffx/fabs(diffx);
+        
+        CGFloat radx = diffx/180.0;
+        CGFloat rady = diffy/180.0;
+        CGFloat radz = diffz/180.0;
+        
+        [self _rotateCube:radx rady:rady radz:radz];
+        
+        start = loc;
+    }
+}
+
+- (void)_rotateCube:(CGFloat)radx rady:(CGFloat)rady radz:(CGFloat)radz{
+    _baseradx += rady;
+    _baserady -= radx;
+    _baseradz -= radz;
+    
+    CATransform3D perspective = CATransform3DIdentity;
+    perspective.m34 = -1.0 / 500.0;
+    perspective = CATransform3DRotate(perspective, _baseradx , 1, 0, 0);
+    perspective = CATransform3DRotate(perspective, _baserady , 0, 1, 0);
+    perspective = CATransform3DRotate(perspective, _baseradz , 0, 0, 1);
+    self.containerView.layer.sublayerTransform = perspective;
 }
 
 - (void)_setupFaces{
