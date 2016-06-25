@@ -42,7 +42,6 @@
                 }
             }
         }
-        
     }
     NSLog(@"%@", mutStr);
     if (mutStr.length != 54) {

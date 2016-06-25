@@ -21,6 +21,7 @@
 		3CF1061A1D1E827B0027F2BD /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CF106191D1E827B0027F2BD /* CoreGraphics.framework */; };
 		3CF106201D1E83390027F2BD /* IATConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CF1061D1D1E83390027F2BD /* IATConfig.m */; };
 		3CF106211D1E83390027F2BD /* ISRDataHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CF1061F1D1E83390027F2BD /* ISRDataHelper.m */; };
+		3CF106321D1EC4BB0027F2BD /* ScreenSizeHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CF106311D1EC4BB0027F2BD /* ScreenSizeHelper.m */; };
 		D1F7E6A61D1E6663009CD28F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D1F7E6A51D1E6663009CD28F /* main.m */; };
 		D1F7E6A91D1E6663009CD28F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D1F7E6A81D1E6663009CD28F /* AppDelegate.m */; };
 		D1F7E6AC1D1E6663009CD28F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D1F7E6AB1D1E6663009CD28F /* ViewController.m */; };
@@ -54,6 +55,8 @@
 		3CF1061D1D1E83390027F2BD /* IATConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IATConfig.m; sourceTree = "<group>"; };
 		3CF1061E1D1E83390027F2BD /* ISRDataHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISRDataHelper.h; sourceTree = "<group>"; };
 		3CF1061F1D1E83390027F2BD /* ISRDataHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ISRDataHelper.m; sourceTree = "<group>"; };
+		3CF106301D1EC4BB0027F2BD /* ScreenSizeHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScreenSizeHelper.h; sourceTree = "<group>"; };
+		3CF106311D1EC4BB0027F2BD /* ScreenSizeHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScreenSizeHelper.m; sourceTree = "<group>"; };
 		944B34D8CB0E4DE7FF7EA039 /* Pods-xfrubiks.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-xfrubiks.debug.xcconfig"; path = "Pods/Target Support Files/Pods-xfrubiks/Pods-xfrubiks.debug.xcconfig"; sourceTree = "<group>"; };
 		D1F7E6A11D1E6663009CD28F /* xfrubiks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = xfrubiks.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D1F7E6A51D1E6663009CD28F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -232,6 +235,8 @@
 			children = (
 				D1F7E6BF1D1E6AD5009CD28F /* BaseViewController.h */,
 				D1F7E6C01D1E6AD5009CD28F /* BaseViewController.m */,
+				3CF106301D1EC4BB0027F2BD /* ScreenSizeHelper.h */,
+				3CF106311D1EC4BB0027F2BD /* ScreenSizeHelper.m */,
 			);
 			name = Common;
 			sourceTree = "<group>";
@@ -382,6 +387,7 @@
 				3CF106201D1E83390027F2BD /* IATConfig.m in Sources */,
 				D1F7E6C71D1E6B28009CD28F /* DisplayViewController.m in Sources */,
 				3CF106211D1E83390027F2BD /* ISRDataHelper.m in Sources */,
+				3CF106321D1EC4BB0027F2BD /* ScreenSizeHelper.m in Sources */,
 				D1F7E6CA1D1E6B32009CD28F /* MenuViewController.m in Sources */,
 				D1F7E6AC1D1E6663009CD28F /* ViewController.m in Sources */,
 				D1F7E70C1D1E85B8009CD28F /* ButtonMenuView.m in Sources */,

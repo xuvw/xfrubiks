@@ -8,6 +8,9 @@
 
 #import "ButtonMenuView.h"
 #import <objc/runtime.h>
+#import "ScreenSizeHelper.h"
+
+#define MenueViewWith [ScreenSizeHelper getMenuViewWidth]
 
 static char kButtonTagKey;
 
@@ -40,7 +43,7 @@ static char kButtonTagKey;
 
 - (UIButton*)_createButton:(UIColor*)color row:(NSUInteger)row col:(NSUInteger)col tag:(NSString*)tag{
     CGFloat width = 60;
-    CGFloat hStep = ceil(SCREEN_WIDTH/2/6);
+    CGFloat hStep = ceil(MenueViewWith/6);
     CGFloat vStep = ceil(width*2/4)+3;
     
     UIButton *button = [UIButton new];

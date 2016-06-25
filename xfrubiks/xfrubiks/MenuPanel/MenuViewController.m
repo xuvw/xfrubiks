@@ -12,7 +12,9 @@
 #import "ISRDataHelper.h"
 #import "ButtonMenuView.h"
 #import <xfsolver/xfsolver.h>
+#import "ScreenSizeHelper.h"
 
+#define MenueViewWith [ScreenSizeHelper getMenuViewWidth]
 @interface MenuViewController ()<IFlySpeechRecognizerDelegate, ButtonMenuViewDelegate>
 @property (nonatomic, strong) IFlySpeechRecognizer *iFlySpeechRecognizer;
 @property (nonatomic, copy) NSString *inputStr;
@@ -33,36 +35,37 @@
     _inputStr = @"";
     _isInputComplete = NO;
     // Do any additional setup after loading the view.
-    _inputTextView = [[UITextView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH/2, 120)];
+    _inputTextView = [[UITextView alloc]initWithFrame:CGRectMake(0, 0, MenueViewWith, 120)];
     _inputTextView.editable = NO;
     [self.view addSubview:_inputTextView];
     
     {
-        UIView *sep = [[UIView alloc]initWithFrame:CGRectMake(0, 120, SCREEN_WIDTH/2, 0.5)];
+        UIView *sep = [[UIView alloc]initWithFrame:CGRectMake(0, 120, MenueViewWith, 0.5)];
         sep.backgroundColor = [UIColor grayColor];
         [self.view addSubview:sep];
     }
     
-    _buttonsView = [[ButtonMenuView alloc]initWithFrame:CGRectMake(0,121, SCREEN_WIDTH/2, 130)];
+    _buttonsView = [[ButtonMenuView alloc]initWithFrame:CGRectMake(0,121, MenueViewWith, 130)];
     _buttonsView.delegate = self;
     [self.view addSubview:_buttonsView];
     
     {
-        UIView *sep = [[UIView alloc]initWithFrame:CGRectMake(0, 121 + 131, SCREEN_WIDTH/2, 0.5)];
+        UIView *sep = [[UIView alloc]initWithFrame:CGRectMake(0, 121 + 131, MenueViewWith, 0.5)];
         sep.backgroundColor = [UIColor grayColor];
         [self.view addSubview:sep];
     }
     
     UIView *audioInputView = [[UIView alloc]init];
-    audioInputView.frame = CGRectMake(0, SCREEN_HEIGHT - 80, SCREEN_WIDTH/2, 80);
+    audioInputView.frame = CGRectMake(0, SCREEN_HEIGHT - 80, MenueViewWith, 80);
     [self.view addSubview:audioInputView];
     
+    float witdth = MenueViewWith/3 -40;
     UIButton *starBtn_audio = [UIButton buttonWithType:UIButtonTypeSystem];
     starBtn_audio.layer.cornerRadius = 5;
     starBtn_audio.layer.masksToBounds = YES;
-    starBtn_audio.titleLabel.font = [UIFont systemFontOfSize: 18];
+    starBtn_audio.titleLabel.font = [UIFont systemFontOfSize: 15];
     [starBtn_audio setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-    starBtn_audio.frame = CGRectMake(20, 0, 80, 50);
+    starBtn_audio.frame = CGRectMake(10, 0, witdth, 50);
     [starBtn_audio setTitle:@"开始" forState:UIControlStateNormal];
     [starBtn_audio addTarget:self action:@selector(starAudioInput) forControlEvents:UIControlEventTouchUpInside];
     [audioInputView addSubview:starBtn_audio];
@@ -72,7 +75,7 @@
     stopBtn_audio.layer.masksToBounds = YES;
     stopBtn_audio.titleLabel.font = [UIFont systemFontOfSize: 18];
     [stopBtn_audio setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-    stopBtn_audio.frame = CGRectMake(120, 0, 80, 50);
+    stopBtn_audio.frame = CGRectMake(witdth+20, 0, witdth, 50);
     [stopBtn_audio setTitle:@"停止" forState:UIControlStateNormal];
     [stopBtn_audio addTarget:self action:@selector(stopAudioInput) forControlEvents:UIControlEventTouchUpInside];
     [audioInputView addSubview:stopBtn_audio];
@@ -82,7 +85,7 @@
     reStarBtn_audio.layer.masksToBounds = YES;
     reStarBtn_audio.titleLabel.font = [UIFont systemFontOfSize: 18];
     [reStarBtn_audio setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-    reStarBtn_audio.frame = CGRectMake(220, 0, 80, 50);
+    reStarBtn_audio.frame = CGRectMake(witdth*2+30, 0, witdth, 50);
     [reStarBtn_audio setTitle:@"重新输入" forState:UIControlStateNormal];
     [reStarBtn_audio addTarget:self action:@selector(reStarInput) forControlEvents:UIControlEventTouchUpInside];
     [audioInputView addSubview:reStarBtn_audio];
