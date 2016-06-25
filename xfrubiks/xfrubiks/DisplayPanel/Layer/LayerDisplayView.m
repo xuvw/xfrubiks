@@ -242,16 +242,16 @@
 - (void)setColorByString:(NSString *)zhcnString{
     NSLog(@"zhcn String : %@", zhcnString);
     
-    if(zhcnString.length == 0){
-        // clear
-        for (LayerFaceView *face in _faces) {
-            for(NSUInteger idx = 0; idx < 9; ++idx){
-                [face setColor:nil index:idx];
-            }
-            [face removeWaiting];
+    // clear
+    for (LayerFaceView *face in _faces) {
+        for(NSUInteger idx = 0; idx < 9; ++idx){
+            [face setColor:nil index:idx];
         }
+        [face removeWaiting];
+    }
+    
+    if(zhcnString.length == 0){
         [_faces[0] setWaitingIndex:0];
-        
         return;
     }
     

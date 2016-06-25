@@ -27,8 +27,7 @@
 @property (nonatomic, strong) ButtonMenuView *buttonsView;
 @property (nonatomic, strong) UITextView *inputTextView;
 @property (nonatomic, assign) int inputCount;
-@property (nonatomic, assign) BOOL isInputComplete;
-@property (nonatomic, assign) int completeCount;
+@property (nonatomic, assign) NSUInteger completeCount;
 
 @property (nonatomic, strong) NSMutableArray<NSString *> *colors;
 @end
@@ -40,7 +39,6 @@
     _inputCount = 0;
     _completeCount = 0;
     _inputStr = @"";
-    _isInputComplete = NO;
     // Do any additional setup after loading the view.
     _inputTextView = [[UITextView alloc]initWithFrame:CGRectMake(0, 0, MenueViewWith, 120)];
     _inputTextView.editable = NO;
@@ -277,6 +275,7 @@
 }
 
 - (void)_addInputText:(NSString*)text{
+    if(_colors.count == 54)return;
     
     NSArray *array = @[@"红", @"蓝", @"黄", @"橙", @"绿", @"白", @"黑"];
     for (NSString *str in array) {
@@ -284,41 +283,38 @@
 
             [self _pushColor:str];
             
-            
             _inputCount++;
             break;
         }
     }
     
-    if (_isInputComplete == NO) {
+    _completeCount = _colors.count;
+    
+    if (_colors.count != 54) {
         NSString *tips = @"";
         if (_inputCount == 9) {
             if (_completeCount < 1) {
                 tips = @"上面输入完成，请输入右面";
                 [[NSNotificationCenter defaultCenter]postNotificationName:@"input_arrow" object:@"left"];
                 [self showInputAlert:tips tag:0];
-                _completeCount++;
             }
         }else if (_inputCount == 18){
             if (_completeCount < 2) {
                 tips = @"右面输入完成，请输入前面";
                 [[NSNotificationCenter defaultCenter]postNotificationName:@"input_arrow" object:@"right"];
                 [self showInputAlert:tips tag:1];
-                _completeCount++;
             }
         }else if (_inputCount == 27){
             if (_completeCount < 3) {
                 tips = @"前面输入完成，请输入底面";
                 [[NSNotificationCenter defaultCenter]postNotificationName:@"input_arrow" object:@"up"];
                 [self showInputAlert:tips tag:2];
-                _completeCount++;
             }
         }else if (_inputCount == 36){
             if (_completeCount < 4) {
                 tips = @"底面输入完成，请输入左面";
                 [[NSNotificationCenter defaultCenter]postNotificationName:@"input_arrow" object:@"upleft"];
                 [self showInputAlert:tips tag:3];
-                _completeCount++;
             }
 
         }else if (_inputCount == 45){
@@ -327,7 +323,6 @@
                 [[NSNotificationCenter defaultCenter]postNotificationName:@"input_arrow" object:@"leftright"];
 
                 [self showInputAlert:tips tag:4];
-                _completeCount++;
             }
         }else if (_inputCount == 54){
             if (_completeCount < 6) {
@@ -335,9 +330,6 @@
                 [self showInputAlert:tips tag:5];
                 
                 [self _trySolve:_inputTextView.text];
-                
-                _isInputComplete = YES;
-                _completeCount++;
             }
         }
     }
