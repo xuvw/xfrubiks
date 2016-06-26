@@ -49,7 +49,7 @@
     [_revertPosition addTarget:self action:@selector(_revertPosition:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:_revertPosition];
     
-    _fillTestData = [[UIButton alloc]initWithFrame:CGRectMake(0, 33, 50, 30)];
+    _fillTestData = [[UIButton alloc]initWithFrame:CGRectMake(0, SCREEN_HEIGHT - 30 - 3 - 30, 50, 30)];
     _fillTestData.backgroundColor = [UIColor orangeColor];
     _fillTestData.titleLabel.font = [UIFont systemFontOfSize:10];
     [_fillTestData setTitle:@"测试数据" forState:UIControlStateNormal];
@@ -57,7 +57,7 @@
     [_fillTestData addTarget:self action:@selector(_fillTestData:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:_fillTestData];
     
-    _opencvLab = [[UIButton alloc]initWithFrame:CGRectMake(0, 33+30+3, 50, 30)];
+    _opencvLab = [[UIButton alloc]initWithFrame:CGRectMake(0, SCREEN_HEIGHT - 3 - 30, 50, 30)];
     _opencvLab.backgroundColor = [UIColor purpleColor];
     _opencvLab.titleLabel.font = [UIFont systemFontOfSize:10];
     [_opencvLab setTitle:@"42" forState:UIControlStateNormal];
