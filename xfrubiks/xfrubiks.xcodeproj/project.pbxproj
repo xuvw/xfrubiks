@@ -113,7 +113,7 @@
 		D1A73B501D1F699C001FD63E /* MainNavigatonController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainNavigatonController.m; sourceTree = "<group>"; };
 		D1A73B521D1F6A0D001FD63E /* PortraitNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PortraitNavigationController.h; sourceTree = "<group>"; };
 		D1A73B531D1F6A0D001FD63E /* PortraitNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PortraitNavigationController.m; sourceTree = "<group>"; };
-		D1F7E6A11D1E6663009CD28F /* 童年小梦想.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "童年小梦想.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D1F7E6A11D1E6663009CD28F /* 童年的小小梦想.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "童年的小小梦想.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D1F7E6A51D1E6663009CD28F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		D1F7E6A71D1E6663009CD28F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		D1F7E6A81D1E6663009CD28F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -272,7 +272,7 @@
 		D1F7E6A21D1E6663009CD28F /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				D1F7E6A11D1E6663009CD28F /* 童年小梦想.app */,
+				D1F7E6A11D1E6663009CD28F /* 童年的小小梦想.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -429,7 +429,7 @@
 			);
 			name = xfrubiks;
 			productName = xfrubiks;
-			productReference = D1F7E6A11D1E6663009CD28F /* 童年小梦想.app */;
+			productReference = D1F7E6A11D1E6663009CD28F /* 童年的小小梦想.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -692,7 +692,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.xfteam.xfrubiks;
 				PRODUCT_MODULE_NAME = xfrubiks;
-				PRODUCT_NAME = "童年小梦想";
+				PRODUCT_NAME = "童年的小小梦想";
 			};
 			name = Debug;
 		};
@@ -718,7 +718,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.xfteam.xfrubiks;
 				PRODUCT_MODULE_NAME = xfrubiks;
-				PRODUCT_NAME = "童年小梦想";
+				PRODUCT_NAME = "童年的小小梦想";
 			};
 			name = Release;
 		};
