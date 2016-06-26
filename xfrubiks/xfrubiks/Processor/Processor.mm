@@ -10,10 +10,16 @@
 #include "opencv2/imgproc.hpp"
 #include "opencv2/highgui.hpp"
 #include "ProcessorParam.h"
+#include <string>
+#include <sstream>
 
 
 
 void Processor::processImage(cv::Mat & src){
+    cv::Mat image;
+    src.copyTo(image);
+
+    cv::Size imageSize = src.size();
     
     // Gray Scale
     cv::Mat grayscale_img;
@@ -44,13 +50,29 @@ void Processor::processImage(cv::Mat & src){
     }
     
     
-//    // Contour
-//    std::vector<std::vector<Point>> contours;
-//    cv::Mat hierarchy;
-//    {
-//        cv::findContours(dilate_img, contours, hierarchy, CV_RETR_LIST, CV_CHAIN_APPROX_SIMPLE);
-//        dilate_img.release();
-//    }
+    // Contour
+    std::vector<std::vector<cv::Point>> contours;
+    std::vector<cv::Vec4i> hierarchy;
+    {
+        cv::findContours(dilate_img, contours, hierarchy,  cv::RETR_LIST, cv::CHAIN_APPROX_SIMPLE);
+        dilate_img.release();
+        
+        cv::Mat gray_image(imageSize, CV_8UC4);
+        cv::Mat rgba_gray_image(imageSize, CV_8UC4);
+        cv::cvtColor( image, gray_image, cv::COLOR_RGB2GRAY);
+        cv::cvtColor(gray_image, rgba_gray_image, cv::COLOR_GRAY2BGRA, 3);
+        
+        cv::Scalar color( 255, 0, 0 );
+        cv::drawContours(rgba_gray_image, contours, -1, color,3);
+        
+        std::stringstream ss;
+        ss << "Coutours count :" << contours.size();
+        cv::String text("Contours Count:");
+        cv::Scalar textColor(255,0,0);
+        cv::putText(rgba_gray_image, cv::String(ss.str().c_str()), cv::Point(10,10), cv::FONT_HERSHEY_PLAIN, 4, textColor);
+        
+        rgba_gray_image.copyTo(src);
+    }
     
 //    // Polygon
 //    {
@@ -69,5 +91,5 @@ void Processor::processImage(cv::Mat & src){
 //        }
 //    }
     
-    dilate_img.copyTo(src);
+    image.release();
 }
