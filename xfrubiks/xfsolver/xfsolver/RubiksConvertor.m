@@ -138,5 +138,19 @@
     }
     return @"";
 }
++ (UIColor *)translateFaceIndexToColor:(NSUInteger)index{
+    // UUUUUUUUURRRRRRRRRFFFFFFFFFDDDDDDDDDLLLLLLLLLBBBBBBBBB
+    switch (index) {
+        case 0: return [UIColor yellowColor];//@"顶";
+        case 1: return [UIColor redColor] ;//@"右";
+        case 2: return [UIColor blueColor] ;//@"前";
+        case 3: return [UIColor whiteColor];//@"底";
+        case 4: return [UIColor orangeColor];//@"左";
+        case 5: return [UIColor greenColor];// @"后";
+        default:break;
+    }
+    return [UIColor grayColor];
+}
+
 
 @end

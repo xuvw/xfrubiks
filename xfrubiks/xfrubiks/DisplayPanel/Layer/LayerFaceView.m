@@ -73,6 +73,11 @@
     [_label sizeToFit];
 }
 
+- (void)setTextBgColor:(UIColor *)textBgColor{
+    
+    _label.backgroundColor = textBgColor;
+}
+
 - (void)setWaitingIndex:(NSUInteger)index{
     if(index > _views.count - 1)return;
     

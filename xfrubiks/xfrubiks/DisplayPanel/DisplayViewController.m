@@ -57,7 +57,7 @@
     [_fillTestData addTarget:self action:@selector(_fillTestData:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:_fillTestData];
     
-    _opencvLab = [[UIButton alloc]initWithFrame:CGRectMake(0, SCREEN_HEIGHT - 3 - 30, 50, 30)];
+    _opencvLab = [[UIButton alloc]initWithFrame:CGRectMake(0, SCREEN_HEIGHT - 30, 50, 30)];
     _opencvLab.backgroundColor = [UIColor purpleColor];
     _opencvLab.titleLabel.font = [UIFont systemFontOfSize:10];
     [_opencvLab setTitle:@"42" forState:UIControlStateNormal];

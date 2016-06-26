@@ -236,7 +236,8 @@
 
 - (void)_configFace:(LayerFaceView*)face idx:(NSUInteger)idx{
     
-    [face setText:[RubiksConvertor translateFaceIndexToZhcnString:idx]];
+    face.text = [RubiksConvertor translateFaceIndexToZhcnString:idx];
+    face.textBgColor = [RubiksConvertor translateFaceIndexToColor:idx];
 }
 
 - (void)setColorByString:(NSString *)zhcnString{

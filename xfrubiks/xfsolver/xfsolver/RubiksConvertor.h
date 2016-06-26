@@ -18,6 +18,7 @@
 
 + (NSString *)translateResultToZhcnString:(NSString*)result;
 
++ (UIColor *)translateFaceIndexToColor:(NSUInteger)index;
 + (NSString *)translateFaceIndexToZhcnString:(NSUInteger)index;
 
 @end
