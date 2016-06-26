@@ -31,6 +31,17 @@
 		3CF106591D1F20A30027F2BD /* turnLeft.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CF106551D1F20A30027F2BD /* turnLeft.png */; };
 		3CF1065A1D1F20A30027F2BD /* turnRight.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CF106561D1F20A30027F2BD /* turnRight.png */; };
 		3CF1065B1D1F20A30027F2BD /* turnUp.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CF106571D1F20A30027F2BD /* turnUp.png */; };
+		D1A73B401D1F626B001FD63E /* Processor.mm in Sources */ = {isa = PBXBuildFile; fileRef = D1A73B351D1F626B001FD63E /* Processor.mm */; };
+		D1A73B411D1F626B001FD63E /* ProcessorParam.mm in Sources */ = {isa = PBXBuildFile; fileRef = D1A73B371D1F626B001FD63E /* ProcessorParam.mm */; };
+		D1A73B421D1F626B001FD63E /* Rhombus.mm in Sources */ = {isa = PBXBuildFile; fileRef = D1A73B391D1F626B001FD63E /* Rhombus.mm */; };
+		D1A73B441D1F626B001FD63E /* RubikVideoCamera.mm in Sources */ = {isa = PBXBuildFile; fileRef = D1A73B3F1D1F626B001FD63E /* RubikVideoCamera.mm */; };
+		D1A73B461D1F63CA001FD63E /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1A73B451D1F63CA001FD63E /* CoreVideo.framework */; };
+		D1A73B481D1F63D6001FD63E /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1A73B471D1F63D6001FD63E /* CoreMedia.framework */; };
+		D1A73B4A1D1F63E0001FD63E /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1A73B491D1F63E0001FD63E /* CoreImage.framework */; };
+		D1A73B4C1D1F63F5001FD63E /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1A73B4B1D1F63F5001FD63E /* Accelerate.framework */; };
+		D1A73B4E1D1F63FF001FD63E /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1A73B4D1D1F63FF001FD63E /* AssetsLibrary.framework */; };
+		D1A73B511D1F699C001FD63E /* MainNavigatonController.m in Sources */ = {isa = PBXBuildFile; fileRef = D1A73B501D1F699C001FD63E /* MainNavigatonController.m */; };
+		D1A73B541D1F6A0D001FD63E /* PortraitNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = D1A73B531D1F6A0D001FD63E /* PortraitNavigationController.m */; };
 		D1F7E6A61D1E6663009CD28F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D1F7E6A51D1E6663009CD28F /* main.m */; };
 		D1F7E6A91D1E6663009CD28F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D1F7E6A81D1E6663009CD28F /* AppDelegate.m */; };
 		D1F7E6AC1D1E6663009CD28F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D1F7E6AB1D1E6663009CD28F /* ViewController.m */; };
@@ -46,8 +57,8 @@
 		D1F7E7711D1EB187009CD28F /* LayerFaceView.m in Sources */ = {isa = PBXBuildFile; fileRef = D1F7E7701D1EB187009CD28F /* LayerFaceView.m */; };
 		D1F7E7731D1EC0C2009CD28F /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1F7E7721D1EC0C2009CD28F /* GLKit.framework */; };
 		D1F7E7761D1EF61F009CD28F /* XFContext.m in Sources */ = {isa = PBXBuildFile; fileRef = D1F7E7751D1EF61F009CD28F /* XFContext.m */; };
-		D1F7E7791D1EFC56009CD28F /* Utility.m in Sources */ = {isa = PBXBuildFile; fileRef = D1F7E7781D1EFC56009CD28F /* Utility.m */; };
-		D1F7E77D1D1F052B009CD28F /* ARPanelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D1F7E77C1D1F052B009CD28F /* ARPanelViewController.m */; };
+		D1F7E7791D1EFC56009CD28F /* Utility.mm in Sources */ = {isa = PBXBuildFile; fileRef = D1F7E7781D1EFC56009CD28F /* Utility.mm */; };
+		D1F7E77D1D1F052B009CD28F /* ARPanelViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = D1F7E77C1D1F052B009CD28F /* ARPanelViewController.mm */; };
 		D1F7E7821D1F09B7009CD28F /* LayerBoxView.m in Sources */ = {isa = PBXBuildFile; fileRef = D1F7E7811D1F09B7009CD28F /* LayerBoxView.m */; };
 		D1F7E7841D1F11F2009CD28F /* WebP.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1F7E7831D1F11F2009CD28F /* WebP.framework */; };
 		D1F7E7861D1F1377009CD28F /* wall-e@2x.webp in Resources */ = {isa = PBXBuildFile; fileRef = D1F7E7851D1F1241009CD28F /* wall-e@2x.webp */; };
@@ -85,6 +96,23 @@
 		3CF106561D1F20A30027F2BD /* turnRight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = turnRight.png; sourceTree = "<group>"; };
 		3CF106571D1F20A30027F2BD /* turnUp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = turnUp.png; sourceTree = "<group>"; };
 		944B34D8CB0E4DE7FF7EA039 /* Pods-xfrubiks.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-xfrubiks.debug.xcconfig"; path = "Pods/Target Support Files/Pods-xfrubiks/Pods-xfrubiks.debug.xcconfig"; sourceTree = "<group>"; };
+		D1A73B341D1F626B001FD63E /* Processor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Processor.h; sourceTree = "<group>"; };
+		D1A73B351D1F626B001FD63E /* Processor.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Processor.mm; sourceTree = "<group>"; };
+		D1A73B361D1F626B001FD63E /* ProcessorParam.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProcessorParam.h; sourceTree = "<group>"; };
+		D1A73B371D1F626B001FD63E /* ProcessorParam.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ProcessorParam.mm; sourceTree = "<group>"; };
+		D1A73B381D1F626B001FD63E /* Rhombus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Rhombus.h; sourceTree = "<group>"; };
+		D1A73B391D1F626B001FD63E /* Rhombus.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Rhombus.mm; sourceTree = "<group>"; };
+		D1A73B3E1D1F626B001FD63E /* RubikVideoCamera.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RubikVideoCamera.h; sourceTree = "<group>"; };
+		D1A73B3F1D1F626B001FD63E /* RubikVideoCamera.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = RubikVideoCamera.mm; sourceTree = "<group>"; };
+		D1A73B451D1F63CA001FD63E /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
+		D1A73B471D1F63D6001FD63E /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+		D1A73B491D1F63E0001FD63E /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
+		D1A73B4B1D1F63F5001FD63E /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
+		D1A73B4D1D1F63FF001FD63E /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
+		D1A73B4F1D1F699C001FD63E /* MainNavigatonController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainNavigatonController.h; sourceTree = "<group>"; };
+		D1A73B501D1F699C001FD63E /* MainNavigatonController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainNavigatonController.m; sourceTree = "<group>"; };
+		D1A73B521D1F6A0D001FD63E /* PortraitNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PortraitNavigationController.h; sourceTree = "<group>"; };
+		D1A73B531D1F6A0D001FD63E /* PortraitNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PortraitNavigationController.m; sourceTree = "<group>"; };
 		D1F7E6A11D1E6663009CD28F /* xfrubiks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = xfrubiks.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D1F7E6A51D1E6663009CD28F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		D1F7E6A71D1E6663009CD28F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -114,9 +142,9 @@
 		D1F7E7741D1EF61F009CD28F /* XFContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = XFContext.h; path = Common/XFContext.h; sourceTree = "<group>"; };
 		D1F7E7751D1EF61F009CD28F /* XFContext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = XFContext.m; path = Common/XFContext.m; sourceTree = "<group>"; };
 		D1F7E7771D1EFC56009CD28F /* Utility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Utility.h; path = Common/Utility.h; sourceTree = "<group>"; };
-		D1F7E7781D1EFC56009CD28F /* Utility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Utility.m; path = Common/Utility.m; sourceTree = "<group>"; };
+		D1F7E7781D1EFC56009CD28F /* Utility.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = Utility.mm; path = Common/Utility.mm; sourceTree = "<group>"; };
 		D1F7E77B1D1F052B009CD28F /* ARPanelViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ARPanelViewController.h; path = ARPanel/ARPanelViewController.h; sourceTree = "<group>"; };
-		D1F7E77C1D1F052B009CD28F /* ARPanelViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ARPanelViewController.m; path = ARPanel/ARPanelViewController.m; sourceTree = "<group>"; };
+		D1F7E77C1D1F052B009CD28F /* ARPanelViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = ARPanelViewController.mm; path = ARPanel/ARPanelViewController.mm; sourceTree = "<group>"; };
 		D1F7E7801D1F09B7009CD28F /* LayerBoxView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LayerBoxView.h; path = DisplayPanel/Layer/LayerBoxView.h; sourceTree = "<group>"; };
 		D1F7E7811D1F09B7009CD28F /* LayerBoxView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LayerBoxView.m; path = DisplayPanel/Layer/LayerBoxView.m; sourceTree = "<group>"; };
 		D1F7E7831D1F11F2009CD28F /* WebP.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = WebP.framework; sourceTree = "<group>"; };
@@ -132,8 +160,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D1F7E7731D1EC0C2009CD28F /* GLKit.framework in Frameworks */,
+				3CF106061D1E81A00027F2BD /* AVFoundation.framework in Frameworks */,
+				D1A73B4E1D1F63FF001FD63E /* AssetsLibrary.framework in Frameworks */,
+				D1A73B4C1D1F63F5001FD63E /* Accelerate.framework in Frameworks */,
 				3CF1061A1D1E827B0027F2BD /* CoreGraphics.framework in Frameworks */,
+				D1A73B4A1D1F63E0001FD63E /* CoreImage.framework in Frameworks */,
+				D1A73B481D1F63D6001FD63E /* CoreMedia.framework in Frameworks */,
+				D1A73B461D1F63CA001FD63E /* CoreVideo.framework in Frameworks */,
+				D1F7E7731D1EC0C2009CD28F /* GLKit.framework in Frameworks */,
 				3CF106181D1E82710027F2BD /* QuartzCore.framework in Frameworks */,
 				3CF106161D1E82650027F2BD /* AddressBook.framework in Frameworks */,
 				3CF106141D1E825B0027F2BD /* CoreLocation.framework in Frameworks */,
@@ -144,7 +178,6 @@
 				3CF1060C1D1E822D0027F2BD /* Foundation.framework in Frameworks */,
 				3CF1060A1D1E82240027F2BD /* SystemConfiguration.framework in Frameworks */,
 				3CF106081D1E82190027F2BD /* libz.tbd in Frameworks */,
-				3CF106061D1E81A00027F2BD /* AVFoundation.framework in Frameworks */,
 				3CF105EE1D1E7D2F0027F2BD /* iflyMSC.framework in Frameworks */,
 				D1F7E6F91D1E75AD009CD28F /* xfsolver.framework in Frameworks */,
 				FAE31EA632A0A6CA1A43812A /* libPods-xfrubiks.a in Frameworks */,
@@ -157,6 +190,11 @@
 		04285741233CAE749A4CFA10 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D1A73B4D1D1F63FF001FD63E /* AssetsLibrary.framework */,
+				D1A73B4B1D1F63F5001FD63E /* Accelerate.framework */,
+				D1A73B491D1F63E0001FD63E /* CoreImage.framework */,
+				D1A73B471D1F63D6001FD63E /* CoreMedia.framework */,
+				D1A73B451D1F63CA001FD63E /* CoreVideo.framework */,
 				D1F7E7831D1F11F2009CD28F /* WebP.framework */,
 				D1F7E7721D1EC0C2009CD28F /* GLKit.framework */,
 				3CF106191D1E827B0027F2BD /* CoreGraphics.framework */,
@@ -197,6 +235,28 @@
 			);
 			name = audioInput;
 			path = MenuPanel/audioInput;
+			sourceTree = "<group>";
+		};
+		D1A73B331D1F626B001FD63E /* Processor */ = {
+			isa = PBXGroup;
+			children = (
+				D1A73B341D1F626B001FD63E /* Processor.h */,
+				D1A73B351D1F626B001FD63E /* Processor.mm */,
+				D1A73B361D1F626B001FD63E /* ProcessorParam.h */,
+				D1A73B371D1F626B001FD63E /* ProcessorParam.mm */,
+				D1A73B381D1F626B001FD63E /* Rhombus.h */,
+				D1A73B391D1F626B001FD63E /* Rhombus.mm */,
+			);
+			path = Processor;
+			sourceTree = "<group>";
+		};
+		D1A73B3D1D1F626B001FD63E /* Video */ = {
+			isa = PBXGroup;
+			children = (
+				D1A73B3E1D1F626B001FD63E /* RubikVideoCamera.h */,
+				D1A73B3F1D1F626B001FD63E /* RubikVideoCamera.mm */,
+			);
+			path = Video;
 			sourceTree = "<group>";
 		};
 		D1F7E6981D1E6663009CD28F = {
@@ -252,6 +312,10 @@
 				D1F7E6B21D1E6663009CD28F /* LaunchScreen.storyboard */,
 				D1F7E6B51D1E6663009CD28F /* Info.plist */,
 				D1F7E6CB1D1E6B43009CD28F /* Precompiled.h */,
+				D1A73B4F1D1F699C001FD63E /* MainNavigatonController.h */,
+				D1A73B501D1F699C001FD63E /* MainNavigatonController.m */,
+				D1A73B521D1F6A0D001FD63E /* PortraitNavigationController.h */,
+				D1A73B531D1F6A0D001FD63E /* PortraitNavigationController.m */,
 			);
 			name = Main;
 			sourceTree = "<group>";
@@ -289,7 +353,7 @@
 				D1F7E7741D1EF61F009CD28F /* XFContext.h */,
 				D1F7E7751D1EF61F009CD28F /* XFContext.m */,
 				D1F7E7771D1EFC56009CD28F /* Utility.h */,
-				D1F7E7781D1EFC56009CD28F /* Utility.m */,
+				D1F7E7781D1EFC56009CD28F /* Utility.mm */,
 				3CF1064B1D1F12970027F2BD /* down.png */,
 				3CF1064C1D1F12970027F2BD /* left.png */,
 				3CF1064D1D1F12970027F2BD /* right.png */,
@@ -328,8 +392,10 @@
 		D1F7E77A1D1F04E0009CD28F /* ARPanel */ = {
 			isa = PBXGroup;
 			children = (
+				D1A73B331D1F626B001FD63E /* Processor */,
+				D1A73B3D1D1F626B001FD63E /* Video */,
 				D1F7E77B1D1F052B009CD28F /* ARPanelViewController.h */,
-				D1F7E77C1D1F052B009CD28F /* ARPanelViewController.m */,
+				D1F7E77C1D1F052B009CD28F /* ARPanelViewController.mm */,
 			);
 			name = ARPanel;
 			sourceTree = "<group>";
@@ -474,15 +540,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				D1F7E7711D1EB187009CD28F /* LayerFaceView.m in Sources */,
+				D1A73B511D1F699C001FD63E /* MainNavigatonController.m in Sources */,
+				D1A73B541D1F6A0D001FD63E /* PortraitNavigationController.m in Sources */,
 				3CF106201D1E83390027F2BD /* IATConfig.m in Sources */,
 				3CF106351D1EF0040027F2BD /* ArrowsImage.m in Sources */,
 				D1F7E7761D1EF61F009CD28F /* XFContext.m in Sources */,
 				D1F7E7821D1F09B7009CD28F /* LayerBoxView.m in Sources */,
-				D1F7E77D1D1F052B009CD28F /* ARPanelViewController.m in Sources */,
+				D1F7E77D1D1F052B009CD28F /* ARPanelViewController.mm in Sources */,
 				D1F7E6C71D1E6B28009CD28F /* DisplayViewController.m in Sources */,
+				D1A73B421D1F626B001FD63E /* Rhombus.mm in Sources */,
+				D1A73B441D1F626B001FD63E /* RubikVideoCamera.mm in Sources */,
 				3CF106211D1E83390027F2BD /* ISRDataHelper.m in Sources */,
+				D1A73B401D1F626B001FD63E /* Processor.mm in Sources */,
 				3CF106321D1EC4BB0027F2BD /* ScreenSizeHelper.m in Sources */,
-				D1F7E7791D1EFC56009CD28F /* Utility.m in Sources */,
+				D1F7E7791D1EFC56009CD28F /* Utility.mm in Sources */,
 				D1F7E6CA1D1E6B32009CD28F /* MenuViewController.m in Sources */,
 				D1F7E6AC1D1E6663009CD28F /* ViewController.m in Sources */,
 				D1F7E78E1D1F15F4009CD28F /* GuidePanelViewController.m in Sources */,
@@ -490,6 +561,7 @@
 				D1F7E6C11D1E6AD5009CD28F /* BaseViewController.m in Sources */,
 				D1F7E76E1D1EAB2B009CD28F /* LayerDisplayView.m in Sources */,
 				D1F7E6A91D1E6663009CD28F /* AppDelegate.m in Sources */,
+				D1A73B411D1F626B001FD63E /* ProcessorParam.mm in Sources */,
 				D1F7E6A61D1E6663009CD28F /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

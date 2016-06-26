@@ -11,6 +11,7 @@
 #import "ScreenSizeHelper.h"
 #import "XFContext.h"
 #import "ARPanelViewController.h"
+#import "PortraitNavigationController.h"
 
 
 @interface DisplayViewController ()
@@ -89,8 +90,11 @@
 }
 
 - (void)_opencvLab:(id)sender{
+    
     ARPanelViewController *vc = [[ARPanelViewController alloc]init];
-    [self.navigationController pushViewController:vc animated:YES];
+    PortraitNavigationController *nav = [[PortraitNavigationController alloc]initWithRootViewController:vc];
+    [self presentViewController:nav animated:YES completion:^{
+    }];
 }
 
 

@@ -6,7 +6,6 @@
 //  Copyright © 2016年 xfteam. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
 
 @interface Utility : NSObject
 
@@ -14,4 +13,9 @@
 + (void)barError:(NSString*)str;
 + (void)barSuccess:(NSString *)str;
 
+#ifdef __cplusplus
++ (cv::Mat)cvMatFromUIImage:(UIImage *)image;
++ (cv::Mat)cvMatGrayFromUIImage:(UIImage *)image;
++(UIImage *)UIImageFromCVMat:(cv::Mat)cvMat;
+#endif
 @end

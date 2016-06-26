@@ -1,5 +1,6 @@
 PODS:
   - Masonry (1.0.1)
+  - OpenCV (3.0.0)
   - SCLAlertView-Objective-C (1.0.4)
   - SVProgressHUD (2.0.3)
   - TWMessageBarManager (1.8.1)
@@ -9,6 +10,7 @@ PODS:
 
 DEPENDENCIES:
   - Masonry (~> 1.0)
+  - OpenCV (~> 3.0)
   - SCLAlertView-Objective-C (~> 1.0)
   - SVProgressHUD (~> 2.0)
   - TWMessageBarManager (~> 1.8)
@@ -16,11 +18,12 @@ DEPENDENCIES:
 
 SPEC CHECKSUMS:
   Masonry: a1a931a0d08870ed8ae415a2ea5ea68ebcac77df
+  OpenCV: be07c02f0d8f125f1d40d261e66a66cb66ece3b3
   SCLAlertView-Objective-C: dd8a12b4068b8bae1b25c1748d7413b5abcad05b
   SVProgressHUD: b0830714205bea1317ea1a2ebc71e5633af334d4
   TWMessageBarManager: fd84e7948ba7968a2b5d9454859135761214ec56
   YYImage: 2cc79ed49b9549b71c6715cefe7b0f5ab3d33abf
 
-PODFILE CHECKSUM: 45cf99d4507fb84d3e8654cdcfb9a6107b2ef8db
+PODFILE CHECKSUM: 00366d3ef6dd64dc40b68a46d8d3d54a7afddbfc
 
 COCOAPODS: 1.0.1
