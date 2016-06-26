@@ -221,7 +221,7 @@
 
 - (void)addFace:(NSInteger)index withTransform:(CATransform3D)transform {
     UIView *face = _faces[index];
-    face.backgroundColor = [UIColor colorWithRed:0.902 green:0.902 blue:0.902 alpha:1.0];
+    face.backgroundColor = [UIColor colorWithRed:0.702 green:0.702 blue:0.702 alpha:1.0];
     [_containerView addSubview:face];
     face.layer.transform = transform;
     

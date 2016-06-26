@@ -60,7 +60,7 @@
 - (void)setColor:(UIColor *)color index:(NSUInteger)index{
     if(index > 8)return;
     if(!color){
-        _views[index].backgroundColor = [UIColor whiteColor];
+        _views[index].backgroundColor = [UIColor colorWithRed:0.702 green:0.702 blue:0.702 alpha:1.0];
         return;
     }
     
